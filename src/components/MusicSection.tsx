@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -25,7 +24,12 @@ export function MusicSection() {
       <div className="max-w-6xl mx-auto space-y-16">
         <div className="text-center space-y-4">
           <h2 className="text-primary font-headline font-bold text-lg tracking-widest uppercase">The Vocal Journey</h2>
-          <h3 className="text-4xl md:text-5xl font-headline font-bold">Sonic Echoes</h3>
+          <h3 className="text-4xl md:text-5xl font-headline font-bold flex items-center justify-center gap-4">
+            Building My Empire
+            <span className="css-smiley">
+              <span className="smiley-mouth"></span>
+            </span>
+          </h3>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

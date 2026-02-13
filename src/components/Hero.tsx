@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -18,7 +17,12 @@ export function Hero() {
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline font-bold leading-tight">
           Crafting <span className="text-primary italic">Intelligence</span> <br /> 
-          Building My <span className="text-primary neon-text">Empire</span> <span className="inline-block animate-bounce ml-2">😊</span>
+          Building My <span className="text-primary neon-text">Empire</span> 
+          <span className="ml-4 inline-block">
+            <span className="css-smiley">
+              <span className="smiley-mouth"></span>
+            </span>
+          </span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body font-light">

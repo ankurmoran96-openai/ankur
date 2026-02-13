@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,4 +68,43 @@
   background: rgba(25, 42, 86, 0.2);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(125, 249, 255, 0.1);
+}
+
+/* Custom CSS Smiley */
+.css-smiley {
+  @apply relative inline-flex items-center justify-center rounded-full border-2 border-primary bg-primary/10;
+  width: 1.2em;
+  height: 1.2em;
+  box-shadow: 0 0 15px theme('colors.primary.DEFAULT / 0.4');
+  vertical-align: middle;
+  animation: float 3s ease-in-out infinite;
+}
+
+.css-smiley::before, .css-smiley::after {
+  content: '';
+  @apply absolute bg-primary rounded-full;
+  width: 15%;
+  height: 15%;
+  top: 30%;
+  animation: blink 4s infinite;
+}
+
+.css-smiley::before { left: 25%; }
+.css-smiley::after { right: 25%; }
+
+.smiley-mouth {
+  @apply absolute border-b-2 border-primary rounded-full;
+  width: 50%;
+  height: 25%;
+  bottom: 25%;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
