@@ -1,8 +1,7 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Cpu, Music, User, MessageSquare } from 'lucide-react';
+import { Menu, X, Cpu, Music, User } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function Navigation() {
@@ -19,7 +18,6 @@ export function Navigation() {
     { name: 'About', href: '#about', icon: User },
     { name: 'AI/ML', href: '#ai', icon: Cpu },
     { name: 'Vocals', href: '#music', icon: Music },
-    { name: 'Chat', href: '#chat', icon: MessageSquare },
   ];
 
   return (
@@ -32,7 +30,7 @@ export function Navigation() {
           <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center neon-border">
             <span className="text-xs">AM</span>
           </div>
-          <span className="tracking-tight">ANKUR'S ECHO</span>
+          <span className="tracking-tight uppercase">Ankur's Echo</span>
         </div>
 
         {/* Desktop Nav */}
