@@ -15,8 +15,8 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about', icon: User },
-    { name: 'AI/ML', href: '#ai', icon: Cpu },
+    { name: 'Profile', href: '#about', icon: User },
+    { name: 'Neural Lab', href: '#ai', icon: Cpu },
     { name: 'Vocals', href: '#music', icon: Music },
   ];
 
@@ -30,7 +30,7 @@ export function Navigation() {
           <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center neon-border">
             <span className="text-xs">AM</span>
           </div>
-          <span className="tracking-tight uppercase">Ankur's Echo</span>
+          <span className="tracking-tighter uppercase">Ankur Moran</span>
         </div>
 
         {/* Desktop Nav */}
@@ -63,9 +63,9 @@ export function Navigation() {
             key={link.name}
             href={link.href}
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-headline font-semibold text-foreground hover:text-primary transition-colors flex items-center gap-4"
+            className="text-3xl font-headline font-bold text-foreground hover:text-primary transition-colors flex items-center gap-4"
           >
-            <link.icon className="w-6 h-6 text-primary" />
+            <link.icon className="w-8 h-8 text-primary" />
             {link.name}
           </a>
         ))}

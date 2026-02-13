@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Terminal, BrainCircuit, Workflow, Layout, Sparkles } from 'lucide-react';
+import { Terminal, BrainCircuit, Workflow, Layout, Sparkles, AlertCircle, Clock } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function AISection() {
@@ -22,6 +21,24 @@ export function AISection() {
           </div>
           <h2 className="text-4xl md:text-5xl font-headline font-bold">Intelligent Systems</h2>
         </div>
+
+        {/* Environment Status Disclaimer */}
+        <Card className="glass-card border-primary/30 bg-primary/5 mb-12 animate-in fade-in slide-in-from-top-4 duration-700">
+          <CardContent className="p-6 md:p-8 flex flex-col md:flex-row items-center gap-6">
+            <div className="p-4 rounded-2xl bg-primary/20 text-primary">
+              <AlertCircle className="w-8 h-8" />
+            </div>
+            <div className="space-y-2 text-center md:text-left">
+              <h4 className="text-xl font-headline font-bold text-primary flex items-center justify-center md:justify-start gap-2">
+                System Status: Resource Constraints
+                <Clock className="w-4 h-4 animate-spin-slow" />
+              </h4>
+              <p className="text-muted-foreground leading-relaxed italic max-w-3xl">
+                Current projects are limited due to a lack of essential tools and an environment that is outdated and repetitively boring. Development is temporarily throttled as we wait for the necessary accessories to scale our vision.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Termux CLI Agent */}
@@ -47,7 +64,7 @@ export function AISection() {
             </CardHeader>
             <CardContent className="p-8 pt-4 space-y-6">
               <p className="text-muted-foreground leading-relaxed italic">
-                "An autonomous orchestrator designed for the mobile terminal environment, pushing the boundaries of edge-device intelligence."
+                "An autonomous orchestrator designed for mobile terminal environments, optimized for edge-device intelligence."
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {[
