@@ -16,9 +16,9 @@ export function Hero() {
           <span>Building the Future of AI & Music</span>
         </div>
 
-        <h1 className="text-5xl md:text-8xl font-headline font-bold leading-tight">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-headline font-bold leading-tight">
           Crafting <span className="text-primary italic">Intelligence</span> <br /> 
-          with <span className="text-primary neon-text">Sonic Echoes</span>.
+          Building My <span className="text-primary neon-text">Empire</span> <span className="inline-block animate-bounce ml-2">😊</span>
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-body font-light">
