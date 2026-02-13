@@ -1,0 +1,35 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "ai-agent-demo",
+      "description": "Termux CLI AI agent dashboard",
+      "imageUrl": "https://picsum.photos/seed/ai-agent/800/600",
+      "imageHint": "coding terminal"
+    },
+    {
+      "id": "chatbot-collection",
+      "description": "Various AI chatbots interface",
+      "imageUrl": "https://picsum.photos/seed/chatbots/800/600",
+      "imageHint": "artificial intelligence"
+    },
+    {
+      "id": "vocal-practice",
+      "description": "Music studio setup",
+      "imageUrl": "https://picsum.photos/seed/vocals/800/600",
+      "imageHint": "microphone music"
+    },
+    {
+      "id": "ar-rahman",
+      "description": "A.R. Rahman portrait",
+      "imageUrl": "https://picsum.photos/seed/rahman/400/400",
+      "imageHint": "music composer"
+    },
+    {
+      "id": "the-weeknd",
+      "description": "The Weeknd artistic style",
+      "imageUrl": "https://picsum.photos/seed/weeknd/400/400",
+      "imageHint": "pop singer"
+    }
+  ]
+}
