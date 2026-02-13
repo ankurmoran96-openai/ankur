@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -28,7 +29,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button size="lg" className="glow-button font-headline rounded-full bg-primary text-background hover:bg-primary/90 px-8 py-6 text-lg group" asChild>
             <a href="#ai">
-              Explore My Projects
+              Explore AI Projects
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </Button>

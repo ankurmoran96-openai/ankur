@@ -1,3 +1,4 @@
+
 import { StarBackground } from '@/components/StarBackground';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
