@@ -16,7 +16,7 @@ export function Footer() {
             </span>
           </div>
           <p className="text-sm text-muted-foreground font-body font-light max-w-xs">
-            Architecting neural systems and vocal harmonies. Building the future, one echo at a time.
+            Architecting neural systems and vocal harmonies. Building the future, one empire at a time.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export function Footer() {
             ))}
           </div>
           <div className="text-[10px] text-muted-foreground font-code uppercase tracking-[0.2em]">
-            © {new Date().getFullYear()} Imperial Echo Chamber | System Version 2.0
+            © {new Date().getFullYear()} Empire Core | Build v2.0
           </div>
         </div>
       </div>

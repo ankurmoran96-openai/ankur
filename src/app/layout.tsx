@@ -3,8 +3,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Ankur's Echo Chamber | Portfolio",
-  description: "Portfolio of Ankur Moran, AI/ML enthusiast and musician.",
+  title: "Ankur Moran | Building My Empire",
+  description: "Portfolio of Ankur Moran, AI/ML enthusiast and musician building the future of intelligence.",
 };
 
 export default function RootLayout({
