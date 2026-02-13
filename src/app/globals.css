@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,6 +37,18 @@
     background-image: radial-gradient(circle at 50% 50%, #192A56 0%, #0A0E17 100%);
     overflow-x: hidden;
   }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSJub25lIi8+CjxwYXRoIGQ9Ik0wIDRMNCAwIiBzdHJva2U9InJnYmEoMTI1LDI0OSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iMC41Ii8+Cjwvc3ZnPg==');
+    pointer-events: none;
+    z-index: 100;
+  }
 }
 
 .star {
@@ -51,23 +64,35 @@
   50% { opacity: 1; transform: scale(1.2); }
 }
 
+.neon-text {
+  text-shadow: 0 0 10px rgba(125, 249, 255, 0.5), 0 0 20px rgba(125, 249, 255, 0.2);
+}
+
 .neon-border {
-  box-shadow: 0 0 10px rgba(125, 249, 255, 0.2), inset 0 0 5px rgba(125, 249, 255, 0.1);
+  box-shadow: 0 0 15px rgba(125, 249, 255, 0.1), inset 0 0 10px rgba(125, 249, 255, 0.05);
 }
 
 .glow-button {
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .glow-button:hover {
-  box-shadow: 0 0 20px rgba(125, 249, 255, 0.5);
-  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(125, 249, 255, 0.6);
+  transform: translateY(-4px) scale(1.02);
 }
 
 .glass-card {
-  background: rgba(25, 42, 86, 0.2);
-  backdrop-filter: blur(12px);
+  background: rgba(25, 42, 86, 0.15);
+  backdrop-filter: blur(16px);
   border: 1px solid rgba(125, 249, 255, 0.1);
+  transition: all 0.5s ease;
+}
+
+.glass-card:hover {
+  background: rgba(25, 42, 86, 0.25);
+  border-color: rgba(125, 249, 255, 0.4);
+  box-shadow: 0 10px 40px -10px rgba(125, 249, 255, 0.2);
+  transform: translateY(-5px);
 }
 
 /* Custom CSS Smiley */
@@ -105,6 +130,7 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-5px) rotate(2deg); }
+  66% { transform: translateY(-2px) rotate(-2deg); }
 }

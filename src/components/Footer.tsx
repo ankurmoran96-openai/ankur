@@ -1,35 +1,48 @@
 
 import React from 'react';
-import { Github, Twitter, Mail, Instagram } from 'lucide-react';
+import { Github, Instagram, Send } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="py-12 border-t border-primary/10 bg-background/50 backdrop-blur-sm px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-        <div className="text-center md:text-left">
-          <div className="text-xl font-headline font-bold text-primary tracking-tight">ANKUR MORAN</div>
-          <p className="text-sm text-muted-foreground mt-2 font-body font-light">Building the future, one echo at a time.</p>
+    <footer className="py-16 border-t border-primary/10 bg-background/50 backdrop-blur-md px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(125,249,255,0.05),transparent_70%)] pointer-events-none" />
+      
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
+        <div className="text-center md:text-left space-y-2">
+          <div className="text-2xl font-headline font-bold text-primary tracking-tighter flex items-center justify-center md:justify-start gap-2">
+            ANKUR MORAN
+            <span className="css-smiley w-6 h-6 border-px">
+              <span className="smiley-mouth"></span>
+            </span>
+          </div>
+          <p className="text-sm text-muted-foreground font-body font-light max-w-xs">
+            Architecting neural systems and vocal harmonies. Building the future, one echo at a time.
+          </p>
         </div>
 
-        <div className="flex gap-6">
-          {[
-            { icon: Github, href: '#' },
-            { icon: Instagram, href: '#' },
-            { icon: Twitter, href: '#' },
-            { icon: Mail, href: 'mailto:contact@ankur.tech' }
-          ].map((social, i) => (
-            <a 
-              key={i} 
-              href={social.href} 
-              className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-all hover:scale-110"
-            >
-              <social.icon className="w-5 h-5" />
-            </a>
-          ))}
-        </div>
-
-        <div className="text-xs text-muted-foreground font-body">
-          © {new Date().getFullYear()} Ankur Moran. All rights reserved.
+        <div className="flex flex-col items-center md:items-end gap-6">
+          <div className="flex gap-4">
+            {[
+              { icon: Github, href: 'https://github.com/ankurmoran96-openai', label: 'GitHub' },
+              { icon: Instagram, href: 'https://instagram.com/_ankurmoran_', label: 'Instagram' },
+              { icon: Send, href: 'https://t.me/Ankxrrrr', label: 'Telegram' }
+            ].map((social, i) => (
+              <a 
+                key={i} 
+                href={social.href} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative w-12 h-12 rounded-xl border border-primary/20 flex items-center justify-center text-primary/60 hover:text-primary hover:border-primary transition-all duration-300 hover:-translate-y-1 bg-primary/5"
+                title={social.label}
+              >
+                <div className="absolute inset-0 rounded-xl bg-primary/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity" />
+                <social.icon className="w-5 h-5 relative z-10" />
+              </a>
+            ))}
+          </div>
+          <div className="text-[10px] text-muted-foreground font-code uppercase tracking-[0.2em]">
+            © {new Date().getFullYear()} Imperial Echo Chamber | System Version 2.0
+          </div>
         </div>
       </div>
     </footer>
