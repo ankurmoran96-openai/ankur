@@ -20,6 +20,7 @@ export function AISection() {
             Neural Infrastructure
           </div>
           <h2 className="text-5xl md:text-6xl font-display font-bold tracking-tighter">INTELLIGENT SYSTEMS</h2>
+          <p className="text-muted-foreground font-code text-sm tracking-widest">DEPLOYED PROJECTS SO FAR</p>
         </div>
 
         {/* Environment Status Disclaimer */}
@@ -64,7 +65,7 @@ export function AISection() {
             </CardHeader>
             <CardContent className="p-10 pt-6 space-y-8">
               <p className="text-muted-foreground leading-relaxed font-light italic text-lg">
-                "An autonomous orchestrator designed for high-performance terminal operations on edge devices."
+                "An autonomous orchestrator capable of writing, reading, and analyzing code directly from the command line."
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {[
@@ -105,7 +106,7 @@ export function AISection() {
             </CardHeader>
             <CardContent className="p-10 pt-6 space-y-8">
               <p className="text-muted-foreground leading-relaxed font-light italic text-lg">
-                "Customized intelligence nodes built on GenKit and Gemini for specific industrial automation."
+                "A collection of customized intelligence nodes built for conversational automation and context handling."
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 {['GenKit', 'Firebase', 'TypeScript', 'Python', 'React', 'Gemini'].map(tech => (

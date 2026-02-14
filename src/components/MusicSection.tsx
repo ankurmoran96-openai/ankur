@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { Music, Mic2, Star, PlayCircle, Loader2 } from 'lucide-react';
+import { Music, Mic2, Star, PlayCircle, Loader2, Timer } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function MusicSection() {
@@ -44,27 +44,27 @@ export function MusicSection() {
                 </div>
                 <div>
                   <h4 className="text-3xl font-headline font-bold">Development Status</h4>
-                  <p className="text-primary/70 font-code text-xs tracking-widest uppercase mt-1">Practice Phase: Active</p>
+                  <p className="text-primary/70 font-code text-xs tracking-widest uppercase mt-1">Ongoing Growth</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="space-y-6">
                   <p className="text-muted-foreground leading-relaxed font-light text-lg">
-                    Music is the sanctuary where I refine my focus. I am currently dedicated to vocal practice, drawing from the legendary compositions of A.R. Rahman and the modern textures of The Weeknd.
+                    I have dedicated 3 months of consistent practice to my vocal journey so far. This is only the beginning of a lifelong commitment to refining my sound and mastering the craft.
                   </p>
                   <div className="p-4 rounded-2xl bg-primary/5 border border-primary/20 italic text-sm text-primary font-light">
-                    "The voice is not yet mastered—we are still practicing, refining, and growing with every session."
+                    "The voice is not yet mastered—we are still practicing, refining, and growing with every session. It will be going on."
                   </div>
                   <div className="flex gap-8">
                     <div className="flex flex-col">
-                      <div className="text-4xl font-bold text-primary font-headline tracking-tighter">2+</div>
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-code">Daily Hours</div>
+                      <div className="text-4xl font-bold text-primary font-headline tracking-tighter">3 Mo</div>
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-code">Duration So Far</div>
                     </div>
                     <div className="w-px h-12 bg-primary/20" />
                     <div className="flex flex-col">
-                      <div className="text-4xl font-bold text-primary font-headline tracking-tighter">50+</div>
-                      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-code">Repertoire</div>
+                      <div className="text-4xl font-bold text-primary font-headline tracking-tighter">∞</div>
+                      <div className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground font-code">Endless Journey</div>
                     </div>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export function MusicSection() {
                    />
                    <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center bg-background/80 backdrop-blur-md p-3 rounded-2xl border border-primary/10">
-                      <div className="text-[10px] font-code text-primary">BUFFERING FREQUENCIES...</div>
+                      <div className="text-[10px] font-code text-primary">REFINING FREQUENCIES...</div>
                       <div className="flex gap-1">
                         <div className="w-1 h-3 bg-primary animate-bounce" />
                         <div className="w-1 h-5 bg-primary animate-bounce delay-75" />
