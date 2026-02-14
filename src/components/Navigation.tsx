@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -22,15 +23,15 @@ export function Navigation() {
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-3 md:py-4",
       scrolled ? "bg-background/80 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-2xl font-headline font-bold text-primary flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center neon-border">
-            <span className="text-xs">AM</span>
+        <div className="text-xl md:text-2xl font-headline font-bold text-primary flex items-center gap-2">
+          <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-primary flex items-center justify-center neon-border">
+            <span className="text-[10px] md:text-xs">AM</span>
           </div>
-          <span className="tracking-tighter uppercase">Ankur Moran</span>
+          <span className="tracking-tighter uppercase text-sm md:text-2xl">Ankur Moran</span>
         </div>
 
         {/* Desktop Nav */}
@@ -48,8 +49,8 @@ export function Navigation() {
         </div>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-primary">
-          {isOpen ? <X /> : <Menu />}
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-primary p-2">
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -58,6 +59,9 @@ export function Navigation() {
         "md:hidden fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-500",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}>
+        <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-primary p-2">
+          <X size={32} />
+        </button>
         {navLinks.map((link) => (
           <a
             key={link.name}
