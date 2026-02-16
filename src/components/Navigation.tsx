@@ -2,49 +2,63 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Cpu, Music, User } from 'lucide-react';
+import { Menu, X, Cpu, Music, User, Flame } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Profile', href: '#about', icon: User },
-    { name: 'Neural Lab', href: '#ai', icon: Cpu },
-    { name: 'Vocals', href: '#music', icon: Music },
+    { name: 'Home', href: '/', icon: Cpu },
+    { name: 'Profile', href: '/about', icon: User },
+    { name: 'Neural Lab', href: '/ai', icon: Cpu },
+    { name: 'Vocals', href: '/music', icon: Music },
+    { name: 'Manifesto', href: '/manifesto', icon: Flame },
   ];
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-6 py-3 md:py-4",
-      scrolled ? "bg-background/80 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
+      "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-4 md:px-6 py-3 md:py-4",
+      scrolled || isOpen ? "bg-background/80 backdrop-blur-md border-b border-primary/20" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-headline font-bold text-primary flex items-center gap-2">
-          <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-primary flex items-center justify-center neon-border">
+        <Link href="/" className="text-xl md:text-2xl font-headline font-bold text-primary flex items-center gap-2 group">
+          <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border-2 border-primary flex items-center justify-center neon-border group-hover:scale-110 transition-transform">
             <span className="text-[10px] md:text-xs">AM</span>
           </div>
           <span className="tracking-tighter uppercase text-sm md:text-2xl">Ankur Moran</span>
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-2 group"
+              className={cn(
+                "text-sm font-medium transition-all flex items-center gap-2 group relative py-1",
+                pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"
+              )}
             >
-              <link.icon className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
+              <link.icon className={cn(
+                "w-4 h-4 transition-opacity",
+                pathname === link.href ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              )} />
               {link.name}
-            </a>
+              {pathname === link.href && (
+                <span className="absolute -bottom-1 left-0 w-full h-px bg-primary animate-in fade-in zoom-in duration-500" />
+              )}
+            </Link>
           ))}
         </div>
 
@@ -56,22 +70,22 @@ export function Navigation() {
 
       {/* Mobile Nav */}
       <div className={cn(
-        "md:hidden fixed inset-0 bg-background/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8 transition-transform duration-500",
+        "md:hidden fixed inset-0 bg-background/95 backdrop-blur-xl z-[-1] flex flex-col items-center justify-center gap-8 transition-transform duration-500",
         isOpen ? "translate-x-0" : "translate-x-full"
       )}>
-        <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-primary p-2">
-          <X size={32} />
-        </button>
         {navLinks.map((link) => (
-          <a
+          <Link
             key={link.name}
             href={link.href}
             onClick={() => setIsOpen(false)}
-            className="text-3xl font-headline font-bold text-foreground hover:text-primary transition-colors flex items-center gap-4"
+            className={cn(
+              "text-3xl font-headline font-bold transition-colors flex items-center gap-4",
+              pathname === link.href ? "text-primary" : "text-foreground hover:text-primary"
+            )}
           >
-            <link.icon className="w-8 h-8 text-primary" />
+            <link.icon className="w-8 h-8" />
             {link.name}
-          </a>
+          </Link>
         ))}
       </div>
     </nav>

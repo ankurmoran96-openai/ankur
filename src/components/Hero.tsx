@@ -4,10 +4,11 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ChevronDown, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative px-4 py-20 text-center overflow-hidden">
+    <section className="min-h-[90vh] flex flex-col items-center justify-center relative px-4 py-20 text-center overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(125,249,255,0.1),transparent_50%)]" />
       
       <div className="relative z-10 max-w-5xl mx-auto space-y-6 md:space-y-10 animate-in fade-in slide-in-from-bottom-12 duration-1000">
@@ -33,13 +34,13 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center pt-4">
           <Button size="lg" className="w-full sm:w-auto glow-button font-headline rounded-full bg-primary text-background hover:bg-primary/90 px-8 md:px-10 py-6 md:py-7 text-base md:text-lg group" asChild>
-            <a href="#ai">
+            <Link href="/ai">
               NEURAL LAB
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </Button>
           <Button size="lg" variant="outline" className="w-full sm:w-auto font-headline rounded-full border-primary/20 hover:bg-primary/5 px-8 md:px-10 py-6 md:py-7 text-base md:text-lg transition-all" asChild>
-            <a href="#music">VOCAL JOURNEY</a>
+            <Link href="/manifesto">THE MANIFESTO</Link>
           </Button>
         </div>
       </div>
