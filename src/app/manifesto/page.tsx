@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Quote, Flame, ShieldAlert, Cpu, Trophy, Brain, User, Music, Zap, Briefcase, TrendingUp, Lightbulb } from 'lucide-react';
+import { Quote, Flame, Cpu, Trophy, Brain, User, Music, Zap, Briefcase, TrendingUp, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -23,10 +23,10 @@ export default function ManifestoPage() {
             </div>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-lg font-light">
               <p>
-                I don't think education is a curse. It is important, but it is too slow and outdated for the world we live in now. The system needs to change because it can't keep up with the speed of AI. 
+                I do not view education as a curse. It is a fundamental pillar, yet it is currently too sluggish and outdated for the velocity of the modern era. The academic system is struggling to maintain pace with the exponential growth of Artificial Intelligence.
               </p>
               <p>
-                While I struggle with traditional studies and feel isolated when others pass easily, I am aware of my own path. I am not failing at life; I am just moving at a different frequency. 
+                While I navigate the friction of traditional studies and experience isolation as others traverse the path with ease, I remain acutely aware of my own trajectory. I am not failing; I am simply resonating at a different frequency.
               </p>
             </div>
           </CardContent>
@@ -37,14 +37,14 @@ export default function ManifestoPage() {
           <CardContent className="p-8 md:p-12 space-y-6">
             <div className="flex items-center gap-4 text-primary">
               <Lightbulb className="w-6 h-6" />
-              <h3 className="text-xl md:text-3xl font-headline font-bold">IMAGINATION IS SUPREME</h3>
+              <h3 className="text-xl md:text-3xl font-headline font-bold">SUPREMACY OF IMAGINATION</h3>
             </div>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-lg font-light">
               <p>
-                Education provides the foundation, but **imagination builds the future.** Without imagination, we are just repeating what has already been done. 
+                Education provides the blueprint, but **imagination constructs the future.** Without the spark of original thought, we are merely iterating on existing paradigms.
               </p>
               <p>
-                Many people think you need an elite degree like an IIT/JEE score to be an AI Engineer. That is a myth. In this generation, your talent and your consistency are what really speak. Excellence cannot be hidden behind a missing degree.
+                The belief that elite degrees like IIT are prerequisites for AI Engineering is a persistent myth. In this era, talent and relentless consistency are the true currencies. Excellence is undeniable and cannot be suppressed by the absence of a formal credential.
               </p>
             </div>
           </CardContent>
@@ -59,14 +59,14 @@ export default function ManifestoPage() {
             </div>
             <div className="space-y-6 text-sm md:text-lg leading-relaxed font-light">
               <p>
-                My plan is calculated. I will use my education to secure a stable job at **IOCL**. This job will provide the essential security my home needs and the foundation for my real mission.
+                My roadmap is calculated. I will leverage formal education to secure professional stability at **IOCL**. This role will provide the essential security my family requires and serve as the launchpad for my true mission.
               </p>
               <div className="p-6 rounded-2xl bg-primary/10 border border-primary/20 flex items-start gap-4">
                 <TrendingUp className="w-6 h-6 text-primary mt-1 shrink-0" />
                 <div>
-                  <p className="font-bold text-primary uppercase text-sm tracking-widest">The 20% Rule</p>
+                  <p className="font-bold text-primary uppercase text-sm tracking-widest">The 20% Directive</p>
                   <p className="text-muted-foreground italic mt-1">
-                    Every month, I will invest 20% of my salary directly into my AI company. This isn't just a dream; it's a financial roadmap to my empire.
+                    Every month, I will allocate 20% of my salary directly into my AI company. This is not just a dream; it is a financial roadmap to my eventual empire.
                   </p>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function ManifestoPage() {
           <div className="flex justify-center gap-12 pt-8">
             <div className="text-center">
               <Trophy className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="text-[10px] font-code tracking-widest text-muted-foreground uppercase">Main Target</p>
+              <p className="text-[10px] font-code tracking-widest text-muted-foreground uppercase">Primary Target</p>
               <p className="text-sm font-bold font-headline uppercase">My Own Company</p>
               <p className="text-[9px] font-code text-primary/60 mt-1">BENCHMARK: OPENAI / GOOGLE</p>
             </div>
