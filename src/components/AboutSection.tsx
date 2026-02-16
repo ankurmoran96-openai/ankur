@@ -1,12 +1,16 @@
 
+"use client";
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Rocket, Target, Calendar, Brain } from 'lucide-react';
+import { Rocket, Target, Calendar, Brain, ArrowRight, Cpu, Music, Flame } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export function AboutSection() {
   return (
     <section id="about" className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto space-y-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6 md:space-y-10 animate-fade-in-left">
             <div className="space-y-4">
@@ -27,7 +31,7 @@ export function AboutSection() {
                 </div>
                 <div>
                   <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-code">Inception</p>
-                  <p className="text-xs md:text-sm font-semibold font-headline">June 9, 2011</p>
+                  <p className="text-xs md:sm font-semibold font-headline">June 9, 2011</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 group">
@@ -72,6 +76,35 @@ export function AboutSection() {
                 </div>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Empire Navigation Hub */}
+        <div className="pt-24 space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+          <div className="flex items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
+            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Traverse the Infrastructure</h4>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/ai">
+                <Cpu className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">Neural Lab</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/music">
+                <Music className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">Vocal Journey</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/manifesto">
+                <Flame className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">The Manifesto</span>
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

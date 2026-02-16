@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Quote, Flame, ShieldAlert, Cpu, Trophy, Brain } from 'lucide-react';
+import { Quote, Flame, ShieldAlert, Cpu, Trophy, Brain, User, Music } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function ManifestoPage() {
   return (
@@ -75,6 +77,35 @@ export default function ManifestoPage() {
               <p className="text-[10px] font-code tracking-widest text-muted-foreground uppercase">Metric</p>
               <p className="text-sm font-bold font-headline">RAW INTELLIGENCE</p>
             </div>
+          </div>
+        </div>
+
+        {/* Empire Navigation Hub */}
+        <div className="pt-24 space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+          <div className="flex items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
+            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap text-center">Return to Infrastructure</h4>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/about">
+                <User className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">The Profile</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/ai">
+                <Cpu className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">Neural Lab</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/music">
+                <Music className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">Vocal Journey</span>
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

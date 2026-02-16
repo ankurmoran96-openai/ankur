@@ -1,10 +1,14 @@
 
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Terminal, BrainCircuit, Workflow, Layout, Sparkles, AlertCircle, Clock } from 'lucide-react';
+import { Terminal, BrainCircuit, Workflow, Layout, Sparkles, AlertCircle, Clock, User, Music, Flame } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export function AISection() {
   const aiImg = PlaceHolderImages.find(img => img.id === 'ai-agent-demo');
@@ -118,6 +122,35 @@ export function AISection() {
               </div>
             </CardContent>
           </Card>
+        </div>
+
+        {/* Empire Navigation Hub */}
+        <div className="pt-24 space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+          <div className="flex items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
+            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Traverse the Infrastructure</h4>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/about">
+                <User className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">The Profile</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/music">
+                <Music className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">Vocal Journey</span>
+              </Link>
+            </Button>
+            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
+              <Link href="/manifesto">
+                <Flame className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-[10px] font-code tracking-widest uppercase">The Manifesto</span>
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
