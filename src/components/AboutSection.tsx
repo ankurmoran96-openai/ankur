@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Rocket, Target, Calendar, Brain, ArrowRight, Cpu, Music, Flame } from 'lucide-react';
+import { Rocket, Target, Calendar, Brain, ArrowRight, Cpu, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -79,33 +79,27 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Empire Navigation Hub */}
-        <div className="pt-24 space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
-          <div className="flex items-center gap-4">
+        {/* Guided Navigation */}
+        <div className="pt-24 flex flex-col items-center space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+          <div className="w-full flex items-center gap-4">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Traverse the Infrastructure</h4>
+            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Access Next Module</h4>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
-              <Link href="/ai">
-                <Cpu className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] font-code tracking-widest uppercase">Neural Lab</span>
-              </Link>
+          
+          <Link href="/ai" className="group relative">
+            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <Button size="lg" className="relative h-20 md:h-24 px-12 md:px-20 glass-card border-primary/30 group hover:border-primary/80 transition-all duration-500 flex items-center gap-6 overflow-hidden rounded-full">
+              <div className="flex flex-col items-start text-left">
+                <span className="text-[10px] font-code tracking-[0.3em] text-primary/60 uppercase">Node 02</span>
+                <span className="text-xl md:text-3xl font-display font-bold tracking-tighter">NEURAL LAB</span>
+              </div>
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all duration-500">
+                <Cpu className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-12 transition-transform" />
+              </div>
+              <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-primary group-hover:translate-x-2 transition-transform" />
             </Button>
-            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
-              <Link href="/music">
-                <Music className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] font-code tracking-widest uppercase">Vocal Journey</span>
-              </Link>
-            </Button>
-            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
-              <Link href="/manifesto">
-                <Flame className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] font-code tracking-widest uppercase">The Manifesto</span>
-              </Link>
-            </Button>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

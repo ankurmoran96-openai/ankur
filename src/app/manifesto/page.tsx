@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Quote, Flame, Cpu, Trophy, Brain, User, Music, Zap, Briefcase, TrendingUp, Lightbulb, ShieldCheck } from 'lucide-react';
+import { Quote, Zap, Briefcase, TrendingUp, Lightbulb, ShieldCheck, Home, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -41,7 +41,7 @@ export default function ManifestoPage() {
             </div>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-lg font-light">
               <p>
-                I have observed a disturbing trend where academic performance is used to excuse vulgarity and disrespect towards authority. Success without character is a hollow victory. Excellence should be defined by how one carries themselves, not just by how well they score on a test.
+                I have observed a trend where academic performance is used to excuse vulgarity and disrespect towards authority. Success without character is a hollow victory. Excellence should be defined by how one carries themselves, not just by test scores.
               </p>
               <p>
                 My focus is on becoming a complete individual: high intelligence fueled by consistency, and a character that remains unshakable.
@@ -62,7 +62,7 @@ export default function ManifestoPage() {
                 Education provides the blueprint, but **imagination constructs the future.** The belief that elite degrees like IIT are absolute prerequisites for AI Engineering is a persistent myth. 
               </p>
               <p>
-                Talent and relentless consistency are the true currencies. We can build our own companies and earn roles at labs like Google or OpenAI without a traditional degree, but it requires a level of intelligence and dedication that I am currently working to master.
+                Talent and relentless consistency are the true currencies. We can build our own companies and earn roles at labs like Google or OpenAI without a traditional degree, but it requires a level of intelligence and dedication that I am mastering.
               </p>
             </div>
           </CardContent>
@@ -77,7 +77,7 @@ export default function ManifestoPage() {
             </div>
             <div className="space-y-6 text-sm md:text-lg leading-relaxed font-light">
               <p>
-                My roadmap is calculated. I will leverage formal education to secure professional stability at **IOCL**. This role will provide the essential security my family requires and serve as the financial launchpad for my mission.
+                My roadmap is calculated. I will leverage formal education to secure professional stability at **IOCL**. This role will provide essential security for my family and serve as the financial launchpad for my mission.
               </p>
               <div className="p-6 rounded-2xl bg-primary/10 border border-primary/20 flex items-start gap-4">
                 <TrendingUp className="w-6 h-6 text-primary mt-1 shrink-0" />
@@ -102,33 +102,27 @@ export default function ManifestoPage() {
           </div>
         </div>
 
-        {/* Navigation Traversal */}
-        <div className="pt-24 space-y-8">
-          <div className="flex items-center gap-4">
+        {/* Guided Navigation */}
+        <div className="pt-24 flex flex-col items-center space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
+          <div className="w-full flex items-center gap-4">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">End of Manifesto</h4>
+            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Return to Core</h4>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
-              <Link href="/about">
-                <User className="w-6 h-6 text-primary" />
-                <span className="text-[10px] font-code tracking-widest uppercase">The Profile</span>
-              </Link>
+          
+          <Link href="/" className="group relative">
+            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <Button size="lg" className="relative h-20 md:h-24 px-12 md:px-20 glass-card border-primary/30 group hover:border-primary/80 transition-all duration-500 flex items-center gap-6 overflow-hidden rounded-full">
+              <div className="flex flex-col items-start text-left">
+                <span className="text-[10px] font-code tracking-[0.3em] text-primary/60 uppercase">Node 00</span>
+                <span className="text-xl md:text-3xl font-display font-bold tracking-tighter">EMPIRE CORE</span>
+              </div>
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all duration-500">
+                <Home className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-12 transition-transform" />
+              </div>
+              <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-primary group-hover:translate-x-2 transition-transform" />
             </Button>
-            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
-              <Link href="/ai">
-                <Cpu className="w-6 h-6 text-primary" />
-                <span className="text-[10px] font-code tracking-widest uppercase">Neural Lab</span>
-              </Link>
-            </Button>
-            <Button variant="outline" className="h-24 glass-card border-primary/10 group hover:border-primary/40 flex flex-col items-center justify-center gap-3 transition-all duration-500" asChild>
-              <Link href="/music">
-                <Music className="w-6 h-6 text-primary" />
-                <span className="text-[10px] font-code tracking-widest uppercase">Vocal Journey</span>
-              </Link>
-            </Button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
