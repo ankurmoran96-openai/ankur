@@ -43,18 +43,18 @@ export function ChatbotUI() {
   };
 
   return (
-    <section id="chat" className="py-24 px-6 bg-secondary/5">
+    <section id="chat" className="py-16 md:py-24 px-4 md:px-6 bg-secondary/5">
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <h2 className="text-primary font-headline font-bold text-lg tracking-widest uppercase">Experience Intelligence</h2>
-          <h3 className="text-4xl font-headline font-bold">The Interactive Echo</h3>
+          <h3 className="text-3xl md:text-4xl font-headline font-bold">The Interactive Echo</h3>
         </div>
 
-        <Card className="glass-card border-primary/20 overflow-hidden flex flex-col h-[600px] shadow-2xl neon-border">
-          <CardHeader className="bg-primary/10 border-b border-primary/20 flex flex-row items-center justify-between p-6">
-            <CardTitle className="flex items-center gap-3 text-xl font-headline">
+        <Card className="glass-card border-primary/20 overflow-hidden flex flex-col h-[500px] md:h-[600px] shadow-2xl neon-border">
+          <CardHeader className="bg-primary/10 border-b border-primary/20 flex flex-row items-center justify-between p-4 md:p-6">
+            <CardTitle className="flex items-center gap-3 text-lg md:text-xl font-headline">
               <div className="p-2 rounded-full bg-primary/20 text-primary">
-                <Bot className="w-6 h-6" />
+                <Bot className="w-5 h-5 md:w-6 md:h-6" />
               </div>
               Ankur's AI Assistant
             </CardTitle>
@@ -65,20 +65,20 @@ export function ChatbotUI() {
             </div>
           </CardHeader>
           
-          <CardContent className="flex-1 overflow-y-auto p-6 space-y-6" ref={scrollRef}>
+          <CardContent className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6" ref={scrollRef}>
             {messages.map((msg, i) => (
               <div key={i} className={cn(
-                "flex w-full gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300",
+                "flex w-full gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-2 duration-300",
                 msg.role === 'user' ? "flex-row-reverse" : "flex-row"
               )}>
                 <div className={cn(
-                  "w-10 h-10 rounded-full flex items-center justify-center shrink-0 border border-primary/20",
+                  "w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center shrink-0 border border-primary/20",
                   msg.role === 'user' ? "bg-secondary text-foreground" : "bg-primary/20 text-primary"
                 )}>
-                  {msg.role === 'user' ? <User className="w-5 h-5" /> : <Bot className="w-5 h-5" />}
+                  {msg.role === 'user' ? <User className="w-4 h-4 md:w-5 md:h-5" /> : <Bot className="w-4 h-4 md:w-5 md:h-5" />}
                 </div>
                 <div className={cn(
-                  "max-w-[80%] p-4 rounded-2xl text-sm leading-relaxed",
+                  "max-w-[85%] md:max-w-[80%] p-3 md:p-4 rounded-2xl text-xs md:text-sm leading-relaxed",
                   msg.role === 'user' 
                     ? "bg-secondary border border-primary/10 text-foreground rounded-tr-none" 
                     : "bg-primary/10 border border-primary/30 text-primary-foreground rounded-tl-none"
@@ -88,26 +88,26 @@ export function ChatbotUI() {
               </div>
             ))}
             {loading && (
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">
-                  <Bot className="w-5 h-5" />
+              <div className="flex gap-3 md:gap-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0">
+                  <Bot className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <div className="bg-primary/10 border border-primary/30 p-4 rounded-2xl rounded-tl-none">
-                  <Loader2 className="w-5 h-5 text-primary animate-spin" />
+                <div className="bg-primary/10 border border-primary/30 p-3 md:p-4 rounded-2xl rounded-tl-none">
+                  <Loader2 className="w-4 h-4 md:w-5 md:h-5 text-primary animate-spin" />
                 </div>
               </div>
             )}
           </CardContent>
 
-          <form onSubmit={handleSubmit} className="p-4 bg-background/50 border-t border-primary/20 flex gap-4">
+          <form onSubmit={handleSubmit} className="p-3 md:p-4 bg-background/50 border-t border-primary/20 flex gap-2 md:gap-4">
             <Input 
               placeholder="Ask about my projects, music or goals..." 
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-1 bg-secondary/50 border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-full h-12 px-6"
+              className="flex-1 bg-secondary/50 border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-full h-10 md:h-12 px-4 md:px-6 text-xs md:text-sm"
             />
-            <Button type="submit" disabled={loading} className="rounded-full w-12 h-12 p-0 bg-primary text-background hover:bg-primary/90 glow-button">
-              <Send className="w-5 h-5" />
+            <Button type="submit" disabled={loading} className="rounded-full w-10 h-10 md:w-12 md:h-12 p-0 bg-primary text-background hover:bg-primary/90 glow-button shrink-0">
+              <Send className="w-4 h-4 md:w-5 md:h-5" />
             </Button>
           </form>
         </Card>
