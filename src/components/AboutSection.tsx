@@ -21,7 +21,7 @@ export function AboutSection() {
             </div>
             
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light italic">
-              "Born on June 9, 2011, I am architecting a future where intelligence is seamless. At 14, my vision extends beyond code—it's about creating an ecosystem where technology serves humanity through practical, high-impact products."
+              "Born on June 9, 2011, I am architecting a future where intelligence is seamless. My vision extends beyond mere code—it's about founding an ecosystem where technology serves humanity through practical, high-impact robotics and agents."
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 pt-4">
@@ -40,7 +40,7 @@ export function AboutSection() {
                 </div>
                 <div>
                   <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-code">Strategic Focus</p>
-                  <p className="text-xs md:text-sm font-semibold font-headline">Applied AI & Robotics</p>
+                  <p className="text-xs md:text-sm font-semibold font-headline">Empire Founding & AI</p>
                 </div>
               </div>
             </div>
@@ -54,9 +54,9 @@ export function AboutSection() {
                   <Brain className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div className="space-y-2 md:space-y-3">
-                  <h4 className="text-xl md:text-2xl font-headline font-bold">Future CEO</h4>
+                  <h4 className="text-xl md:text-2xl font-headline font-bold">Empire Founder</h4>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-light">
-                    I will not just train models; I will use the world's most advanced intelligence to build tangible products. My focus is on robotics and autonomous agents that solve real-world problems.
+                    I am not here to just train models; I am here to build a company that utilizes advanced intelligence to create tangible products—from robotics to agents that revolutionize daily life.
                   </p>
                 </div>
               </CardContent>
@@ -69,9 +69,9 @@ export function AboutSection() {
                   <Rocket className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
                 <div className="space-y-2 md:space-y-3">
-                  <h4 className="text-xl md:text-2xl font-headline font-bold">The Empire</h4>
+                  <h4 className="text-xl md:text-2xl font-headline font-bold">The Vision</h4>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-light">
-                    Every project is a brick in my empire. I am building a legacy of utility, where AI isn't just a chatbot, but a partner in physical and digital labor.
+                    Every project is a brick in my empire. While labs like Google or OpenAI are impressive benchmarks, my ultimate goal is to architect my own legacy of utility and innovation.
                   </p>
                 </div>
               </CardContent>

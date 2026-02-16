@@ -26,10 +26,10 @@ export default function ManifestoPage() {
             </div>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-lg font-light italic">
               <p>
-                Watching others navigate traditional systems with ease while I struggle can be profoundly isolating. I feel the weight of standard academia, where I often find myself falling behind in conventional metrics.
+                Diverging from the path of standard academia is inherently isolating. I see my peers navigating traditional systems with ease while I chart a course that isn't measured by grades, but by raw capability. 
               </p>
               <p>
-                But I am conscious of this path. Isolation is not a defeat; it is the friction caused by moving in a different direction. While others pass through the gates of the expected, I am busy building the exceptional.
+                I recognize the friction of failure in a system that wasn't built for my speed. Isolation is not a defeat; it is simply the byproduct of moving in a direction the majority cannot see. While others seek safety in the expected, I am occupied with building the exceptional.
               </p>
             </div>
           </CardContent>
@@ -44,13 +44,13 @@ export default function ManifestoPage() {
             </div>
             <div className="space-y-6 text-sm md:text-lg leading-relaxed font-light">
               <p>
-                There is a persistent, outdated narrative that AI Engineering is gated behind JEE scores or IIT degrees. This ideology belongs to a previous generation. In the current era of intelligence, **talent and consistency are the only supreme currencies.**
+                The narrative that AI Engineering is gated by elite degrees or JEE scores is an archaic ghost of the past. In the current era of intelligence, **talent and consistency are the only supreme currencies.**
               </p>
               <p className="border-l-2 border-primary/30 pl-6 text-primary/80 italic">
-                "Who says we cannot build a global empire without a degree? Who says a job at Google or OpenAI is reserved for those with a piece of paper?"
+                "Who says we cannot build a global empire without a degree? Who says a role at a top-tier lab like OpenAI or Google is reserved for those with a piece of paper?"
               </p>
               <p>
-                Excellence is undeniable. I am refining my mind every day to reach a level of intelligence that traditional institutions cannot quantify. My portfolio is not just a collection of code; it is a roadmap to a future that cannot be ignored.
+                Excellence is undeniable. I am refining my mind every day to reach a level of intelligence that traditional institutions cannot quantify. My portfolio is not just a collection of code; it is a roadmap to a future where impact is the only metric that matters.
               </p>
             </div>
           </CardContent>
@@ -68,8 +68,9 @@ export default function ManifestoPage() {
           <div className="flex justify-center gap-12 pt-8">
             <div className="text-center">
               <Trophy className="w-8 h-8 text-primary mx-auto mb-2" />
-              <p className="text-[10px] font-code tracking-widest text-muted-foreground uppercase">Target</p>
-              <p className="text-sm font-bold font-headline">OPENAI / GOOGLE</p>
+              <p className="text-[10px] font-code tracking-widest text-muted-foreground uppercase">Primary Target</p>
+              <p className="text-sm font-bold font-headline uppercase">Empire Foundation</p>
+              <p className="text-[9px] font-code text-primary/60 mt-1">BENCHMARK: OPENAI / GOOGLE</p>
             </div>
             <div className="w-px h-16 bg-primary/20" />
             <div className="text-center">
