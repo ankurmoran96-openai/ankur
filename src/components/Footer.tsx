@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Github, Instagram, Send, Cpu, Cloud } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="py-16 border-t border-primary/10 bg-background/50 backdrop-blur-md px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(125,249,255,0.05),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(0,163,255,0.05),transparent_70%)] pointer-events-none" />
       
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-12 relative z-10">
         <div className="w-full flex flex-col md:flex-row justify-between items-center gap-10">

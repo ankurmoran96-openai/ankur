@@ -1,15 +1,14 @@
-
 "use client";
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, User } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 
 export function Hero() {
   return (
     <section className="min-h-[85vh] flex flex-col items-center justify-center relative px-4 py-20 text-center overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(125,249,255,0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,163,255,0.1),transparent_50%)]" />
       
       <div className="relative z-10 max-w-5xl mx-auto space-y-8 md:space-y-12 animate-in fade-in slide-in-from-bottom-12 duration-1000">
         <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] md:text-sm font-code tracking-wider uppercase">
@@ -29,7 +28,7 @@ export function Hero() {
         <div className="pt-8">
            <Button 
             size="lg" 
-            className="rounded-full px-8 h-14 bg-primary text-background hover:bg-primary/90 font-code font-bold tracking-widest group transition-all duration-500" 
+            className="rounded-full px-8 h-14 bg-primary text-background hover:bg-primary/90 font-code font-bold tracking-widest group transition-all duration-500 shadow-[0_0_20px_rgba(0,163,255,0.3)] hover:shadow-[0_0_40px_rgba(0,163,255,0.5)]" 
             asChild
           >
             <Link href="/about">
