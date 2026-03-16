@@ -1,17 +1,65 @@
+
 "use client";
 
 import React from 'react';
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Terminal, BrainCircuit, Sparkles, FileCode, Search, ListChecks, Box, ChevronRight, Music } from 'lucide-react';
+import { 
+  Terminal, 
+  BrainCircuit, 
+  Sparkles, 
+  FileCode, 
+  Search, 
+  ListChecks, 
+  Box, 
+  Music,
+  Gamepad2,
+  Sword,
+  ShieldAlert,
+  Bot
+} from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export function AISection() {
   const aiImg = PlaceHolderImages.find(img => img.id === 'ai-agent-demo');
-  const chatImg = PlaceHolderImages.find(img => img.id === 'chatbot-collection');
+
+  const projects = [
+    {
+      title: "Termux CLI Agent",
+      badge: "CORE_UTILITY",
+      icon: Terminal,
+      desc: "Autonomous filesystem orchestrator for deep system interaction and code synthesis.",
+      features: ["Synthesis", "Scanner", "Planner", "Operations"],
+      main: true
+    },
+    {
+      title: "Telegram Bot Manager",
+      badge: "V3_BOTNET",
+      icon: Gamepad2,
+      desc: "AI-powered Telegram ecosystem featuring integrated mini-games like TicTacToe and RPS.",
+      features: ["Logic Hooks", "Game Engine", "Multi-user"],
+      main: false
+    },
+    {
+      title: "Minecraft AI Entity",
+      badge: "GPT-4O_V1",
+      icon: Bot,
+      desc: "Autonomous Minecraft bot capable of server-wide social interaction using advanced LLMs.",
+      features: ["GPT-4o Integration", "Real-time Chat", "Server Auth"],
+      main: false
+    },
+    {
+      title: "Bypass Dumper",
+      badge: "SEC_RESEARCH",
+      icon: ShieldAlert,
+      desc: "Reverse engineering utility for lib cracking and targeted memory offset extraction.",
+      features: ["Dump Analysis", "Lib Crack", "Offset Mapping"],
+      main: false
+    }
+  ];
 
   return (
     <section className="py-24 px-6 relative overflow-hidden">
@@ -22,11 +70,12 @@ export function AISection() {
             Neural Deployment Log
           </div>
           <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">Lab <span className="text-primary/60">01</span></h2>
-          <p className="text-muted-foreground font-code text-xs tracking-[0.4em] uppercase">Core Systems Active</p>
+          <p className="text-muted-foreground font-code text-xs tracking-[0.4em] uppercase">Tactical AI Assets Initialized</p>
         </div>
 
         <div className="grid gap-12">
-          <Card className="glass-card overflow-hidden border-white/5 bg-white/[0.02] flex flex-col lg:flex-row min-h-[550px] group">
+          {/* Main Termux Agent */}
+          <Card className="glass-card overflow-hidden border-white/5 bg-white/[0.02] flex flex-col lg:flex-row min-h-[500px] group">
             <div className="lg:w-1/2 relative overflow-hidden bg-black/40">
               <Image 
                 src={aiImg?.imageUrl || ''} 
@@ -42,64 +91,54 @@ export function AISection() {
                 <Badge className="bg-primary text-background font-code font-bold rounded-none px-4">CORE_UTILITY_V1</Badge>
                 <h3 className="text-4xl font-headline font-bold flex items-center gap-4">
                   <Terminal className="w-10 h-10 text-primary" />
-                  Termux CLI Agent
+                  {projects[0].title}
                 </h3>
                 <p className="text-xl text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
-                  "Autonomous filesystem orchestrator designed for deep system interaction and code synthesis."
+                  "{projects[0].desc}"
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: FileCode, label: 'SYNTHESIS', desc: 'Direct Code Gen' },
-                  { icon: Search, label: 'SCANNER', desc: 'File Analysis' },
-                  { icon: ListChecks, label: 'PLANNER', desc: 'Task Heuristics' },
-                  { icon: Box, label: 'OPERATIONS', desc: 'Process Control' }
+                  { icon: FileCode, label: 'SYNTHESIS' },
+                  { icon: Search, label: 'SCANNER' },
+                  { icon: ListChecks, label: 'PLANNER' },
+                  { icon: Box, label: 'OPERATIONS' }
                 ].map((item, idx) => (
                   <div key={idx} className="space-y-1">
                     <div className="flex items-center gap-2 text-[10px] font-bold text-primary font-code uppercase tracking-widest">
                       <item.icon className="w-3 h-3" />
                       {item.label}
                     </div>
-                    <p className="text-[10px] text-muted-foreground uppercase">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
           </Card>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="glass-card p-12 space-y-10 group bg-white/[0.02] border-white/5">
-              <div className="flex items-center justify-between">
-                <BrainCircuit className="w-12 h-12 text-primary" />
-                <Badge variant="outline" className="border-primary/40 text-primary font-code">ACTIVE</Badge>
-              </div>
-              <div className="space-y-4">
-                <h4 className="text-3xl font-headline font-bold uppercase tracking-tight">Neural Nodes</h4>
-                <p className="text-muted-foreground font-light leading-relaxed">
-                  Collection of customized intelligence nodes for conversational automation and GenAI tasks.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {['Image Gen', 'Token Gen', 'GenKit', 'Firebase', 'Gemini'].map(tech => (
-                  <span key={tech} className="text-[10px] font-code uppercase px-3 py-1 bg-white/5 border border-white/10 text-primary/80">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="glass-card p-12 flex flex-col justify-center items-center text-center space-y-8 bg-primary/[0.02] border-primary/20 border-dashed">
-              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary animate-pulse">
-                <Box className="w-10 h-10" />
-              </div>
-              <div className="space-y-4">
-                <h4 className="text-2xl font-headline font-bold uppercase text-primary">Status: Scalable</h4>
-                <p className="text-muted-foreground font-light italic max-w-xs">
-                  "Environmental constraints active. Hardware scaling pending initialization."
-                </p>
-              </div>
-            </Card>
+          {/* New Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.slice(1).map((project, idx) => (
+              <Card key={idx} className="glass-card p-8 space-y-8 bg-white/[0.02] border-white/5 group hover:border-primary/30">
+                <div className="flex items-center justify-between">
+                  <project.icon className="w-10 h-10 text-primary" />
+                  <Badge variant="outline" className="border-primary/40 text-primary font-code text-[8px]">{project.badge}</Badge>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-2xl font-headline font-bold uppercase tracking-tight">{project.title}</h4>
+                  <p className="text-sm text-muted-foreground font-light leading-relaxed min-h-[60px]">
+                    {project.desc}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                  {project.features.map(f => (
+                    <span key={f} className="text-[8px] font-code uppercase px-2 py-1 bg-white/5 text-primary/80">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
 
