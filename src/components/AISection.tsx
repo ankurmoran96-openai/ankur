@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Terminal, BrainCircuit, Sparkles, AlertCircle, Music, FileCode, Search, ListChecks, Box, ChevronRight } from 'lucide-react';
+import { Terminal, BrainCircuit, Sparkles, FileCode, Search, ListChecks, Box, ChevronRight, Music } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -14,123 +14,111 @@ export function AISection() {
   const chatImg = PlaceHolderImages.find(img => img.id === 'chatbot-collection');
 
   return (
-    <section id="ai" className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto space-y-12 md:space-y-16 relative z-10">
-        <div className="text-center space-y-4 animate-in fade-in zoom-in duration-1000">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[9px] md:text-[10px] font-code uppercase tracking-[0.4em]">
-            <Sparkles className="w-3 h-3" />
-            Deployment Log
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto space-y-24 relative z-10">
+        <div className="text-center space-y-6 animate-in fade-in zoom-in duration-1000">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-code uppercase tracking-[0.5em]">
+            <Sparkles className="w-4 h-4" />
+            Neural Deployment Log
           </div>
-          <h2 className="text-3xl md:text-6xl font-display font-bold tracking-tighter uppercase">Neural Lab</h2>
-          <p className="text-muted-foreground font-code text-[10px] md:text-sm tracking-widest uppercase">Systems Active and Initialized</p>
+          <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">Lab <span className="text-primary/60">01</span></h2>
+          <p className="text-muted-foreground font-code text-xs tracking-[0.4em] uppercase">Core Systems Active</p>
         </div>
 
-        <Card className="glass-card overflow-hidden border-primary/20 group cursor-default animate-fade-in-left flex flex-col lg:flex-row min-h-[500px]">
-          <div className="lg:w-1/2 relative bg-background overflow-hidden min-h-[300px]">
-            <Image 
-              src={aiImg?.imageUrl || ''} 
-              alt="Termux CLI Agent" 
-              fill 
-              className="object-cover opacity-30 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
-              data-ai-hint="coding terminal"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent hidden lg:block" />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent lg:hidden" />
-          </div>
-          <div className="lg:w-1/2 p-8 md:p-12 space-y-8 flex flex-col justify-center">
-            <div className="space-y-4">
-              <Badge className="bg-primary text-primary-foreground font-code font-bold px-3 py-1">CORE UTILITY</Badge>
-              <h3 className="text-2xl md:text-4xl font-headline font-bold flex items-center gap-4">
-                <Terminal className="w-8 h-8 text-primary" />
-                Termux CLI AI Agent
-              </h3>
-              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed font-light italic">
-                "An autonomous orchestrator designed for deep filesystem interaction. Capable of writing code, analyzing structures, and managing system processes."
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                { icon: FileCode, label: 'CODE ARCHITECT', desc: 'Direct code synthesis' },
-                { icon: Search, label: 'FILE ANALYZER', desc: 'Contextual scanning' },
-                { icon: ListChecks, label: 'HEURISTIC PLANNER', desc: 'Autonomous tasks' },
-                { icon: Box, label: 'ORCHESTRATOR', desc: 'Process lifecycle' }
-              ].map((item, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-300">
-                  <div className="flex items-center gap-2 text-[10px] font-bold text-primary font-code tracking-widest">
-                    <item.icon className="w-4 h-4" />
-                    {item.label}
-                  </div>
-                  <div className="text-[10px] text-muted-foreground mt-1 uppercase tracking-tight">{item.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Card>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          <Card className="glass-card overflow-hidden border-primary/20 group cursor-default animate-fade-in-right flex flex-col">
-            <div className="h-48 md:h-80 relative bg-background overflow-hidden">
+        <div className="grid gap-12">
+          <Card className="glass-card overflow-hidden border-white/5 bg-white/[0.02] flex flex-col lg:flex-row min-h-[550px] group">
+            <div className="lg:w-1/2 relative overflow-hidden bg-black/40">
               <Image 
-                src={chatImg?.imageUrl || ''} 
-                alt="Chatbot Collection" 
+                src={aiImg?.imageUrl || ''} 
+                alt="Termux CLI Agent" 
                 fill 
-                className="object-cover opacity-20 group-hover:scale-105 transition-transform duration-1000 ease-out"
-                data-ai-hint="artificial intelligence"
+                className="object-cover opacity-20 grayscale group-hover:scale-105 transition-all duration-1000"
+                data-ai-hint="coding terminal"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-card via-transparent to-transparent" />
             </div>
-            <CardHeader className="relative -mt-10 bg-card/60 backdrop-blur-3xl mx-8 rounded-t-2xl border-t border-x border-primary/20 p-8">
-              <CardTitle className="flex items-center gap-4 text-xl md:text-3xl font-headline font-bold">
-                <BrainCircuit className="w-8 h-8 text-primary" />
-                Neural Nodes
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-10 pt-6 space-y-8 flex-1">
-              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed font-light italic">
-                "A collection of customized intelligence nodes built for conversational automation and GenAI tasks like image and token synthesis."
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {['Image Gen', 'Token Gen', 'GenKit', 'Firebase', 'TypeScript', 'Gemini'].map(tech => (
-                  <Badge key={tech} variant="outline" className="text-primary border-primary/20 text-[10px] md:text-xs font-code px-4 py-1.5 hover:bg-primary/10">
-                    {tech}
-                  </Badge>
+            <div className="lg:w-1/2 p-12 flex flex-col justify-center space-y-10">
+              <div className="space-y-6">
+                <Badge className="bg-primary text-background font-code font-bold rounded-none px-4">CORE_UTILITY_V1</Badge>
+                <h3 className="text-4xl font-headline font-bold flex items-center gap-4">
+                  <Terminal className="w-10 h-10 text-primary" />
+                  Termux CLI Agent
+                </h3>
+                <p className="text-xl text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
+                  "Autonomous filesystem orchestrator designed for deep system interaction and code synthesis."
+                </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { icon: FileCode, label: 'SYNTHESIS', desc: 'Direct Code Gen' },
+                  { icon: Search, label: 'SCANNER', desc: 'File Analysis' },
+                  { icon: ListChecks, label: 'PLANNER', desc: 'Task Heuristics' },
+                  { icon: Box, label: 'OPERATIONS', desc: 'Process Control' }
+                ].map((item, idx) => (
+                  <div key={idx} className="space-y-1">
+                    <div className="flex items-center gap-2 text-[10px] font-bold text-primary font-code uppercase tracking-widest">
+                      <item.icon className="w-3 h-3" />
+                      {item.label}
+                    </div>
+                    <p className="text-[10px] text-muted-foreground uppercase">{item.desc}</p>
+                  </div>
                 ))}
               </div>
-            </CardContent>
+            </div>
           </Card>
 
-          <Card className="glass-card border-primary/30 bg-primary/5 flex flex-col justify-center items-center text-center p-8 md:p-12 space-y-6">
-            <div className="p-6 rounded-full bg-primary/10 text-primary animate-pulse border border-primary/20">
-              <AlertCircle className="w-10 h-10" />
-            </div>
-            <div className="space-y-3">
-              <h4 className="text-xl md:text-2xl font-headline font-bold text-primary uppercase tracking-tighter">Status: Restricted</h4>
-              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed italic font-light max-w-sm">
-                Infrastructure scaling is pending critical hardware arrival. Vision currently constrained by environment limits.
-              </p>
-            </div>
-          </Card>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <Card className="glass-card p-12 space-y-10 group bg-white/[0.02] border-white/5">
+              <div className="flex items-center justify-between">
+                <BrainCircuit className="w-12 h-12 text-primary" />
+                <Badge variant="outline" className="border-primary/40 text-primary font-code">ACTIVE</Badge>
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-3xl font-headline font-bold uppercase tracking-tight">Neural Nodes</h4>
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  Collection of customized intelligence nodes for conversational automation and GenAI tasks.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {['Image Gen', 'Token Gen', 'GenKit', 'Firebase', 'Gemini'].map(tech => (
+                  <span key={tech} className="text-[10px] font-code uppercase px-3 py-1 bg-white/5 border border-white/10 text-primary/80">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="glass-card p-12 flex flex-col justify-center items-center text-center space-y-8 bg-primary/[0.02] border-primary/20 border-dashed">
+              <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center text-primary animate-pulse">
+                <Box className="w-10 h-10" />
+              </div>
+              <div className="space-y-4">
+                <h4 className="text-2xl font-headline font-bold uppercase text-primary">Status: Scalable</h4>
+                <p className="text-muted-foreground font-light italic max-w-xs">
+                  "Environmental constraints active. Hardware scaling pending initialization."
+                </p>
+              </div>
+            </Card>
+          </div>
         </div>
 
-        <div className="pt-24 flex flex-col items-center space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
-          <div className="w-full flex items-center gap-4">
+        <div className="pt-24 flex flex-col items-center space-y-12">
+          <div className="w-full flex items-center gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Access Next Module</h4>
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Vocal Harmonics</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
-          <Link href="/music" className="group relative">
-            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <Button size="lg" className="relative h-20 md:h-24 px-12 md:px-20 glass-card border-primary/30 group hover:border-primary/80 transition-all duration-500 flex items-center gap-6 overflow-hidden rounded-full">
-              <div className="flex flex-col items-start text-left">
-                <span className="text-[10px] font-code tracking-[0.3em] text-primary/60 uppercase">Node 03</span>
-                <span className="text-xl md:text-3xl font-display font-bold tracking-tighter">VOCAL JOURNEY</span>
+          <Link href="/music" className="group">
+            <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group">
+              <div className="text-left">
+                <p className="text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Next Node</p>
+                <p className="text-4xl font-display font-bold tracking-tighter uppercase">Harmonics</p>
               </div>
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-                <Music className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-12 transition-transform" />
+              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                <Music className="w-6 h-6 group-hover:rotate-12 transition-transform" />
               </div>
-              <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-primary group-hover:translate-x-2 transition-transform" />
             </Button>
           </Link>
         </div>

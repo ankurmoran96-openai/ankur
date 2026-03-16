@@ -2,100 +2,85 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Rocket, Target, Calendar, Brain, Cpu, ChevronRight } from 'lucide-react';
+import { Rocket, Target, Calendar, Brain, Cpu, ChevronRight, Fingerprint } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto space-y-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="space-y-6 md:space-y-10 animate-fade-in-left">
-            <div className="space-y-4">
-              <h2 className="text-primary font-code font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Executive Core</h2>
-              <h3 className="text-4xl md:text-6xl font-headline font-bold leading-[1.1] md:leading-[0.9] tracking-tighter">
-                Logic and <br className="hidden md:block" /><span className="text-primary/80">Strategy.</span>
-              </h3>
-            </div>
-            
-            <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light italic">
-              "Born on June 9, 2011, I am architecting a future where intelligence is absolute. My vision is to found a high-impact ecosystem where AI serves humanity through practical, autonomous robotics."
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 pt-4">
-              <div className="flex items-center gap-4 group">
-                <div className="p-3 rounded-xl md:rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
-                  <Calendar className="w-5 h-5 md:w-6 md:h-6" />
-                </div>
-                <div>
-                  <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-code">Inception</p>
-                  <p className="text-xs md:sm font-semibold font-headline">June 9, 2011</p>
-                </div>
+    <section className="py-24 px-6 relative overflow-hidden min-h-screen flex items-center">
+      <div className="max-w-6xl mx-auto w-full space-y-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="space-y-12 animate-fade-in-left">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-3 px-3 py-1 rounded-sm border border-primary/20 bg-primary/5 text-primary text-[10px] font-code uppercase tracking-[0.5em]">
+                <Fingerprint className="w-4 h-4" />
+                Identity Node
               </div>
-              <div className="flex items-center gap-4 group">
-                <div className="p-3 rounded-xl md:rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
-                  <Target className="w-5 h-5 md:w-6 md:h-6" />
-                </div>
-                <div>
-                  <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-code">Objective</p>
-                  <p className="text-xs md:text-sm font-semibold font-headline">Founder @ AI Empire</p>
-                </div>
+              <h2 className="text-6xl md:text-8xl font-display font-bold leading-tight tracking-tighter uppercase">
+                Strategic <br /><span className="text-primary/60">Logic.</span>
+              </h2>
+              <p className="text-xl text-muted-foreground leading-relaxed font-light border-l-2 border-primary/20 pl-8 italic">
+                "Born June 9, 2011. I am architecting a future where intelligence is absolute. My vision is to found a high-impact ecosystem where AI serves humanity through practical, autonomous robotics."
+              </p>
+            </div>
+
+            <div className="flex gap-12">
+              <div className="space-y-1">
+                <p className="text-[10px] font-code uppercase text-primary/60 tracking-widest">Inception</p>
+                <p className="text-2xl font-display font-bold">2011</p>
+              </div>
+              <div className="w-px h-12 bg-white/10" />
+              <div className="space-y-1">
+                <p className="text-[10px] font-code uppercase text-primary/60 tracking-widest">Objective</p>
+                <p className="text-2xl font-display font-bold uppercase">Founder</p>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 animate-fade-in-right">
-            <Card className="glass-card border-primary/20 group overflow-hidden bg-card/30">
-              <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-              <CardContent className="pt-6 md:pt-10 space-y-4 md:space-y-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-                  <Brain className="w-6 h-6 md:w-8 md:h-8" />
-                </div>
-                <div className="space-y-2 md:space-y-3">
-                  <h4 className="text-xl md:text-2xl font-headline font-bold">Empire Founder</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-light">
-                    Focused on creating tangible intelligence products—from robotics to agents that revolutionize infrastructure.
-                  </p>
-                </div>
-              </CardContent>
+          <div className="grid gap-6 animate-fade-in-right">
+            <Card className="glass-card bg-white/[0.02] p-8 space-y-6 group">
+              <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center text-primary transition-all group-hover:bg-primary group-hover:text-background">
+                <Brain className="w-8 h-8" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight">Empire Founder</h3>
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  Dedicated to creating tangible intelligence products—from autonomous robotics to agents that revolutionize digital infrastructure.
+                </p>
+              </div>
             </Card>
 
-            <Card className="glass-card border-primary/20 group md:mt-12 overflow-hidden bg-card/30">
-              <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-              <CardContent className="pt-6 md:pt-10 space-y-4 md:space-y-6">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
-                  <Rocket className="w-6 h-6 md:w-8 md:h-8" />
-                </div>
-                <div className="space-y-2 md:space-y-3">
-                  <h4 className="text-xl md:text-2xl font-headline font-bold">The Vision</h4>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-light">
-                    Every project is a modular component of my future legacy. Designing utility and innovation at scale.
-                  </p>
-                </div>
-              </CardContent>
+            <Card className="glass-card bg-white/[0.02] p-8 space-y-6 group">
+              <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center text-primary transition-all group-hover:bg-primary group-hover:text-background">
+                <Rocket className="w-8 h-8" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight">The Vision</h3>
+                <p className="text-muted-foreground font-light leading-relaxed">
+                  Every project is a modular component of my future legacy. Designing utility and innovation at scale for the global grid.
+                </p>
+              </div>
             </Card>
           </div>
         </div>
 
-        <div className="pt-24 flex flex-col items-center space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
-          <div className="w-full flex items-center gap-4">
+        <div className="pt-24 flex flex-col items-center space-y-12">
+          <div className="w-full flex items-center gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <h4 className="text-[10px] md:text-xs font-code font-bold text-primary tracking-[0.4em] uppercase whitespace-nowrap">Access Next Module</h4>
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Engage Neural Lab</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
-          <Link href="/ai" className="group relative">
-            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <Button size="lg" className="relative h-20 md:h-24 px-12 md:px-20 glass-card border-primary/30 group hover:border-primary/80 transition-all duration-500 flex items-center gap-6 overflow-hidden rounded-full">
-              <div className="flex flex-col items-start text-left">
-                <span className="text-[10px] font-code tracking-[0.3em] text-primary/60 uppercase">Node 02</span>
-                <span className="text-xl md:text-3xl font-display font-bold tracking-tighter">NEURAL LAB</span>
+          <Link href="/ai" className="group">
+            <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group">
+              <div className="text-left">
+                <p className="text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Next Node</p>
+                <p className="text-4xl font-display font-bold tracking-tighter uppercase">Neural Lab</p>
               </div>
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-                <Cpu className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-12 transition-transform" />
+              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                <Cpu className="w-6 h-6 group-hover:rotate-12 transition-transform" />
               </div>
-              <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-primary group-hover:translate-x-2 transition-transform" />
             </Button>
           </Link>
         </div>
