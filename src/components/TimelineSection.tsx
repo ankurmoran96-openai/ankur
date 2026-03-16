@@ -64,16 +64,16 @@ const timelineData = [
 
 export function TimelineSection() {
   return (
-    <section className="w-full relative py-12 bg-transparent overflow-hidden border-t border-white/5">
+    <section className="w-full relative py-6 md:py-12 bg-transparent overflow-hidden border-t border-white/5">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="text-center mb-4"
+        className="text-center mb-0 md:mb-4 px-4"
       >
-        <h3 className="text-[10px] font-code text-primary uppercase tracking-[0.6em] mb-2">Tactical Roadmap</h3>
-        <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter">
+        <h3 className="text-[9px] md:text-[10px] font-code text-primary uppercase tracking-[0.5em] md:tracking-[0.6em] mb-1 md:mb-2">Tactical Roadmap</h3>
+        <h2 className="text-2xl md:text-5xl font-display font-bold uppercase tracking-tighter">
           Empire <span className="text-primary/60">Timeline</span>
         </h2>
       </motion.div>

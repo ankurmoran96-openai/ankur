@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 interface TimelineItem {
   id: number;
@@ -115,7 +116,7 @@ export default function RadialOrbitalTimeline({
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = isMobile ? 90 : 180;
+    const radius = isMobile ? 85 : 180;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
@@ -156,7 +157,7 @@ export default function RadialOrbitalTimeline({
 
   return (
     <div
-      className="w-full h-[400px] md:h-[600px] flex flex-col items-center justify-center bg-transparent overflow-hidden"
+      className="w-full h-[450px] md:h-[600px] flex flex-col items-center justify-center bg-transparent overflow-hidden touch-none"
       ref={containerRef}
       onClick={handleContainerClick}
     >
@@ -169,16 +170,14 @@ export default function RadialOrbitalTimeline({
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          <div className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary via-primary/80 to-primary/40 animate-pulse flex items-center justify-center z-10">
-            <div className="absolute w-12 h-12 md:w-16 md:h-16 rounded-full border border-primary/20 animate-ping opacity-70"></div>
-            <div
-              className="absolute w-16 h-16 md:w-20 md:h-20 rounded-full border border-primary/10 animate-ping opacity-50"
-              style={{ animationDelay: "0.5s" }}
-            ></div>
-            <div className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-white/80 backdrop-blur-md"></div>
+          {/* Core Sun */}
+          <div className="absolute w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary via-primary/80 to-primary/40 animate-pulse flex items-center justify-center z-10 shadow-[0_0_30px_rgba(255,59,59,0.3)]">
+            <div className="absolute w-14 h-14 md:w-20 md:h-20 rounded-full border border-primary/20 animate-ping opacity-70"></div>
+            <div className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
           </div>
 
-          <div className="absolute w-[180px] h-[180px] md:w-[360px] md:h-[360px] rounded-full border border-primary/10"></div>
+          {/* Orbital Ring */}
+          <div className="absolute w-[170px] h-[170px] md:w-[360px] md:h-[360px] rounded-full border border-primary/10 shadow-[inset_0_0_50px_rgba(255,59,59,0.05)]"></div>
 
           {timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);
@@ -204,121 +203,107 @@ export default function RadialOrbitalTimeline({
                   toggleItem(item.id);
                 }}
               >
+                {/* Glow Ring */}
                 <div
-                  className={`absolute rounded-full -inset-1 ${
-                    isPulsing ? "animate-pulse duration-1000" : ""
-                  }`}
+                  className={cn(
+                    "absolute rounded-full -inset-1 transition-all duration-500",
+                    isPulsing ? "animate-pulse" : ""
+                  )}
                   style={{
                     background: `radial-gradient(circle, rgba(255,59,59,0.2) 0%, rgba(255,59,59,0) 70%)`,
-                    width: `${item.energy * (isMobile ? 0.2 : 0.4) + (isMobile ? 20 : 30)}px`,
-                    height: `${item.energy * (isMobile ? 0.2 : 0.4) + (isMobile ? 20 : 30)}px`,
-                    left: `-${(item.energy * (isMobile ? 0.2 : 0.4) + (isMobile ? 20 : 30) - (isMobile ? 20 : 30)) / 2}px`,
-                    top: `-${(item.energy * (isMobile ? 0.2 : 0.4) + (isMobile ? 20 : 30) - (isMobile ? 20 : 30)) / 2}px`,
+                    width: `${item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40)}px`,
+                    height: `${item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40)}px`,
+                    left: `-${(item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40) - (isMobile ? 25 : 40)) / 2}px`,
+                    top: `-${(item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40) - (isMobile ? 25 : 40)) / 2}px`,
                   }}
                 ></div>
 
+                {/* Node Orb */}
                 <div
-                  className={`
-                  ${isMobile ? "w-5 h-5" : "w-8 h-8"} rounded-full flex items-center justify-center
-                  ${
-                    isExpanded
-                      ? "bg-primary text-background"
-                      : isRelated
-                      ? "bg-primary/50 text-background"
-                      : "bg-background text-primary"
-                  }
-                  border
-                  ${
-                    isExpanded
-                      ? "border-primary shadow-lg shadow-primary/30"
-                      : isRelated
-                      ? "border-primary animate-pulse"
-                      : "border-primary/40"
-                  }
-                  transition-all duration-300 transform
-                  ${isExpanded ? "scale-125" : ""}
-                `}
+                  className={cn(
+                    "rounded-full flex items-center justify-center transition-all duration-500",
+                    isMobile ? "w-6 h-6" : "w-10 h-10",
+                    isExpanded ? "bg-primary text-background scale-125" : isRelated ? "bg-primary/50 text-background animate-pulse" : "bg-card border-primary/20 text-primary border",
+                    isExpanded ? "shadow-[0_0_20px_rgba(255,59,59,0.5)]" : ""
+                  )}
                 >
-                  <Icon size={isMobile ? 10 : 14} />
+                  <Icon size={isMobile ? 12 : 18} />
                 </div>
 
+                {/* Node Label */}
                 <div
-                  className={`
-                  absolute top-6 md:top-10 whitespace-nowrap
-                  text-[7px] md:text-[9px] font-code font-bold uppercase tracking-widest
-                  transition-all duration-300
-                  ${isExpanded ? "text-primary scale-110" : "text-muted-foreground"}
-                `}
+                  className={cn(
+                    "absolute top-full mt-2 whitespace-nowrap font-code font-bold uppercase tracking-widest transition-all duration-300",
+                    isMobile ? "text-[8px]" : "text-[10px]",
+                    isExpanded ? "text-primary scale-110" : "text-muted-foreground/60"
+                  )}
                 >
                   {item.title}
                 </div>
 
+                {/* Info Card Overlay */}
                 {isExpanded && (
-                  <Card className="absolute top-8 md:top-16 left-1/2 -translate-x-1/2 w-40 md:w-60 glass-card bg-card/95 backdrop-blur-lg border-primary/30 shadow-xl shadow-primary/10 overflow-visible z-50">
+                  <Card className={cn(
+                    "absolute glass-card bg-card/95 backdrop-blur-xl border-primary/30 shadow-2xl z-50 overflow-visible transition-all duration-500",
+                    isMobile ? "top-10 -left-[90px] w-[180px] p-2" : "top-14 left-1/2 -translate-x-1/2 w-64 p-4"
+                  )}>
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-primary/50"></div>
-                    <CardHeader className="p-2 md:p-3 md:pb-2">
-                      <div className="flex justify-between items-center">
-                        <Badge
-                          className={`px-1 py-0 text-[6px] md:text-[9px] font-code font-bold rounded-none ${getStatusStyles(
-                            item.status
-                          )}`}
-                        >
-                          {item.status === "completed"
-                            ? "DONE"
-                            : item.status === "in-progress"
-                            ? "ACTIVE"
-                            : "QUEUED"}
+                    <CardHeader className="p-0 mb-2 md:mb-3">
+                      <div className="flex justify-between items-center mb-1">
+                        <Badge className={cn(
+                          "px-1.5 py-0 font-code font-bold rounded-none",
+                          isMobile ? "text-[7px]" : "text-[9px]",
+                          getStatusStyles(item.status)
+                        )}>
+                          {item.status.toUpperCase()}
                         </Badge>
-                        <span className="text-[6px] md:text-[9px] font-code text-muted-foreground">
+                        <span className={cn("font-code text-muted-foreground", isMobile ? "text-[7px]" : "text-[10px]")}>
                           {item.date}
                         </span>
                       </div>
-                      <CardTitle className="text-[9px] md:text-xs mt-1 font-display font-bold uppercase tracking-tight">
+                      <CardTitle className={cn("font-display font-bold uppercase tracking-tight", isMobile ? "text-[10px]" : "text-sm")}>
                         {item.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-2 md:p-3 pt-0 text-[7px] md:text-[10px] text-muted-foreground font-light leading-relaxed">
-                      <p>{item.content}</p>
+                    <CardContent className="p-0">
+                      <p className={cn("text-muted-foreground font-light leading-tight md:leading-relaxed mb-3", isMobile ? "text-[9px]" : "text-[11px]")}>
+                        {item.content}
+                      </p>
 
-                      <div className="mt-1 md:mt-3 pt-1 border-t border-white/5">
-                        <div className="flex justify-between items-center text-[6px] md:text-[9px] font-code uppercase tracking-widest mb-1">
-                          <span className="flex items-center">
-                            <Zap size={6} className="mr-1 text-primary" />
-                            Power
+                      <div className="space-y-1.5 border-t border-white/5 pt-2">
+                        <div className="flex justify-between items-center font-code uppercase tracking-widest">
+                          <span className={cn("flex items-center gap-1 text-muted-foreground", isMobile ? "text-[7px]" : "text-[9px]")}>
+                            <Zap size={isMobile ? 8 : 10} className="text-primary" />
+                            Efficiency
                           </span>
-                          <span className="font-mono text-primary">{item.energy}%</span>
+                          <span className={cn("text-primary", isMobile ? "text-[7px]" : "text-[10px]")}>{item.energy}%</span>
                         </div>
-                        <div className="w-full h-0.5 md:h-1 bg-white/5 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-primary"
-                            style={{ width: `${item.energy}%` }}
-                          ></div>
+                        <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
+                          <div className="h-full bg-primary" style={{ width: `${item.energy}%` }}></div>
                         </div>
                       </div>
 
                       {item.relatedIds.length > 0 && (
-                        <div className="mt-1 md:mt-3 pt-1 border-t border-white/5">
+                        <div className="mt-3 pt-2 border-t border-white/5">
                           <div className="flex flex-wrap gap-1">
-                            {item.relatedIds.map((relatedId) => {
-                              const relatedItem = timelineData.find(
-                                (i) => i.id === relatedId
-                              );
+                            {item.relatedIds.map((relId) => {
+                              const rel = timelineData.find((i) => i.id === relId);
                               return (
                                 <Button
-                                  key={relatedId}
+                                  key={relId}
                                   variant="outline"
                                   size="sm"
-                                  className="flex items-center h-3 md:h-5 px-1 md:px-1.5 py-0 text-[5px] md:text-[7px] font-code uppercase rounded-none border-primary/20 bg-transparent hover:bg-primary/10 text-primary/80 hover:text-primary transition-all"
+                                  className={cn(
+                                    "flex items-center gap-1 border-primary/20 bg-transparent hover:bg-primary/10 text-primary transition-all rounded-none",
+                                    isMobile ? "h-4 px-1 text-[6px]" : "h-6 px-2 text-[8px]"
+                                  )}
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    toggleItem(relatedId);
+                                    toggleItem(relId);
                                   }}
                                 >
-                                  {relatedItem?.title}
-                                  <ArrowRight
-                                    size={5}
-                                    className="ml-1 text-primary/60"
-                                  />
+                                  {rel?.title}
+                                  <ArrowRight size={isMobile ? 6 : 8} />
                                 </Button>
                               );
                             })}
