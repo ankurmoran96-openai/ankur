@@ -38,8 +38,8 @@ export function AISection() {
       title: "Telegram Bot Manager",
       badge: "CHAT BOT",
       icon: Gamepad2,
-      desc: "A smart assistant for Telegram that makes chats fun. It has built-in games like TicTacToe and Rock Paper Scissors that anyone can play instantly.",
-      features: ["Fun Games", "Chat Management", "Fast Replies"],
+      desc: "A smart assistant for Telegram that makes chats fun. It has built-in games like TicTacToe and Rock Paper Scissors that anyone can play instantly. It also manages groups by automatically kicking or banning users who break rules.",
+      features: ["Kick/Ban/Mute", "Fun Games", "AI Chat", "Group Guard"],
       main: false
     },
     {
