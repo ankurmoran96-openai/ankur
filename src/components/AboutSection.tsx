@@ -1,9 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Rocket, Target, Calendar, Brain, ArrowRight, Cpu, ChevronRight } from 'lucide-react';
+import { Rocket, Target, Calendar, Brain, Cpu, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -14,19 +13,19 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-6 md:space-y-10 animate-fade-in-left">
             <div className="space-y-4">
-              <h2 className="text-primary font-code font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Executive Summary</h2>
+              <h2 className="text-primary font-code font-bold text-xs md:text-sm tracking-[0.3em] uppercase">Executive Core</h2>
               <h3 className="text-4xl md:text-6xl font-headline font-bold leading-[1.1] md:leading-[0.9] tracking-tighter">
-                Logic and <br className="hidden md:block" /><span className="text-primary/80">Melody.</span>
+                Logic and <br className="hidden md:block" /><span className="text-primary/80">Strategy.</span>
               </h3>
             </div>
             
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed font-light italic">
-              "Born on June 9, 2011, I am architecting a future where intelligence is seamless. My vision extends beyond mere code—it's about founding an ecosystem where technology serves humanity through practical, high-impact robotics and agents."
+              "Born on June 9, 2011, I am architecting a future where intelligence is absolute. My vision is to found a high-impact ecosystem where AI serves humanity through practical, autonomous robotics."
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 pt-4">
               <div className="flex items-center gap-4 group">
-                <div className="p-3 rounded-xl md:rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-background transition-colors duration-500">
+                <div className="p-3 rounded-xl md:rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
                   <Calendar className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
@@ -35,19 +34,19 @@ export function AboutSection() {
                 </div>
               </div>
               <div className="flex items-center gap-4 group">
-                <div className="p-3 rounded-xl md:rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-background transition-colors duration-500">
+                <div className="p-3 rounded-xl md:rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
                   <Target className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-code">Strategic Focus</p>
-                  <p className="text-xs md:text-sm font-semibold font-headline">Empire Founding & AI</p>
+                  <p className="text-[9px] md:text-[10px] uppercase tracking-widest text-muted-foreground font-code">Objective</p>
+                  <p className="text-xs md:text-sm font-semibold font-headline">Founder @ AI Empire</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 animate-fade-in-right">
-            <Card className="glass-card border-primary/20 group overflow-hidden">
+            <Card className="glass-card border-primary/20 group overflow-hidden bg-card/30">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               <CardContent className="pt-6 md:pt-10 space-y-4 md:space-y-6">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
@@ -56,13 +55,13 @@ export function AboutSection() {
                 <div className="space-y-2 md:space-y-3">
                   <h4 className="text-xl md:text-2xl font-headline font-bold">Empire Founder</h4>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-light">
-                    I am not here to just train models; I am here to build a company that utilizes advanced intelligence to create tangible products—from robotics to agents that revolutionize daily life.
+                    Focused on creating tangible intelligence products—from robotics to agents that revolutionize infrastructure.
                   </p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="glass-card border-primary/20 group md:mt-12 overflow-hidden">
+            <Card className="glass-card border-primary/20 group md:mt-12 overflow-hidden bg-card/30">
               <div className="absolute top-0 left-0 w-1 h-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
               <CardContent className="pt-6 md:pt-10 space-y-4 md:space-y-6">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
@@ -71,7 +70,7 @@ export function AboutSection() {
                 <div className="space-y-2 md:space-y-3">
                   <h4 className="text-xl md:text-2xl font-headline font-bold">The Vision</h4>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-light">
-                    Every project is a brick in my empire. While labs like Google or OpenAI are impressive benchmarks, my ultimate goal is to architect my own legacy of utility and innovation.
+                    Every project is a modular component of my future legacy. Designing utility and innovation at scale.
                   </p>
                 </div>
               </CardContent>
@@ -79,7 +78,6 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Guided Navigation */}
         <div className="pt-24 flex flex-col items-center space-y-8 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-300">
           <div className="w-full flex items-center gap-4">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
@@ -94,7 +92,7 @@ export function AboutSection() {
                 <span className="text-[10px] font-code tracking-[0.3em] text-primary/60 uppercase">Node 02</span>
                 <span className="text-xl md:text-3xl font-display font-bold tracking-tighter">NEURAL LAB</span>
               </div>
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all duration-500">
+              <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
                 <Cpu className="w-6 h-6 md:w-8 md:h-8 group-hover:rotate-12 transition-transform" />
               </div>
               <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-primary group-hover:translate-x-2 transition-transform" />
