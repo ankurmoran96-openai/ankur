@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Code, FileText, User, Clock, Rocket, Target, Shield, Cpu } from "lucide-react";
+import { Calendar, Rocket, Target, Shield, Cpu } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { motion } from "framer-motion";
 
@@ -64,16 +64,16 @@ const timelineData = [
 
 export function TimelineSection() {
   return (
-    <section className="w-full relative py-20 bg-transparent overflow-hidden">
+    <section className="w-full relative py-12 bg-transparent overflow-hidden border-t border-white/5">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="text-center mb-10"
+        className="text-center mb-4"
       >
-        <h3 className="text-[10px] font-code text-primary uppercase tracking-[0.6em] mb-4">Tactical Roadmap</h3>
-        <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter">
+        <h3 className="text-[10px] font-code text-primary uppercase tracking-[0.6em] mb-2">Tactical Roadmap</h3>
+        <h2 className="text-3xl md:text-5xl font-display font-bold uppercase tracking-tighter">
           Empire <span className="text-primary/60">Timeline</span>
         </h2>
       </motion.div>
