@@ -6,15 +6,10 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { 
   Terminal, 
-  BrainCircuit, 
   Sparkles, 
-  FileCode, 
-  Search, 
   ListChecks, 
-  Box, 
   Music,
   Gamepad2,
-  Sword,
   ShieldAlert,
   Bot
 } from 'lucide-react';
@@ -54,7 +49,7 @@ export function AISection() {
       title: "Security Research Tool",
       badge: "TECHNICAL",
       icon: ShieldAlert,
-      desc: "A specialized tool for reverse engineering. it helps analyze how software is built by looking deep into its memory to find hidden information.",
+      desc: "A specialized tool for reverse engineering. It helps analyze how software is built by looking deep into its memory to find hidden information.",
       features: ["Deep Analysis", "Memory Scan", "Code Mapping"],
       main: false
     }
@@ -89,7 +84,7 @@ export function AISection() {
               <div className="space-y-6">
                 <Badge className="bg-primary text-background font-code font-bold rounded-none px-4">MAIN_UTILITY_V1</Badge>
                 <h3 className="text-4xl font-headline font-bold flex items-center gap-4">
-                  <Terminal className="w-10 h-10 text-primary" />
+                  <Terminal className="w-10 text-primary" />
                   {projects[0].title}
                 </h3>
                 <p className="text-xl text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
