@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -11,7 +10,7 @@ export function Hero() {
   return (
     <section className="min-h-screen w-full flex flex-col items-center justify-center relative overflow-hidden">
       <HeroGeometric 
-        badge="Neural Infrastructure Node: 00"
+        badge="Ankur's Portfolio"
         title1="ANKUR"
         title2="MORAN"
       />
@@ -21,7 +20,7 @@ export function Hero() {
           <Link href="/about" className="group">
             <Button size="lg" className="h-16 px-12 rounded-full bg-primary text-background font-bold tracking-widest uppercase hover:bg-primary/90 transition-all duration-500 shadow-[0_0_20px_rgba(255,59,59,0.2)] hover:shadow-[0_0_40px_rgba(255,59,59,0.4)] relative overflow-hidden">
               <span className="relative z-10 flex items-center gap-3">
-                Initialize Nodes
+                See My Story
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </span>
             </Button>
@@ -30,15 +29,15 @@ export function Hero() {
           <div className="flex gap-8 border border-white/5 bg-white/5 backdrop-blur-md px-8 py-4 rounded-full">
             <div className="flex items-center gap-2 text-primary/60">
               <Terminal className="w-4 h-4" />
-              <span className="text-[10px] font-code uppercase">CLI Agent</span>
+              <span className="text-[10px] font-code uppercase">AI Tools</span>
             </div>
             <div className="flex items-center gap-2 text-primary/60">
               <Database className="w-4 h-4" />
-              <span className="text-[10px] font-code uppercase">Neural</span>
+              <span className="text-[10px] font-code uppercase">Music</span>
             </div>
             <div className="flex items-center gap-2 text-primary/60">
               <Shield className="w-4 h-4" />
-              <span className="text-[10px] font-code uppercase">Secure</span>
+              <span className="text-[10px] font-code uppercase">Vision</span>
             </div>
           </div>
         </div>

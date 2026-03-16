@@ -24,9 +24,9 @@ export function MusicSection() {
     <section className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto space-y-24">
         <div className="text-center space-y-6 animate-in fade-in slide-in-from-bottom-10 duration-1000">
-          <div className="text-primary font-code text-xs tracking-[0.5em] uppercase">Frequency Node</div>
+          <div className="text-primary font-code text-xs tracking-[0.5em] uppercase">My Music Journey</div>
           <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase flex items-center justify-center gap-8">
-            Harmonics
+            Vocals
             <span className="css-smiley w-[0.8em] h-[0.8em]">
               <span className="smiley-mouth"></span>
             </span>
@@ -44,24 +44,24 @@ export function MusicSection() {
                 <Loader2 className="w-10 h-10 text-primary animate-spin" />
               </div>
               <div className="space-y-1">
-                <h4 className="text-4xl font-headline font-bold uppercase">Training Log</h4>
-                <p className="text-primary/60 font-code text-xs tracking-widest uppercase">System Growth: Ongoing</p>
+                <h4 className="text-4xl font-headline font-bold uppercase">Practice Log</h4>
+                <p className="text-primary/60 font-code text-xs tracking-widest uppercase">Ongoing Improvement</p>
               </div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 relative z-10">
               <div className="space-y-8">
                 <p className="text-xl text-muted-foreground leading-relaxed font-light italic border-l-2 border-primary/20 pl-8">
-                  "Refining sound and expression for 3 months. A life-long commitment to technical harmonic excellence."
+                  "I have been practicing my vocals consistently for 3 months. It is a life-long journey to get better and express myself through sound."
                 </p>
                 <div className="flex gap-12">
                   <div className="space-y-1">
                     <p className="text-4xl font-display font-bold text-primary">3M</p>
-                    <p className="text-[10px] font-code uppercase tracking-widest text-muted-foreground">Elapsed</p>
+                    <p className="text-[10px] font-code uppercase tracking-widest text-muted-foreground">Practice Time</p>
                   </div>
                   <div className="space-y-1">
                     <p className="text-4xl font-display font-bold text-primary">∞</p>
-                    <p className="text-[10px] font-code uppercase tracking-widest text-muted-foreground">Vision</p>
+                    <p className="text-[10px] font-code uppercase tracking-widest text-muted-foreground">My Goal</p>
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@ export function MusicSection() {
                  />
                  <div className="absolute inset-0 bg-primary/10 mix-blend-overlay" />
                  <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/5 flex justify-between items-center">
-                    <span className="text-[10px] font-code text-primary uppercase tracking-[0.2em]">Analyzing frequencies...</span>
+                    <span className="text-[10px] font-code text-primary uppercase tracking-[0.2em]">Practicing now...</span>
                     <div className="flex gap-1 items-end h-4">
                       <div className="w-1 h-2 bg-primary animate-bounce" />
                       <div className="w-1 h-4 bg-primary animate-bounce delay-75" />
@@ -111,14 +111,14 @@ export function MusicSection() {
         <div className="pt-24 flex flex-col items-center space-y-12">
           <div className="w-full flex items-center gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Final Directive</span>
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">My Vision</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
           <Link href="/manifesto" className="group">
             <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group">
               <div className="text-left">
-                <p className="text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Final Node</p>
+                <p className="text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Final Section</p>
                 <p className="text-4xl font-display font-bold tracking-tighter uppercase">Manifesto</p>
               </div>
               <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">

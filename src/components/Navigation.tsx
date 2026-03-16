@@ -26,10 +26,10 @@ export function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: 'Identity', href: '/about', icon: User, desc: 'Profile' },
-    { name: 'Neural Lab', href: '/ai', icon: Cpu, desc: 'Systems' },
-    { name: 'Harmonics', href: '/music', icon: Music, desc: 'Vocals' },
-    { name: 'Manifesto', href: '/manifesto', icon: Flame, desc: 'Strategy' },
+    { name: 'About Me', href: '/about', icon: User, desc: 'My Story' },
+    { name: 'AI Lab', href: '/ai', icon: Cpu, desc: 'My Projects' },
+    { name: 'Music', href: '/music', icon: Music, desc: 'Vocals' },
+    { name: 'My Vision', href: '/manifesto', icon: Flame, desc: 'The Plan' },
   ];
 
   return (
@@ -43,8 +43,8 @@ export function Navigation() {
             <span className="font-display font-bold text-primary text-sm">AM</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-xs font-display font-bold tracking-tighter uppercase text-foreground/90 leading-none">Empire Core</span>
-            <span className="text-[8px] font-code text-primary tracking-[0.3em] uppercase mt-1">Status: Active</span>
+            <span className="text-xs font-display font-bold tracking-tighter uppercase text-foreground/90 leading-none">Ankur Moran</span>
+            <span className="text-[8px] font-code text-primary tracking-[0.3em] uppercase mt-1">Status: Online</span>
           </div>
         </Link>
 
@@ -58,9 +58,9 @@ export function Navigation() {
             <div className="scanline" />
             <div className="p-10 flex-1 flex flex-col justify-center">
                <SheetHeader className="mb-12">
-                 <div className="text-primary font-code text-[9px] tracking-[0.6em] uppercase mb-4">System Directory</div>
+                 <div className="text-primary font-code text-[9px] tracking-[0.6em] uppercase mb-4">Site Menu</div>
                  <SheetTitle className="text-5xl font-display font-bold tracking-tighter uppercase">Menu</SheetTitle>
-                 <SheetDescription className="sr-only">Main navigation hub for Ankur Moran's portfolio.</SheetDescription>
+                 <SheetDescription className="sr-only">Main navigation for Ankur Moran's portfolio.</SheetDescription>
                </SheetHeader>
                
                <div className="grid gap-3">
@@ -94,7 +94,7 @@ export function Navigation() {
             </div>
             
             <div className="p-8 border-t border-white/5 bg-black/20 flex justify-between items-center">
-               <span className="text-[9px] font-code text-muted-foreground tracking-widest">Build v2.5.MARS</span>
+               <span className="text-[9px] font-code text-muted-foreground tracking-widest">Version 2.5</span>
                <div className="flex gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />

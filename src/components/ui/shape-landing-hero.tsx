@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -72,9 +71,9 @@ function ElegantShape({
 }
 
 function HeroGeometric({
-    badge = "Neural Core Active",
-    title1 = "Building My",
-    title2 = "Empire",
+    badge = "System Online",
+    title1 = "Ankur",
+    title2 = "Moran",
 }: {
     badge?: string;
     title1?: string;
@@ -187,7 +186,7 @@ function HeroGeometric({
                         animate="visible"
                     >
                         <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4 italic">
-                            Architecting high-intelligence ecosystems. Focused on autonomous agents, robotics, and strategic harmonic development.
+                            I am building a smart future. I focus on creating AI tools, helpful robots, and practicing my vocal music.
                         </p>
                     </motion.div>
                 </div>
