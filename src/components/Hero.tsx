@@ -42,11 +42,11 @@ export function Hero() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
   return (
-    <section className="w-full flex flex-col items-center relative overflow-hidden bg-[#0E0E12]">
+    <section className="w-full flex flex-col items-center relative overflow-hidden bg-transparent">
       <HeroGeometric 
         badge="System Active"
         title1="ANKUR"
@@ -56,7 +56,7 @@ export function Hero() {
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/40 animate-bounce pointer-events-none"
       >
         <span className="text-[10px] font-code uppercase tracking-[0.4em]">Scroll for Intel</span>
@@ -74,7 +74,7 @@ export function Hero() {
         >
           {profileInfo.map((info, i) => (
             <Card key={i} className="glass-card bg-white/[0.02] border-white/5 p-6 flex items-center gap-4 group">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all duration-500">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all duration-300">
                 <info.icon className="w-6 h-6" />
               </div>
               <div>
@@ -103,7 +103,7 @@ export function Hero() {
                 {passions.map((p, i) => (
                   <Card key={i} className="glass-card bg-white/[0.02] border-white/5 p-8 space-y-4 group hover:border-primary/40">
                     <div className="flex items-center gap-4 text-primary">
-                      <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-background transition-all duration-500">
+                      <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-background transition-all duration-300">
                         <p.icon className="w-6 h-6" />
                       </div>
                       <span className="text-2xl font-headline font-bold uppercase tracking-wide">{p.title}</span>
@@ -128,7 +128,7 @@ export function Hero() {
             <div className="space-y-8">
               <h3 className="text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-4">
                 <Cpu className="text-primary w-8 h-8" />
-                Neural Focus
+                Where I am Working
               </h3>
               <div className="flex flex-wrap gap-3">
                 {workFocus.map((focus, i) => (
@@ -140,7 +140,7 @@ export function Hero() {
             </div>
 
             <div className="p-10 rounded-3xl bg-primary/5 border border-primary/20 relative overflow-hidden group">
-              <BrainCircuit className="absolute -bottom-10 -right-10 w-40 h-40 text-primary/5 group-hover:text-primary/10 transition-all duration-1000" />
+              <BrainCircuit className="absolute -bottom-10 -right-10 w-40 h-40 text-primary/5 group-hover:text-primary/10 transition-all duration-700" />
               <h4 className="text-2xl font-headline font-bold uppercase mb-4 text-primary">Mission Directive</h4>
               <p className="text-muted-foreground text-lg font-light leading-relaxed italic">
                 I am building a smart future where machines help everyone. My focus is on creating tools that are useful, innovative, and powered by intelligence.
@@ -164,7 +164,7 @@ export function Hero() {
           </div>
 
           <Link href="/ai" className="group">
-            <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group shadow-[0_0_30px_rgba(255,59,59,0.1)] hover:shadow-[0_0_50px_rgba(255,59,59,0.3)]">
+            <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-300 flex items-center gap-8 group shadow-[0_0_30px_rgba(255,59,59,0.1)] hover:shadow-[0_0_50px_rgba(255,59,59,0.3)]">
               <div className="text-left">
                 <p className="text-[10px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 01</p>
                 <p className="text-4xl font-display font-bold tracking-tighter uppercase">AI Arsenal</p>

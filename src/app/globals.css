@@ -62,7 +62,7 @@
 }
 
 .glass-card {
-  @apply bg-card/40 backdrop-blur-md border border-white/5 transition-all duration-500;
+  @apply bg-card/40 backdrop-blur-md border border-white/5 transition-all duration-300;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
@@ -131,23 +131,15 @@
 }
 
 .node-button {
-  @apply relative overflow-hidden h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8;
+  @apply relative overflow-hidden h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-300 flex items-center gap-8;
 }
 
 .node-button::before {
   content: '';
-  @apply absolute inset-0 bg-primary/20 scale-x-0 origin-left transition-transform duration-500;
-}
-
-.group:hover .node-button::before {
-  @apply scale-x-100;
+  @apply absolute inset-0 bg-primary/20 scale-x-0 origin-left transition-transform duration-300;
 }
 
 .node-button .glow {
-  @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
   background: radial-gradient(circle at center, rgba(255, 59, 59, 0.4) 0%, transparent 70%);
-}
-
-.group:hover .node-button .glow {
-  @apply opacity-100;
 }
