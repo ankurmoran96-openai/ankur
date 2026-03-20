@@ -13,7 +13,10 @@ import {
   Gamepad2,
   ShieldAlert,
   Bot,
-  ChevronRight
+  BrainCircuit,
+  MessageSquare,
+  Globe,
+  Zap
 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -24,38 +27,67 @@ export function AISection() {
 
   const projects = [
     {
-      title: "Termux Coding Assistant",
-      badge: "MAIN PROJECT",
+      title: "Memory Chatbot",
+      badge: "NEURAL MEMORY",
+      icon: BrainCircuit,
+      desc: "A smart friend that remembers everything you've talked about before. It uses its memory to give better answers that make sense for you specifically.",
+      features: ["Context Awareness", "Long-term Memory", "Personalized Chat"],
+      image: "https://picsum.photos/seed/memory/800/600"
+    },
+    {
+      title: "Termux Assistant",
+      badge: "AUTONOMOUS AGENT",
       icon: Terminal,
-      desc: "A smart tool that lives in your terminal. It can read and write files, look at code to find problems, and help plan how to build big projects automatically.",
-      features: ["Writes Code", "Finds Bugs", "Plans Tasks", "Handles Files"],
+      desc: "A smart tool that lives in your terminal. It can read and write files, find problems in your code, and help plan how to build big projects automatically.",
+      features: ["Writes Code", "Fixes Errors", "Plans Tasks", "Handles Files"],
       image: aiImg?.imageUrl
     },
     {
-      title: "Telegram Bot Manager",
-      badge: "CHAT BOT",
+      title: "Telegram AI Bot",
+      badge: "MULTI-MODEL",
+      icon: MessageSquare,
+      desc: "A super-powered Telegram bot. It can chat like a real human, create amazing images from your words, and answer almost any question using advanced AI.",
+      features: ["AI Chat", "Image Generation", "Fast Answers"]
+    },
+    {
+      title: "Telegram Manager",
+      badge: "GROUP GUARD",
       icon: Gamepad2,
-      desc: "A smart assistant for Telegram that makes chats fun. It has built-in games like TicTacToe and Rock Paper Scissors. It also manages groups by automatically kicking or banning users who break rules.",
-      features: ["Kick/Ban/Mute", "Fun Games", "AI Chat", "Group Guard"]
+      desc: "A professional group manager. It keeps chats safe by automatically kicking or banning bad users. It also has fun mini-games to keep everyone happy.",
+      features: ["Kick/Ban/Mute", "Mini Games", "AI Moderation", "Group Safety"]
     },
     {
       title: "Minecraft AI Player",
-      badge: "SMART BOT",
+      badge: "SMART ENTITY",
       icon: Bot,
-      desc: "A highly intelligent bot that joins Minecraft servers and talks to real players. It uses advanced AI (GPT-4o) to sound like a real person during chat.",
-      features: ["Real Chat", "Server Access", "Smart Logic"]
+      desc: "A highly intelligent bot that joins Minecraft servers and talks to real players. It uses advanced AI logic to act and chat just like a human player.",
+      features: ["Real Chat", "Smart Logic", "Server Interaction"]
     },
     {
-      title: "Security Research Tool",
-      badge: "TECHNICAL",
+      title: "Bypass Dumper",
+      badge: "SECURITY RESEARCH",
       icon: ShieldAlert,
-      desc: "A specialized tool for reverse engineering. It helps analyze how software is built by looking deep into its memory to find hidden information.",
-      features: ["Deep Analysis", "Memory Scan", "Code Mapping"]
+      desc: "A technical tool for security research. It helps analyze how specific mobile games are built by looking deep into their memory to find hidden info.",
+      features: ["Deep Analysis", "Memory Scanning", "Security Audit"]
+    },
+    {
+      title: "Empire Website",
+      badge: "COMING SOON",
+      icon: Globe,
+      desc: "My upcoming AI-powered portal. It will be the central hub for all my smart tools, robotics research, and future company developments.",
+      features: ["AI Integration", "Central Hub", "Personal Portal"]
+    },
+    {
+      title: "IDE Agent",
+      badge: "COMING SOON",
+      icon: Zap,
+      desc: "A professional coding partner that works inside your code editor. It helps you write, fix, and understand code ten times faster using AI.",
+      features: ["Inline Editing", "Code Logic", "Fast Building"]
     }
   ];
 
   const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
@@ -71,10 +103,10 @@ export function AISection() {
         >
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-code uppercase tracking-[0.5em]">
             <Sparkles className="w-4 h-4" />
-            Project Showcase
+            Tactical Arsenal
           </div>
           <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">AI <span className="text-primary/60">Lab</span></h2>
-          <p className="text-muted-foreground font-code text-xs tracking-[0.4em] uppercase">Smart Tools & Projects</p>
+          <p className="text-muted-foreground font-code text-xs tracking-[0.4em] uppercase">Everything I've built so far</p>
         </motion.div>
 
         <div className="space-y-40">
@@ -83,7 +115,7 @@ export function AISection() {
               key={idx}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
             >
               <Card className="glass-card overflow-hidden border-white/5 bg-white/[0.02] flex flex-col lg:flex-row min-h-[500px] group hover:border-primary/40 transition-colors duration-500">
@@ -94,7 +126,7 @@ export function AISection() {
                       alt={project.title} 
                       fill 
                       className="object-cover opacity-20 grayscale group-hover:scale-105 group-hover:grayscale-0 transition-all duration-1000"
-                      data-ai-hint="coding terminal"
+                      data-ai-hint="artificial intelligence"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center opacity-10">
@@ -132,15 +164,15 @@ export function AISection() {
         </div>
 
         <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true }} 
           variants={fadeUp}
           className="pt-24 flex flex-col items-center space-y-12"
         >
           <div className="w-full flex items-center gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">My Music Journey</span>
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Neural Harmonics</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
@@ -148,7 +180,7 @@ export function AISection() {
             <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group">
               <div className="text-left">
                 <p className="text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 02</p>
-                <p className="text-4xl font-display font-bold tracking-tighter uppercase">Harmonics</p>
+                <p className="text-4xl font-display font-bold tracking-tighter uppercase">Vocals</p>
               </div>
               <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
                 <Music className="w-6 h-6 group-hover:rotate-12 transition-transform" />

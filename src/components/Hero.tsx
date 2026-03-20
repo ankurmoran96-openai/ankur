@@ -13,15 +13,10 @@ import {
   Calendar, 
   Mic2, 
   Code2, 
-  Cpu, 
-  Zap, 
-  Terminal, 
-  Bot, 
-  Gamepad2, 
-  ShieldAlert,
-  Globe,
-  BrainCircuit,
-  MessageSquare
+  Zap,
+  MousePointer2,
+  Cpu,
+  BrainCircuit
 } from 'lucide-react';
 import Link from 'next/link';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
@@ -42,58 +37,7 @@ export function Hero() {
   const workFocus = [
     "AI Integration", "AI/ML", "Applied AI Engineering", "Prompt Engineering", 
     "AI Architecture", "Python", "MLOps", "AI AGENTS", "Web development", 
-    "Bots [ ANY TYPE ]", "Tools [ Linux Scripts ]"
-  ];
-
-  const projects = [
-    { 
-      title: "Memory Chatbot", 
-      status: "Active", 
-      icon: BrainCircuit, 
-      type: "Chatbot-Memory Based" 
-    },
-    { 
-      title: "Termux Assistant", 
-      status: "Active", 
-      icon: Terminal, 
-      type: "Autonomous Code Assistant [ TERMUX ]" 
-    },
-    { 
-      title: "Telegram AI Bot", 
-      status: "Active", 
-      icon: MessageSquare, 
-      type: "AI INTEGRATED [ CHAT & IMAGE GEN ]" 
-    },
-    { 
-      title: "Telegram Manager", 
-      status: "Active", 
-      icon: Gamepad2, 
-      type: "AI INTEGRATED [ GAMES & GUARD ]" 
-    },
-    { 
-      title: "Minecraft AI Player", 
-      status: "Active", 
-      icon: Bot, 
-      type: "AI-Powered Server Assistant" 
-    },
-    { 
-      title: "Bypass Dumper", 
-      status: "Active", 
-      icon: ShieldAlert, 
-      type: "BGMI Reverse Tool [ TG ONLY ]" 
-    },
-    { 
-      title: "Empire Website", 
-      status: "Coming Soon", 
-      icon: Globe, 
-      type: "AI-POWERED PORTAL" 
-    },
-    { 
-      title: "IDE Agent", 
-      status: "Coming Soon", 
-      icon: Zap, 
-      type: "IDE AUTONOMOUS AGENT" 
-    },
+    "Bots [ ANY TYPE ]", "Tools [ Scripts via Linux ]"
   ];
 
   const fadeUp = {
@@ -102,25 +46,35 @@ export function Hero() {
   };
 
   return (
-    <section className="w-full flex flex-col items-center relative overflow-hidden">
+    <section className="w-full flex flex-col items-center relative overflow-hidden bg-[#0E0E12]">
       <HeroGeometric 
         badge="System Active"
         title1="ANKUR"
         title2="MORAN"
       />
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/40 animate-bounce pointer-events-none"
+      >
+        <span className="text-[10px] font-code uppercase tracking-[0.4em]">Scroll for Intel</span>
+        <MousePointer2 className="w-4 h-4" />
+      </motion.div>
       
-      <div className="w-full max-w-7xl mx-auto px-6 space-y-32 pb-40">
+      <div className="w-full max-w-7xl mx-auto px-6 space-y-32 pb-40 relative z-10">
         {/* Profile Stats */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
           viewport={{ once: true }} 
           variants={fadeUp}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {profileInfo.map((info, i) => (
             <Card key={i} className="glass-card bg-white/[0.02] border-white/5 p-6 flex items-center gap-4 group">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all duration-500">
                 <info.icon className="w-6 h-6" />
               </div>
               <div>
@@ -131,8 +85,8 @@ export function Hero() {
           ))}
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Passions & Focus */}
+        <div className="grid lg:grid-cols-2 gap-20">
+          {/* Passions */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -145,85 +99,79 @@ export function Hero() {
                 <Zap className="text-primary w-8 h-8" />
                 My Passion
               </h3>
-              <div className="grid gap-4">
+              <div className="grid gap-6">
                 {passions.map((p, i) => (
-                  <Card key={i} className="glass-card bg-white/[0.02] border-white/5 p-6 space-y-2">
-                    <div className="flex items-center gap-3 text-primary">
-                      <p.icon className="w-5 h-5" />
-                      <span className="font-headline font-bold uppercase tracking-wide">{p.title}</span>
+                  <Card key={i} className="glass-card bg-white/[0.02] border-white/5 p-8 space-y-4 group hover:border-primary/40">
+                    <div className="flex items-center gap-4 text-primary">
+                      <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-background transition-all duration-500">
+                        <p.icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-2xl font-headline font-bold uppercase tracking-wide">{p.title}</span>
                     </div>
-                    <p className="text-sm text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-4">
+                    <p className="text-lg text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
                       {p.desc}
                     </p>
                   </Card>
                 ))}
               </div>
             </div>
-
-            <div className="space-y-6">
-              <h3 className="text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-4">
-                <Code2 className="text-primary w-8 h-8" />
-                Working On
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {workFocus.map((focus, i) => (
-                  <Badge key={i} variant="outline" className="border-primary/20 bg-primary/5 text-primary text-[10px] py-1.5 px-3 rounded-none uppercase font-code tracking-widest">
-                    {focus}
-                  </Badge>
-                ))}
-              </div>
-            </div>
           </motion.div>
 
-          {/* Projects Summary */}
+          {/* Working Focus */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
             viewport={{ once: true }} 
             variants={fadeUp}
-            className="space-y-6"
+            className="space-y-12"
           >
-            <div className="flex items-center justify-between">
+            <div className="space-y-8">
               <h3 className="text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-4">
                 <Cpu className="text-primary w-8 h-8" />
-                AI Arsenal
+                Neural Focus
               </h3>
-              <Badge className="bg-primary/20 text-primary border-primary/40 rounded-none px-4 font-code">VER_2.5</Badge>
+              <div className="flex flex-wrap gap-3">
+                {workFocus.map((focus, i) => (
+                  <Badge key={i} variant="outline" className="border-primary/20 bg-primary/5 text-primary text-xs py-2.5 px-5 rounded-none uppercase font-code tracking-widest hover:bg-primary hover:text-background transition-all duration-300">
+                    {focus}
+                  </Badge>
+                ))}
+              </div>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {projects.map((project, i) => (
-                <Card key={i} className="glass-card bg-white/[0.02] border-white/5 p-5 group hover:border-primary/40">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-10 h-10 bg-primary/5 rounded border border-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                      <project.icon className="w-5 h-5" />
-                    </div>
-                    <span className={`text-[8px] font-code px-2 py-0.5 border ${project.status === 'Active' ? 'border-primary/40 text-primary bg-primary/10' : 'border-white/10 text-muted-foreground bg-white/5'}`}>
-                      {project.status.toUpperCase()}
-                    </span>
-                  </div>
-                  <h4 className="font-headline font-bold text-sm uppercase tracking-tight mb-1">{project.title}</h4>
-                  <p className="text-[10px] text-muted-foreground font-code uppercase tracking-wider">{project.type}</p>
-                </Card>
-              ))}
+
+            <div className="p-10 rounded-3xl bg-primary/5 border border-primary/20 relative overflow-hidden group">
+              <BrainCircuit className="absolute -bottom-10 -right-10 w-40 h-40 text-primary/5 group-hover:text-primary/10 transition-all duration-1000" />
+              <h4 className="text-2xl font-headline font-bold uppercase mb-4 text-primary">Mission Directive</h4>
+              <p className="text-muted-foreground text-lg font-light leading-relaxed italic">
+                I am building a smart future where machines help everyone. My focus is on creating tools that are useful, innovative, and powered by intelligence.
+              </p>
             </div>
           </motion.div>
         </div>
 
-        {/* Story Command */}
+        {/* Tactical Command */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
           viewport={{ once: true }} 
           variants={fadeUp}
-          className="flex justify-center pt-12"
+          className="flex flex-col items-center gap-12 pt-12"
         >
-          <Link href="/about" className="group">
-            <Button size="lg" className="h-20 px-16 rounded-full bg-primary text-background font-bold tracking-[0.2em] uppercase hover:bg-primary/90 transition-all duration-500 shadow-[0_0_20px_rgba(255,59,59,0.2)] hover:shadow-[0_0_40px_rgba(255,59,59,0.4)]">
-              <span className="flex items-center gap-4 text-lg">
-                View My Story
-                <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-              </span>
+          <div className="w-full flex items-center gap-8">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Tactical Access</span>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
+          </div>
+
+          <Link href="/ai" className="group">
+            <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group shadow-[0_0_30px_rgba(255,59,59,0.1)] hover:shadow-[0_0_50px_rgba(255,59,59,0.3)]">
+              <div className="text-left">
+                <p className="text-[10px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 01</p>
+                <p className="text-4xl font-display font-bold tracking-tighter uppercase">AI Arsenal</p>
+              </div>
+              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                <ChevronRight className="w-8 h-8 group-hover:translate-x-2 transition-transform" />
+              </div>
             </Button>
           </Link>
         </motion.div>
