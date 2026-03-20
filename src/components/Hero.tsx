@@ -35,24 +35,65 @@ export function Hero() {
   ];
 
   const passions = [
-    { icon: Mic2, title: "Vocalist", desc: "Practicing vocals daily to master harmonies." },
-    { icon: Code2, title: "Vibe-coding", desc: "Building fast, high-quality tools using AI." },
+    { icon: Mic2, title: "Vocalist", desc: "Practicing vocals daily to master harmonies and express emotion." },
+    { icon: Code2, title: "Vibe-coding", desc: "Building fast, high-quality tools using AI and modern frameworks." },
   ];
 
   const workFocus = [
-    "AI/ML", "Applied AI Engineering", "Prompt Engineering", "AI Architecture", 
-    "Python", "MLOps", "AI AGENTS", "Web development", "Bots", "Linux Tools"
+    "AI Integration", "AI/ML", "Applied AI Engineering", "Prompt Engineering", 
+    "AI Architecture", "Python", "MLOps", "AI AGENTS", "Web development", 
+    "Bots [ ANY TYPE ]", "Tools [ Linux Scripts ]"
   ];
 
   const projects = [
-    { title: "Memory Chatbot", status: "Active", icon: BrainCircuit, type: "Smart Memory Bot" },
-    { title: "Termux Assistant", status: "Active", icon: Terminal, type: "Autonomous Code Tool" },
-    { title: "Telegram AI Bot", status: "Active", icon: MessageSquare, type: "Chat & Image Generator" },
-    { title: "Telegram Manager", status: "Active", icon: Gamepad2, type: "Games & Group Guard" },
-    { title: "Minecraft AI Player", status: "Active", icon: Cpu, type: "Talks to real players" },
-    { title: "Bypass Dumper", status: "Active", icon: ShieldAlert, type: "BGMI Reverse Tool" },
-    { title: "Empire Website", status: "Coming Soon", icon: Globe, type: "AI-Powered Portal" },
-    { title: "IDE Agent", status: "Coming Soon", icon: Zap, type: "Autonomous Assistant" },
+    { 
+      title: "Memory Chatbot", 
+      status: "Active", 
+      icon: BrainCircuit, 
+      type: "Chatbot-Memory Based" 
+    },
+    { 
+      title: "Termux Assistant", 
+      status: "Active", 
+      icon: Terminal, 
+      type: "Autonomous Code Assistant [ TERMUX ]" 
+    },
+    { 
+      title: "Telegram AI Bot", 
+      status: "Active", 
+      icon: MessageSquare, 
+      type: "AI INTEGRATED [ CHAT & IMAGE GEN ]" 
+    },
+    { 
+      title: "Telegram Manager", 
+      status: "Active", 
+      icon: Gamepad2, 
+      type: "AI INTEGRATED [ GAMES & GUARD ]" 
+    },
+    { 
+      title: "Minecraft AI Player", 
+      status: "Active", 
+      icon: Bot, 
+      type: "AI-Powered Server Assistant" 
+    },
+    { 
+      title: "Bypass Dumper", 
+      status: "Active", 
+      icon: ShieldAlert, 
+      type: "BGMI Reverse Tool [ TG ONLY ]" 
+    },
+    { 
+      title: "Empire Website", 
+      status: "Coming Soon", 
+      icon: Globe, 
+      type: "AI-POWERED PORTAL" 
+    },
+    { 
+      title: "IDE Agent", 
+      status: "Coming Soon", 
+      icon: Zap, 
+      type: "IDE AUTONOMOUS AGENT" 
+    },
   ];
 
   const fadeUp = {
@@ -122,7 +163,7 @@ export function Hero() {
             <div className="space-y-6">
               <h3 className="text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-4">
                 <Code2 className="text-primary w-8 h-8" />
-                Tech Focus
+                Working On
               </h3>
               <div className="flex flex-wrap gap-2">
                 {workFocus.map((focus, i) => (
