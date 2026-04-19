@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Calendar, Rocket, Target, Shield, Cpu } from "lucide-react";
@@ -19,7 +20,7 @@ const timelineData = [
   {
     id: 2,
     title: "Neural Lab",
-    date: "2023",
+    date: "Class 9",
     content: "Developing Termux CLI agents and managing Telegram bots. Mastering AI/ML fundamentals.",
     category: "Design",
     icon: Cpu,
@@ -29,14 +30,14 @@ const timelineData = [
   },
   {
     id: 3,
-    title: "Harmonics",
+    title: "Class 10 Hub",
     date: "Ongoing",
-    content: "Consistently practicing vocals and exploring global music influences.",
+    content: "Building autonomous repo managers and Daisy AI. Consistently practicing vocals.",
     category: "Development",
     icon: Rocket,
     relatedIds: [2, 4],
     status: "in-progress" as const,
-    energy: 85,
+    energy: 95,
   },
   {
     id: 4,

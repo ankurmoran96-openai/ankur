@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Github, Instagram, Send, Cpu, Cloud } from 'lucide-react';
 
@@ -16,7 +17,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-muted-foreground font-body font-light max-w-xs mx-auto md:mx-0">
-              Founding the next generation of neural systems and vocal harmonies. Build v2.5_MARS.
+              Founding the next generation of neural systems and vocal harmonies. Build v3.0_CLASS_10.
             </p>
           </div>
 
@@ -24,8 +25,8 @@ export function Footer() {
             <div className="flex gap-4">
               {[
                 { icon: Github, href: 'https://github.com/ankurmoran96-openai', label: 'GitHub' },
-                { icon: Instagram, href: 'https://instagram.com/_ankurmoran_', label: 'Instagram' },
-                { icon: Send, href: 'https://t.me/Ankxrrrr', label: 'Telegram' }
+                { icon: Instagram, href: 'https://instagram.com/git.push.ankur', label: 'Instagram' },
+                { icon: Send, href: 'https://t.me/ankurslys', label: 'Telegram' }
               ].map((social, i) => (
                 <a 
                   key={i} 

@@ -1,3 +1,4 @@
+
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Zap } from "lucide-react";
@@ -91,7 +92,7 @@ export default function RadialOrbitalTimeline({
     if (autoRotate && viewMode === "orbital") {
       rotationTimer = setInterval(() => {
         setRotationAngle((prev) => {
-          const newAngle = (prev + 0.3) % 360;
+          const newAngle = (prev + 0.25) % 360;
           return Number(newAngle.toFixed(3));
         });
       }, 50);
@@ -116,7 +117,7 @@ export default function RadialOrbitalTimeline({
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = isMobile ? 85 : 180;
+    const radius = isMobile ? 80 : 180;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
@@ -157,7 +158,7 @@ export default function RadialOrbitalTimeline({
 
   return (
     <div
-      className="w-full h-[450px] md:h-[600px] flex flex-col items-center justify-center bg-transparent overflow-hidden touch-none"
+      className="w-full h-[400px] md:h-[600px] flex flex-col items-center justify-center bg-transparent overflow-hidden touch-none"
       ref={containerRef}
       onClick={handleContainerClick}
     >
@@ -171,13 +172,13 @@ export default function RadialOrbitalTimeline({
           }}
         >
           {/* Core Sun */}
-          <div className="absolute w-10 h-10 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary via-primary/80 to-primary/40 animate-pulse flex items-center justify-center z-10 shadow-[0_0_30px_rgba(255,59,59,0.3)]">
-            <div className="absolute w-14 h-14 md:w-20 md:h-20 rounded-full border border-primary/20 animate-ping opacity-70"></div>
-            <div className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
+          <div className="absolute w-8 h-8 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary via-primary/80 to-primary/40 flex items-center justify-center z-10 shadow-[0_0_30px_rgba(255,59,59,0.3)]">
+            <div className="absolute w-12 h-12 md:w-20 md:h-20 rounded-full border border-primary/20 animate-ping opacity-70"></div>
+            <div className="w-4 h-4 md:w-8 md:h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
           </div>
 
           {/* Orbital Ring */}
-          <div className="absolute w-[170px] h-[170px] md:w-[360px] md:h-[360px] rounded-full border border-primary/10 shadow-[inset_0_0_50px_rgba(255,59,59,0.05)]"></div>
+          <div className="absolute w-[160px] h-[160px] md:w-[360px] md:h-[360px] rounded-full border border-primary/10 shadow-[inset_0_0_50px_rgba(255,59,59,0.05)]"></div>
 
           {timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);
@@ -203,38 +204,23 @@ export default function RadialOrbitalTimeline({
                   toggleItem(item.id);
                 }}
               >
-                {/* Glow Ring */}
-                <div
-                  className={cn(
-                    "absolute rounded-full -inset-1 transition-all duration-500",
-                    isPulsing ? "animate-pulse" : ""
-                  )}
-                  style={{
-                    background: `radial-gradient(circle, rgba(255,59,59,0.2) 0%, rgba(255,59,59,0) 70%)`,
-                    width: `${item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40)}px`,
-                    height: `${item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40)}px`,
-                    left: `-${(item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40) - (isMobile ? 25 : 40)) / 2}px`,
-                    top: `-${(item.energy * (isMobile ? 0.25 : 0.5) + (isMobile ? 25 : 40) - (isMobile ? 25 : 40)) / 2}px`,
-                  }}
-                ></div>
-
                 {/* Node Orb */}
                 <div
                   className={cn(
                     "rounded-full flex items-center justify-center transition-all duration-500",
-                    isMobile ? "w-6 h-6" : "w-10 h-10",
+                    isMobile ? "w-5 h-5" : "w-10 h-10",
                     isExpanded ? "bg-primary text-background scale-125" : isRelated ? "bg-primary/50 text-background animate-pulse" : "bg-card border-primary/20 text-primary border",
                     isExpanded ? "shadow-[0_0_20px_rgba(255,59,59,0.5)]" : ""
                   )}
                 >
-                  <Icon size={isMobile ? 12 : 18} />
+                  <Icon size={isMobile ? 10 : 18} />
                 </div>
 
                 {/* Node Label */}
                 <div
                   className={cn(
                     "absolute top-full mt-2 whitespace-nowrap font-code font-bold uppercase tracking-widest transition-all duration-300",
-                    isMobile ? "text-[8px]" : "text-[10px]",
+                    isMobile ? "text-[7px]" : "text-[10px]",
                     isExpanded ? "text-primary scale-110" : "text-muted-foreground/60"
                   )}
                 >
@@ -245,35 +231,35 @@ export default function RadialOrbitalTimeline({
                 {isExpanded && (
                   <Card className={cn(
                     "absolute glass-card bg-card/95 backdrop-blur-xl border-primary/30 shadow-2xl z-50 overflow-visible transition-all duration-500",
-                    isMobile ? "top-10 -left-[90px] w-[180px] p-2" : "top-14 left-1/2 -translate-x-1/2 w-64 p-4"
+                    isMobile ? "top-8 -left-[75px] w-[150px] p-2" : "top-14 left-1/2 -translate-x-1/2 w-64 p-4"
                   )}>
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-primary/50"></div>
-                    <CardHeader className="p-0 mb-2 md:mb-3">
+                    <CardHeader className="p-0 mb-1 md:mb-3">
                       <div className="flex justify-between items-center mb-1">
                         <Badge className={cn(
                           "px-1.5 py-0 font-code font-bold rounded-none",
-                          isMobile ? "text-[7px]" : "text-[9px]",
+                          isMobile ? "text-[6px]" : "text-[9px]",
                           getStatusStyles(item.status)
                         )}>
                           {item.status.toUpperCase()}
                         </Badge>
-                        <span className={cn("font-code text-muted-foreground", isMobile ? "text-[7px]" : "text-[10px]")}>
+                        <span className={cn("font-code text-muted-foreground", isMobile ? "text-[6px]" : "text-[10px]")}>
                           {item.date}
                         </span>
                       </div>
-                      <CardTitle className={cn("font-display font-bold uppercase tracking-tight", isMobile ? "text-[10px]" : "text-sm")}>
+                      <CardTitle className={cn("font-display font-bold uppercase tracking-tight", isMobile ? "text-[9px]" : "text-sm")}>
                         {item.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="p-0">
-                      <p className={cn("text-muted-foreground font-light leading-tight md:leading-relaxed mb-3", isMobile ? "text-[9px]" : "text-[11px]")}>
+                      <p className={cn("text-muted-foreground font-light leading-tight mb-2 md:mb-3", isMobile ? "text-[8px]" : "text-[11px]")}>
                         {item.content}
                       </p>
 
                       <div className="space-y-1.5 border-t border-white/5 pt-2">
                         <div className="flex justify-between items-center font-code uppercase tracking-widest">
-                          <span className={cn("flex items-center gap-1 text-muted-foreground", isMobile ? "text-[7px]" : "text-[9px]")}>
-                            <Zap size={isMobile ? 8 : 10} className="text-primary" />
+                          <span className={cn("flex items-center gap-1 text-muted-foreground", isMobile ? "text-[6px]" : "text-[9px]")}>
+                            <Zap size={isMobile ? 7 : 10} className="text-primary" />
                             Efficiency
                           </span>
                           <span className={cn("text-primary", isMobile ? "text-[7px]" : "text-[10px]")}>{item.energy}%</span>
@@ -284,7 +270,7 @@ export default function RadialOrbitalTimeline({
                       </div>
 
                       {item.relatedIds.length > 0 && (
-                        <div className="mt-3 pt-2 border-t border-white/5">
+                        <div className="mt-2 md:mt-3 pt-2 border-t border-white/5">
                           <div className="flex flex-wrap gap-1">
                             {item.relatedIds.map((relId) => {
                               const rel = timelineData.find((i) => i.id === relId);
@@ -295,7 +281,7 @@ export default function RadialOrbitalTimeline({
                                   size="sm"
                                   className={cn(
                                     "flex items-center gap-1 border-primary/20 bg-transparent hover:bg-primary/10 text-primary transition-all rounded-none",
-                                    isMobile ? "h-4 px-1 text-[6px]" : "h-6 px-2 text-[8px]"
+                                    isMobile ? "h-3 px-1 text-[5px]" : "h-6 px-2 text-[8px]"
                                   )}
                                   onClick={(e) => {
                                     e.stopPropagation();
@@ -303,7 +289,6 @@ export default function RadialOrbitalTimeline({
                                   }}
                                 >
                                   {rel?.title}
-                                  <ArrowRight size={isMobile ? 6 : 8} />
                                 </Button>
                               );
                             })}

@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -16,7 +17,9 @@ import {
   BrainCircuit,
   MessageSquare,
   Globe,
-  Zap
+  Zap,
+  Github,
+  Search
 } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
@@ -26,6 +29,22 @@ export function AISection() {
   const aiImg = PlaceHolderImages.find(img => img.id === 'ai-agent-demo');
 
   const projects = [
+    {
+      title: "GitHub Repo Architect",
+      badge: "REPO AUTONOMY",
+      icon: Github,
+      desc: "A professional repository manager that can control your whole GitHub using a PAT token. It uses AI to analyze your files, find bugs, and automatically fix them for you.",
+      features: ["PAT Authentication", "Auto-Fixing Bugs", "Repo Analysis", "Self-Healing Code"],
+      image: "https://picsum.photos/seed/github/800/600"
+    },
+    {
+      title: "Daisy (TG Manager)",
+      badge: "SMART OPS",
+      icon: MessageSquare,
+      desc: "An AI-powered Telegram manager that handles group operations with ease. Now features real-time web search and interactive mini-games for your community.",
+      features: ["Daisy AI", "Web Search", "Mini Games", "Group Management"],
+      image: "https://picsum.photos/seed/daisy/800/600"
+    },
     {
       title: "Memory Chatbot",
       badge: "NEURAL MEMORY",
@@ -43,20 +62,6 @@ export function AISection() {
       image: aiImg?.imageUrl
     },
     {
-      title: "Telegram AI Bot",
-      badge: "MULTI-MODEL",
-      icon: MessageSquare,
-      desc: "A super-powered Telegram bot. It can chat like a real human, create amazing images from your words, and answer almost any question using advanced AI.",
-      features: ["AI Chat", "Image Generation", "Fast Answers"]
-    },
-    {
-      title: "Telegram Manager",
-      badge: "GROUP GUARD",
-      icon: Gamepad2,
-      desc: "A professional group manager. It keeps chats safe by automatically kicking or banning bad users. It also has fun mini-games to keep everyone happy.",
-      features: ["Kick/Ban/Mute", "Mini Games", "AI Moderation", "Group Safety"]
-    },
-    {
       title: "Minecraft AI Player",
       badge: "SMART ENTITY",
       icon: Bot,
@@ -67,7 +72,7 @@ export function AISection() {
       title: "Bypass Dumper",
       badge: "SECURITY RESEARCH",
       icon: ShieldAlert,
-      desc: "A technical tool for security research. It helps analyze how specific mobile games are built by looking deep into their memory to find hidden info.",
+      desc: "A technical tool for security research specifically for BGMI. It helps analyze how the mobile game is built by looking deep into its memory.",
       features: ["Deep Analysis", "Memory Scanning", "Security Audit"]
     },
     {
@@ -138,16 +143,16 @@ export function AISection() {
                 <div className="lg:w-1/2 p-12 flex flex-col justify-center space-y-10">
                   <div className="space-y-6">
                     <Badge className="bg-primary text-background font-code font-bold rounded-none px-4">{project.badge}</Badge>
-                    <h3 className="text-4xl font-headline font-bold flex items-center gap-4">
-                      <project.icon className="w-10 text-primary" />
+                    <h3 className="text-3xl md:text-4xl font-headline font-bold flex items-center gap-4">
+                      <project.icon className="w-8 md:w-10 text-primary" />
                       {project.title}
                     </h3>
-                    <p className="text-xl text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
+                    <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
                       {project.desc}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     {project.features.map((feature, fIdx) => (
                       <div key={fIdx} className="space-y-1">
                         <div className="flex items-center gap-2 text-[10px] font-bold text-primary font-code uppercase tracking-widest">

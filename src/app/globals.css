@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,15 +47,16 @@
   border-radius: 50%;
   opacity: 0.2;
   animation: twinkle var(--duration) infinite ease-in-out;
+  will-change: opacity, transform;
 }
 
 @keyframes twinkle {
   0%, 100% { opacity: 0.05; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.5); }
+  50% { opacity: 0.2; transform: scale(1.2); }
 }
 
 .neon-text {
-  text-shadow: 0 0 10px rgba(255, 59, 59, 0.5), 0 0 20px rgba(255, 59, 59, 0.2);
+  text-shadow: 0 0 10px rgba(255, 59, 59, 0.4), 0 0 20px rgba(255, 59, 59, 0.1);
 }
 
 .neon-border {
@@ -62,26 +64,28 @@
 }
 
 .glass-card {
-  @apply bg-card/40 backdrop-blur-md border border-white/5 transition-all duration-300;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  @apply bg-card/40 backdrop-blur-sm border border-white/5 transition-all duration-300;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  will-change: transform, box-shadow, background-color;
 }
 
 .glass-card:hover {
-  @apply bg-card/60 border-primary/20 scale-[1.01];
+  @apply bg-card/60 border-primary/20 md:scale-[1.01];
   box-shadow: 0 0 40px rgba(255, 59, 59, 0.05);
 }
 
 .scanline {
   width: 100%;
-  height: 2px;
-  background: rgba(255, 59, 59, 0.1);
-  opacity: 0.3;
+  height: 1px;
+  background: rgba(255, 59, 59, 0.05);
+  opacity: 0.2;
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: 50;
-  animation: scanline 10s linear infinite;
+  animation: scanline 15s linear infinite;
+  will-change: top;
 }
 
 @keyframes scanline {
@@ -95,6 +99,7 @@
   height: 1.2em;
   vertical-align: middle;
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 .css-smiley::before, .css-smiley::after {
@@ -121,25 +126,11 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-  width: 3px;
+  width: 2px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
   @apply bg-transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply bg-primary/20 rounded-full hover:bg-primary/50;
-}
-
-.node-button {
-  @apply relative overflow-hidden h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-300 flex items-center gap-8;
-}
-
-.node-button::before {
-  content: '';
-  @apply absolute inset-0 bg-primary/20 scale-x-0 origin-left transition-transform duration-300;
-}
-
-.node-button .glow {
-  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-  background: radial-gradient(circle at center, rgba(255, 59, 59, 0.4) 0%, transparent 70%);
 }
