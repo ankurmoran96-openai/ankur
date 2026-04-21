@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -11,83 +10,71 @@ import {
   Sparkles, 
   ListChecks, 
   Music,
-  Gamepad2,
   ShieldAlert,
   Bot,
   BrainCircuit,
   MessageSquare,
   Globe,
   Zap,
-  Github,
-  Search
+  Github
 } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export function AISection() {
-  const aiImg = PlaceHolderImages.find(img => img.id === 'ai-agent-demo');
-
   const projects = [
     {
       title: "GitHub Repo Architect",
-      badge: "REPO AUTONOMY",
+      badge: "NEW: SELF-HEALING",
       icon: Github,
-      desc: "A professional repository manager that can control your whole GitHub using a PAT token. It uses AI to analyze your files, find bugs, and automatically fix them for you.",
-      features: ["PAT Authentication", "Auto-Fixing Bugs", "Repo Analysis", "Self-Healing Code"],
+      desc: "A professional repository manager that controls your entire GitHub via PAT token. Uses LLMs to analyze code, detect bugs, and automatically fix them.",
+      features: ["PAT Authentication", "Auto-Fixing Bugs", "Neural Analysis", "Self-Healing Code"],
       image: "https://picsum.photos/seed/github/800/600"
     },
     {
       title: "Daisy (TG Manager)",
-      badge: "SMART OPS",
+      badge: "UPDATED: SMART OPS",
       icon: MessageSquare,
-      desc: "An AI-powered Telegram manager that handles group operations with ease. Now features real-time web search and interactive mini-games for your community.",
+      desc: "An advanced AI-powered Telegram manager. Now features real-time web search and interactive mini-games for enhanced community engagement.",
       features: ["Daisy AI", "Web Search", "Mini Games", "Group Management"],
       image: "https://picsum.photos/seed/daisy/800/600"
-    },
-    {
-      title: "Memory Chatbot",
-      badge: "NEURAL MEMORY",
-      icon: BrainCircuit,
-      desc: "A smart friend that remembers everything you've talked about before. It uses its memory to give better answers that make sense for you specifically.",
-      features: ["Context Awareness", "Long-term Memory", "Personalized Chat"],
-      image: "https://picsum.photos/seed/memory/800/600"
     },
     {
       title: "Termux Assistant",
       badge: "AUTONOMOUS AGENT",
       icon: Terminal,
-      desc: "A smart tool that lives in your terminal. It can read and write files, find problems in your code, and help plan how to build big projects automatically.",
-      features: ["Writes Code", "Fixes Errors", "Plans Tasks", "Handles Files"],
-      image: aiImg?.imageUrl
+      desc: "A mobile-first autonomous agent that reading/writes files and handles code logic directly in the terminal environment.",
+      features: ["Writes Code", "Fixes Errors", "Plans Tasks", "Mobile Linux"],
+      image: "https://picsum.photos/seed/terminal/800/600"
+    },
+    {
+      title: "Memory Chatbot",
+      badge: "NEURAL MEMORY",
+      icon: BrainCircuit,
+      desc: "A conversational AI that maintains persistent memory of past interactions to provide deeply personalized and contextual responses.",
+      features: ["Context Awareness", "Long-term Memory", "Personalized Chat"],
+      image: "https://picsum.photos/seed/memory/800/600"
     },
     {
       title: "Minecraft AI Player",
       badge: "SMART ENTITY",
       icon: Bot,
-      desc: "A highly intelligent bot that joins Minecraft servers and talks to real players. It uses advanced AI logic to act and chat just like a human player.",
+      desc: "A highly intelligent bot that joins servers and interacts with real players using human-like chat logic and behaviors.",
       features: ["Real Chat", "Smart Logic", "Server Interaction"]
     },
     {
       title: "Bypass Dumper",
       badge: "SECURITY RESEARCH",
       icon: ShieldAlert,
-      desc: "A technical tool for security research specifically for BGMI. It helps analyze how the mobile game is built by looking deep into its memory.",
-      features: ["Deep Analysis", "Memory Scanning", "Security Audit"]
+      desc: "A technical security auditing tool designed for BGMI memory analysis and deep security research.",
+      features: ["Memory Scanning", "Security Audit", "Deep Analysis"]
     },
     {
-      title: "Empire Website",
+      title: "Empire Infrastructure",
       badge: "COMING SOON",
       icon: Globe,
-      desc: "My upcoming AI-powered portal. It will be the central hub for all my smart tools, robotics research, and future company developments.",
+      desc: "The central hub for all neural systems, robotics research, and future company developments.",
       features: ["AI Integration", "Central Hub", "Personal Portal"]
-    },
-    {
-      title: "IDE Agent",
-      badge: "COMING SOON",
-      icon: Zap,
-      desc: "A professional coding partner that works inside your code editor. It helps you write, fix, and understand code ten times faster using AI.",
-      features: ["Inline Editing", "Code Logic", "Fast Building"]
     }
   ];
 
@@ -97,8 +84,8 @@ export function AISection() {
   };
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto space-y-32 relative z-10">
+    <section className="py-16 md:py-24 px-6 relative overflow-hidden">
+      <div className="max-w-6xl mx-auto space-y-16 md:space-y-32 relative z-10">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -110,11 +97,11 @@ export function AISection() {
             <Sparkles className="w-4 h-4" />
             Tactical Arsenal
           </div>
-          <h2 className="text-6xl md:text-8xl font-display font-bold tracking-tighter uppercase">AI <span className="text-primary/60">Lab</span></h2>
-          <p className="text-muted-foreground font-code text-xs tracking-[0.4em] uppercase">Everything I've built so far</p>
+          <h2 className="text-5xl md:text-8xl font-display font-bold tracking-tighter uppercase">AI <span className="text-primary/60">Lab</span></h2>
+          <p className="text-muted-foreground font-code text-[10px] md:text-xs tracking-[0.4em] uppercase">V3.5_CLASS_10_ACTIVE</p>
         </motion.div>
 
-        <div className="space-y-40">
+        <div className="space-y-24 md:space-y-40">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
@@ -123,8 +110,8 @@ export function AISection() {
               viewport={{ once: true, amount: 0.2 }}
               variants={fadeUp}
             >
-              <Card className="glass-card overflow-hidden border-white/5 bg-white/[0.02] flex flex-col lg:flex-row min-h-[500px] group hover:border-primary/40 transition-colors duration-500">
-                <div className="lg:w-1/2 relative overflow-hidden bg-black/40 h-[300px] lg:h-auto">
+              <Card className="glass-card overflow-hidden border-white/5 bg-white/[0.02] flex flex-col lg:flex-row min-h-[400px] md:min-h-[500px] group hover:border-primary/40 transition-colors duration-500">
+                <div className="lg:w-1/2 relative overflow-hidden bg-black/40 h-[250px] lg:h-auto">
                   {project.image ? (
                     <Image 
                       src={project.image} 
@@ -135,27 +122,27 @@ export function AISection() {
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                      <project.icon className="w-40 h-40 text-primary" />
+                      <project.icon className="w-24 md:w-40 h-24 md:h-40 text-primary" />
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-r from-card via-transparent to-transparent" />
                 </div>
-                <div className="lg:w-1/2 p-12 flex flex-col justify-center space-y-10">
-                  <div className="space-y-6">
-                    <Badge className="bg-primary text-background font-code font-bold rounded-none px-4">{project.badge}</Badge>
-                    <h3 className="text-3xl md:text-4xl font-headline font-bold flex items-center gap-4">
-                      <project.icon className="w-8 md:w-10 text-primary" />
+                <div className="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center space-y-8 md:space-y-10">
+                  <div className="space-y-4 md:space-y-6">
+                    <Badge className="bg-primary text-background font-code font-bold rounded-none px-3 md:px-4 text-[10px] md:text-xs">{project.badge}</Badge>
+                    <h3 className="text-2xl md:text-4xl font-headline font-bold flex items-center gap-4">
+                      <project.icon className="w-6 md:w-10 h-6 md:h-10 text-primary" />
                       {project.title}
                     </h3>
-                    <p className="text-lg md:text-xl text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-6">
+                    <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-4 md:pl-6">
                       {project.desc}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6">
                     {project.features.map((feature, fIdx) => (
                       <div key={fIdx} className="space-y-1">
-                        <div className="flex items-center gap-2 text-[10px] font-bold text-primary font-code uppercase tracking-widest">
+                        <div className="flex items-center gap-2 text-[9px] md:text-[10px] font-bold text-primary font-code uppercase tracking-widest">
                           <ListChecks className="w-3 h-3" />
                           {feature}
                         </div>
@@ -173,22 +160,22 @@ export function AISection() {
           whileInView="visible" 
           viewport={{ once: true }} 
           variants={fadeUp}
-          className="pt-24 flex flex-col items-center space-y-12"
+          className="pt-16 md:pt-24 flex flex-col items-center space-y-12"
         >
           <div className="w-full flex items-center gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Neural Harmonics</span>
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Return to Core</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
           <Link href="/music" className="group">
-            <Button size="lg" className="h-24 px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-8 group">
+            <Button size="lg" className="h-20 md:h-24 px-12 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-6 md:gap-8 group">
               <div className="text-left">
-                <p className="text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 02</p>
-                <p className="text-4xl font-display font-bold tracking-tighter uppercase">Vocals</p>
+                <p className="text-[8px] md:text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 02</p>
+                <p className="text-2xl md:text-4xl font-display font-bold tracking-tighter uppercase">Vocals</p>
               </div>
-              <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
-                <Music className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+              <div className="w-10 h-10 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                <Music className="w-5 h-5 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
               </div>
             </Button>
           </Link>

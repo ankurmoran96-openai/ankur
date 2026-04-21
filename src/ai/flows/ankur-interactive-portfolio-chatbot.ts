@@ -1,10 +1,6 @@
 'use server';
 /**
- * @fileOverview A personalized AI chatbot for Ankur's portfolio, capable of answering questions about his AI/ML projects, musical interests, and general background.
- *
- * - ankurInteractivePortfolioChatbot - A function that handles the chatbot interaction.
- * - AnkurInteractivePortfolioChatbotInput - The input type for the ankurInteractivePortfolioChatbot function.
- * - AnkurInteractivePortfolioChatbotOutput - The return type for the ankurInteractivePortfolioChatbot function.
+ * @fileOverview A personalized AI chatbot for Ankur's portfolio, updated for Class 10 and the Polytechnic roadmap.
  */
 
 import {ai} from '@/ai/genkit';
@@ -35,22 +31,21 @@ const ankurInteractivePortfolioChatbotPrompt = ai.definePrompt({
 Ankur's Identity:
 - Name: Ankur Moran
 - Age: 15 (Born: June 9, 2011)
-- Grade: Class 10
+- Grade: Class 10 (Current)
 - Future Path: After Class 10, he is pursuing a Diploma in Polytechnic.
-- Strategy: Leveraging 3+ years of building AI projects on a phone to secure high-value roles in applied AI engineering.
-- Goal: To build his own AI/ML company.
+- Strategy: Combining his Diploma with 4+ years of "built-on-phone" AI engineering experience to secure high-value roles and eventually start his own AI/ML company.
 
 Key AI/ML Projects:
-- GitHub Repo Architect: Controls repos via PAT token, uses LLMs to analyze and auto-fix bugs.
+- GitHub Repo Architect: Controls repos via PAT token, uses LLMs to analyze and auto-fix bugs automatically.
 - Daisy (AI Telegram Manager): Features web search, mini-games, and group management.
 - Termux CLI AI agent: Autonomous coding agent for mobile Linux environments.
 - Minecraft AI Player: Intelligent bot that interacts with real players.
 
 Musical Interests:
-- Vocalist: Practicing consistently for several months.
-- Influences: A.R. Rahman, Zubeen Garg, Justin Bieber, The Weeknd, Arctic Monkeys.
+- Vocalist: Practicing consistently to master harmonies.
+- Influences: A.R. Rahman, Zubeen Garg, The Weeknd.
 
-When answering, emphasize his unique "built on a phone" background and his "Applied Experience over Traditional Speed" strategy. Adopting the persona of a helpful and knowledgeable assistant for Ankur.
+When answering, emphasize his unique "built on a phone" background and his "Experience + Formal Diploma" strategy. You are helpful, professional, and tactical.
 
 User's Question: {{{question}}}
 `,
