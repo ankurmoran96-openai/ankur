@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Rocket, Target, Calendar, Brain, Cpu, ChevronRight, Fingerprint } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Rocket, Brain, Cpu, Fingerprint, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -21,7 +21,7 @@ export function AboutSection() {
                 Ankur <br /><span className="text-primary/60">Moran.</span>
               </h2>
               <p className="text-xl text-muted-foreground leading-relaxed font-light border-l-2 border-primary/20 pl-8 italic">
-                "Born June 9, 2011. I am building a future where smart machines help everyone. My goal is to start a great company that builds helpful robots and AI tools."
+                "Born June 9, 2011. I have been building AI tools on a phone since age 14. My strategy is simple: prove my expertise through real builds, then formalize it with a Polytechnic Diploma."
               </p>
             </div>
 
@@ -32,8 +32,8 @@ export function AboutSection() {
               </div>
               <div className="w-px h-12 bg-white/10" />
               <div className="space-y-1">
-                <p className="text-[10px] font-code uppercase text-primary/60 tracking-widest">Goal</p>
-                <p className="text-2xl font-display font-bold uppercase">Founder</p>
+                <p className="text-[10px] font-code uppercase text-primary/60 tracking-widest">Plan</p>
+                <p className="text-2xl font-display font-bold uppercase">Diploma</p>
               </div>
             </div>
           </div>
@@ -41,12 +41,12 @@ export function AboutSection() {
           <div className="grid gap-6 animate-fade-in-right">
             <Card className="glass-card bg-white/[0.02] p-8 space-y-6 group">
               <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center text-primary transition-all group-hover:bg-primary group-hover:text-background">
-                <Brain className="w-8 h-8" />
+                <GraduationCap className="w-8 h-8" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight">Future Founder</h3>
+                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight">Polytechnic Path</h3>
                 <p className="text-muted-foreground font-light leading-relaxed">
-                  I want to build real AI products—from helpful robots to tools that make the internet work better for everyone.
+                  After Class 10, I am pursuing a Polytechnic Diploma to anchor my deep self-taught coding experience in professional certification.
                 </p>
               </div>
             </Card>
@@ -56,9 +56,9 @@ export function AboutSection() {
                 <Rocket className="w-8 h-8" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight">My Vision</h3>
+                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight">Early Experience</h3>
                 <p className="text-muted-foreground font-light leading-relaxed">
-                  Every project I make is a step toward my future goal. I focus on creating things that are useful and innovative.
+                  While others started with laptops, I mastered AI orchestration on mobile. This early start gives me years of advantage in the job market.
                 </p>
               </div>
             </Card>

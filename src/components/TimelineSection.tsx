@@ -1,7 +1,6 @@
-
 "use client";
 
-import { Calendar, Rocket, Target, Shield, Cpu } from "lucide-react";
+import { Calendar, Rocket, Target, Shield, Cpu, GraduationCap } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { motion } from "framer-motion";
 
@@ -21,7 +20,7 @@ const timelineData = [
     id: 2,
     title: "Neural Lab",
     date: "Class 9",
-    content: "Developing Termux CLI agents and managing Telegram bots. Mastering AI/ML fundamentals.",
+    content: "Developing Termux CLI agents and managing Telegram bots. Mastering AI/ML fundamentals from a phone.",
     category: "Design",
     icon: Cpu,
     relatedIds: [1, 3],
@@ -31,8 +30,8 @@ const timelineData = [
   {
     id: 3,
     title: "Class 10 Hub",
-    date: "Ongoing",
-    content: "Building autonomous repo managers and Daisy AI. Consistently practicing vocals.",
+    date: "2025",
+    content: "Building GitHub Repo Architect and Daisy AI. Expanding the mobile-first development arsenal.",
     category: "Development",
     icon: Rocket,
     relatedIds: [2, 4],
@@ -41,11 +40,11 @@ const timelineData = [
   },
   {
     id: 4,
-    title: "IOCL Core",
+    title: "Diploma Node",
     date: "Future",
-    content: "Securing stable infrastructure through formal education and professional placement.",
-    category: "Testing",
-    icon: Shield,
+    content: "Pursuing Polytechnic Diploma while securing high-value Applied AI roles through deep build experience.",
+    category: "Certification",
+    icon: GraduationCap,
     relatedIds: [3, 5],
     status: "pending" as const,
     energy: 40,
@@ -54,7 +53,7 @@ const timelineData = [
     id: 5,
     title: "Empire",
     date: "Vision",
-    content: "Building the AI/ML company. Investing 20% to scale innovation and helpful robotics.",
+    content: "Building the AI/ML company. Using years of accumulated build experience to disrupt neural architecture.",
     category: "Release",
     icon: Target,
     relatedIds: [4],
