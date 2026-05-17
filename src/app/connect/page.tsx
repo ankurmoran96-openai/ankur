@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -67,28 +68,28 @@ export default function ConnectPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-12 md:py-24 px-6 space-y-16 md:space-y-24">
+    <div className="max-w-6xl mx-auto py-12 md:py-24 px-4 md:px-6 space-y-12 md:space-y-24 overflow-x-hidden">
       <div className="scanline" />
       
       <motion.div 
         initial="hidden"
         animate="visible"
         variants={fadeUp}
-        className="text-center space-y-6"
+        className="text-center space-y-4 md:space-y-6"
       >
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-code uppercase tracking-[0.5em]">
-          <ShieldCheck className="w-4 h-4" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[8px] md:text-[10px] font-code uppercase tracking-[0.4em]">
+          <ShieldCheck className="w-3 h-3 md:w-4 md:h-4" />
           Secure Channel
         </div>
-        <h1 className="text-5xl md:text-9xl font-display font-bold tracking-tighter uppercase leading-none">
+        <h1 className="text-3xl md:text-9xl font-display font-bold tracking-tighter uppercase leading-none">
           Connect <br /><span className="text-primary/60">With Me.</span>
         </h1>
-        <p className="text-muted-foreground font-light text-sm md:text-xl max-w-2xl mx-auto italic">
+        <p className="text-muted-foreground font-light text-xs md:text-xl max-w-2xl mx-auto italic leading-relaxed">
           "Ready to collaborate on the next generation of AI orchestration? Reach out through any of the encrypted channels below."
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
         {contactMethods.map((method, idx) => (
           <motion.div
             key={idx}
@@ -105,17 +106,17 @@ export default function ConnectPage() {
             }}
           >
             <a href={method.href} target="_blank" rel="noopener noreferrer" className="block h-full group">
-              <Card className={`h-full glass-card border-white/5 bg-gradient-to-br ${method.color} p-6 md:p-8 space-y-6 hover:border-primary/40 transition-all duration-500`}>
+              <Card className={`h-full glass-card border-white/5 bg-gradient-to-br ${method.color} p-5 md:p-8 space-y-4 md:space-y-6 hover:border-primary/40 transition-all duration-500`}>
                 <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 bg-black/40 border border-white/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                    <method.icon className="w-6 h-6" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-black/40 border border-white/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                    <method.icon className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
-                  <ArrowRight className="w-5 h-5 text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/20 group-hover:text-primary group-hover:translate-x-1 transition-all" />
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-[10px] font-code text-primary uppercase tracking-[0.3em] font-bold">{method.name}</h3>
-                  <p className="text-xl md:text-2xl font-display font-bold tracking-tight truncate">{method.value}</p>
-                  <p className="text-xs md:text-sm text-muted-foreground font-light leading-relaxed">
+                <div className="space-y-1 md:space-y-2">
+                  <h3 className="text-[8px] md:text-[10px] font-code text-primary uppercase tracking-[0.3em] font-bold">{method.name}</h3>
+                  <p className="text-base md:text-2xl font-display font-bold tracking-tight truncate">{method.value}</p>
+                  <p className="text-[10px] md:text-sm text-muted-foreground font-light leading-relaxed">
                     {method.desc}
                   </p>
                 </div>
@@ -130,11 +131,11 @@ export default function ConnectPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeUp}
-        className="pt-12 md:pt-24 flex flex-col items-center space-y-12"
+        className="pt-12 md:pt-24 flex flex-col items-center space-y-8 md:space-y-12"
       >
-        <div className="w-full flex items-center gap-8">
+        <div className="w-full flex items-center gap-4 md:gap-8">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-          <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Status: Available</span>
+          <span className="text-[8px] md:text-[10px] font-code text-primary tracking-[0.4em] uppercase">Status: Available</span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
         </div>
         
@@ -142,7 +143,7 @@ export default function ConnectPage() {
           <Button size="lg" className="h-16 md:h-24 px-8 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all duration-700 flex items-center gap-4 md:gap-8 group">
             <div className="text-left">
               <p className="text-[7px] md:text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 00</p>
-              <p className="text-lg md:text-4xl font-display font-bold tracking-tighter uppercase">Empire Core</p>
+              <p className="text-sm md:text-4xl font-display font-bold tracking-tighter uppercase">Empire Core</p>
             </div>
             <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
               <Zap className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />

@@ -24,7 +24,9 @@ export function Navigation() {
 
   useEffect(() => {
     setMounted(true);
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -41,7 +43,7 @@ export function Navigation() {
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-4 md:px-6 py-3",
+      "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-4 md:px-6 py-3",
       scrolled ? "bg-background/90 backdrop-blur-md border-b border-white/5" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -88,8 +90,8 @@ export function Navigation() {
                          )}>
                           <link.icon className="w-4 h-4 md:w-5 md:h-5" />
                          </div>
-                         <div>
-                           <p className="text-lg md:text-xl font-headline font-bold uppercase tracking-tight leading-none">{link.name}</p>
+                         <div className="min-w-0">
+                           <p className="text-lg md:text-xl font-headline font-bold uppercase tracking-tight leading-none truncate">{link.name}</p>
                            <p className="text-[8px] md:text-[10px] font-code tracking-widest uppercase text-muted-foreground mt-1">{link.desc}</p>
                          </div>
                        </div>
@@ -101,7 +103,7 @@ export function Navigation() {
             </div>
             
             <div className="p-6 md:p-8 border-t border-white/5 bg-black/20 flex justify-between items-center">
-               <span className="text-[8px] md:text-[9px] font-code text-muted-foreground tracking-widest">Version 4.3</span>
+               <span className="text-[8px] md:text-[9px] font-code text-muted-foreground tracking-widest">Version 4.4</span>
                <div className="flex gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />

@@ -47,7 +47,7 @@ export function Hero() {
   return (
     <section className="w-full flex flex-col items-center relative overflow-hidden bg-transparent">
       <HeroGeometric 
-        badge="Founder of BrahMos AI | V4.3"
+        badge="Founder of BrahMos AI | V4.4"
         title1="ANKUR"
         title2="MORAN"
       />
@@ -67,8 +67,8 @@ export function Hero() {
                 <info.icon className="w-4 h-4 md:w-6 md:h-6" />
               </div>
               <div>
-                <p className="text-[8px] md:text-[10px] font-code text-muted-foreground uppercase tracking-widest leading-none">{info.label}</p>
-                <p className="text-xs md:text-xl font-display font-bold uppercase mt-1 leading-none">{info.value}</p>
+                <p className="text-[7px] md:text-[10px] font-code text-muted-foreground uppercase tracking-widest leading-none">{info.label}</p>
+                <p className="text-[10px] md:text-xl font-display font-bold uppercase mt-1 leading-none">{info.value}</p>
               </div>
             </Card>
           ))}
@@ -84,7 +84,7 @@ export function Hero() {
             className="space-y-6 md:space-y-12"
           >
             <div className="space-y-4 md:space-y-6">
-              <h3 className="text-lg md:text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-3 md:gap-4">
+              <h3 className="text-sm md:text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-3 md:gap-4">
                 <Zap className="text-primary w-5 h-5 md:w-8 md:h-8" />
                 My Passion
               </h3>
@@ -95,9 +95,9 @@ export function Hero() {
                       <div className="p-2 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-background transition-all">
                         <p.icon className="w-4 h-4 md:w-6 md:h-6" />
                       </div>
-                      <span className="text-sm md:text-2xl font-headline font-bold uppercase tracking-wide leading-none">{p.title}</span>
+                      <span className="text-xs md:text-2xl font-headline font-bold uppercase tracking-wide leading-none">{p.title}</span>
                     </div>
-                    <p className="text-xs md:text-lg text-muted-foreground font-light leading-snug italic border-l-2 border-primary/20 pl-3 md:pl-6">
+                    <p className="text-[10px] md:text-lg text-muted-foreground font-light leading-relaxed italic border-l-2 border-primary/20 pl-3 md:pl-6">
                       {p.desc}
                     </p>
                   </Card>
@@ -115,13 +115,13 @@ export function Hero() {
             className="space-y-6 md:space-y-12"
           >
             <div className="space-y-4 md:space-y-8">
-              <h3 className="text-lg md:text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-3 md:gap-4">
+              <h3 className="text-sm md:text-3xl font-display font-bold uppercase tracking-tight flex items-center gap-3 md:gap-4">
                 <Cpu className="text-primary w-5 h-5 md:w-8 md:h-8" />
                 Working Focus
               </h3>
               <div className="flex flex-wrap gap-2">
                 {workFocus.map((focus, i) => (
-                  <Badge key={i} variant="outline" className="border-primary/20 bg-primary/5 text-primary text-[8px] md:text-xs py-1.5 md:py-2 px-2 md:px-4 rounded-none uppercase font-code tracking-widest hover:bg-primary hover:text-background transition-all cursor-default">
+                  <Badge key={i} variant="outline" className="border-primary/20 bg-primary/5 text-primary text-[7px] md:text-xs py-1.5 md:py-2 px-2 md:px-4 rounded-none uppercase font-code tracking-widest hover:bg-primary hover:text-background transition-all cursor-default">
                     {focus}
                   </Badge>
                 ))}
@@ -130,8 +130,8 @@ export function Hero() {
 
             <div className="p-5 md:p-10 rounded-2xl bg-primary/5 border border-primary/20 relative overflow-hidden group hover:border-primary/40 transition-all">
               <BrainCircuit className="absolute -bottom-6 -right-6 w-20 h-20 md:w-40 md:h-40 text-primary/5 group-hover:text-primary/10 transition-all duration-700" />
-              <h4 className="text-sm md:text-2xl font-headline font-bold uppercase mb-2 text-primary leading-none">BrahMos AI Mission</h4>
-              <p className="text-xs md:text-lg text-muted-foreground font-light leading-relaxed italic">
+              <h4 className="text-xs md:text-2xl font-headline font-bold uppercase mb-2 text-primary leading-none">BrahMos AI Mission</h4>
+              <p className="text-[10px] md:text-lg text-muted-foreground font-light leading-relaxed italic">
                 Architecting the future of neural orchestration through autonomous agents, BrahMos Cloud, and relentless mobile innovation.
               </p>
             </div>
@@ -148,7 +148,7 @@ export function Hero() {
         >
           <div className="w-full flex items-center gap-4 md:gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <span className="text-[10px] font-code text-primary tracking-[0.4em] uppercase text-center whitespace-nowrap">Access Tactical Intel</span>
+            <span className="text-[8px] md:text-[10px] font-code text-primary tracking-[0.4em] uppercase text-center whitespace-nowrap">Access Tactical Intel</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
 
@@ -156,7 +156,7 @@ export function Hero() {
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button size="lg" className="h-14 md:h-24 px-6 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 shadow-[0_0_30px_rgba(255,59,59,0.1)] group">
                 <div className="text-left">
-                  <p className="text-[8px] md:text-[10px] font-code tracking-[0.4em] opacity-60 mb-0.5 uppercase">Node 01</p>
+                  <p className="text-[7px] md:text-[10px] font-code tracking-[0.4em] opacity-60 mb-0.5 uppercase">Node 01</p>
                   <p className="text-base md:text-4xl font-display font-bold tracking-tighter uppercase leading-none">AI Lab</p>
                 </div>
                 <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
@@ -166,7 +166,7 @@ export function Hero() {
             </motion.div>
           </Link>
           
-          <p className="text-[10px] font-code text-muted-foreground/40 uppercase tracking-[0.5em] animate-pulse">Scroll Down for More Info</p>
+          <p className="text-[8px] md:text-[10px] font-code text-muted-foreground/40 uppercase tracking-[0.5em] animate-pulse">Scroll Down for More Info</p>
         </motion.div>
       </div>
     </section>

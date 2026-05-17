@@ -75,40 +75,41 @@ export function GeometricBackground() {
         setMounted(true);
     }, []);
 
-    if (!mounted) return <div className="fixed inset-0 -z-20 bg-[#0E0E12]" />;
-
+    // Ensure identical initial render for hydration
     return (
         <div className="fixed inset-0 -z-20 overflow-hidden bg-[#0E0E12]">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.03] blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.03] blur-3xl opacity-50" />
 
-            <div className="absolute inset-0 overflow-hidden">
-                <ElegantShape
-                    delay={0.3}
-                    width={600}
-                    height={140}
-                    rotate={12}
-                    gradient="from-primary/[0.1]"
-                    className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
-                />
+            {mounted && (
+                <div className="absolute inset-0 overflow-hidden">
+                    <ElegantShape
+                        delay={0.3}
+                        width={600}
+                        height={140}
+                        rotate={12}
+                        gradient="from-primary/[0.1]"
+                        className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+                    />
 
-                <ElegantShape
-                    delay={0.5}
-                    width={500}
-                    height={120}
-                    rotate={-15}
-                    gradient="from-primary/[0.08]"
-                    className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
-                />
+                    <ElegantShape
+                        delay={0.5}
+                        width={500}
+                        height={120}
+                        rotate={-15}
+                        gradient="from-primary/[0.08]"
+                        className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+                    />
 
-                <ElegantShape
-                    delay={0.4}
-                    width={300}
-                    height={80}
-                    rotate={-8}
-                    gradient="from-primary/[0.05]"
-                    className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
-                />
-            </div>
+                    <ElegantShape
+                        delay={0.4}
+                        width={300}
+                        height={80}
+                        rotate={-8}
+                        gradient="from-primary/[0.05]"
+                        className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+                    />
+                </div>
+            )}
             
             <div className="absolute inset-0 bg-gradient-to-t from-[#0E0E12] via-transparent to-[#0E0E12]/80 pointer-events-none" />
         </div>
