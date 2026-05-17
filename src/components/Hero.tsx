@@ -17,7 +17,6 @@ import {
   Zap,
   Cpu,
   BrainCircuit,
-  MessageSquare,
   Send
 } from 'lucide-react';
 import Link from 'next/link';
@@ -55,7 +54,6 @@ export function Hero() {
       />
 
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6 space-y-12 md:space-y-32 pb-24 md:pb-40 relative z-10">
-        {/* Profile Grid */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
@@ -77,7 +75,6 @@ export function Hero() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-20">
-          {/* Passions */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -108,7 +105,6 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Working Focus */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -140,7 +136,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* CTA Section */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
@@ -169,7 +164,7 @@ export function Hero() {
               </motion.div>
             </Link>
 
-            <Link href="https://t.me/ankurslys" target="_blank" className="group flex-1">
+            <Link href="/connect" className="group flex-1">
               <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
                 <Button size="lg" className="w-full h-14 md:h-24 px-6 md:px-12 glass-card bg-white/5 hover:bg-primary hover:text-background border-white/10 rounded-full transition-all flex items-center justify-between group">
                   <div className="text-left">

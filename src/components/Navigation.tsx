@@ -103,7 +103,7 @@ export function Navigation() {
             </div>
             
             <div className="p-6 md:p-8 border-t border-white/5 bg-black/20 flex justify-between items-center">
-               <span className="text-[8px] md:text-[9px] font-code text-muted-foreground tracking-widest">Version 4.4</span>
+               <span className="text-[8px] md:text-[9px] font-code text-muted-foreground tracking-widest">Version 4.6</span>
                <div className="flex gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />

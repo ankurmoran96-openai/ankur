@@ -14,7 +14,6 @@ import {
   ShieldCheck,
   Zap,
   Phone,
-  MessageCircle,
   Globe
 } from 'lucide-react';
 import Link from 'next/link';
