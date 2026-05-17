@@ -33,65 +33,45 @@
   }
   body {
     @apply bg-[#0E0E12] text-foreground selection:bg-primary/30 selection:text-primary antialiased;
-    background-image: 
-      radial-gradient(circle at 50% 50%, #121217 0%, #0e0e12 100%);
+    background-image: radial-gradient(circle at 50% 50%, #121217 0%, #0e0e12 100%);
     overflow-x: hidden;
-    /* Performance fix for lag */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 }
 
-/* Performance Optimized Background */
-.star {
-  @apply fixed pointer-events-none;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.2;
-  animation: twinkle var(--duration) infinite ease-in-out;
-  will-change: opacity;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.05; }
-  50% { opacity: 0.2; }
-}
-
-.neon-text {
-  text-shadow: 0 0 10px rgba(255, 59, 59, 0.4);
-}
-
-.neon-border {
-  @apply border-primary/30 shadow-[0_0_15px_rgba(255,59,59,0.1)];
-}
-
+/* Optimized Performance */
 .glass-card {
-  @apply bg-card/40 backdrop-blur-md border border-white/5 transition-all duration-300;
+  @apply bg-card/40 backdrop-blur-sm border border-white/5 transition-all duration-300;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   will-change: transform, opacity;
 }
 
 .glass-card:hover {
-  @apply bg-card/60 border-primary/20 md:scale-[1.01];
+  @apply bg-card/60 border-primary/20;
+  transform: translateY(-2px);
 }
 
 .scanline {
   width: 100%;
-  height: 1px;
-  background: rgba(255, 59, 59, 0.05);
-  opacity: 0.1;
-  position: absolute;
+  height: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 59, 59, 0.05), transparent);
+  position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: 50;
-  animation: scanline 20s linear infinite;
-  will-change: top;
+  animation: scanline 8s linear infinite;
+  will-change: transform;
 }
 
 @keyframes scanline {
-  0% { top: 0; }
-  100% { top: 100%; }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(255, 59, 59, 0.4);
 }
 
 .css-smiley {
@@ -99,8 +79,6 @@
   width: 1.2em;
   height: 1.2em;
   vertical-align: middle;
-  animation: float 4s ease-in-out infinite;
-  will-change: transform;
 }
 
 .css-smiley::before, .css-smiley::after {
@@ -121,9 +99,10 @@
   bottom: 25%;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+/* Performance fix for mobile lag */
+* {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -133,10 +112,5 @@
   @apply bg-transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-primary/20 rounded-full hover:bg-primary/50;
-}
-
-/* Fix mobile touch delays */
-* {
-  touch-action: manipulation;
+  @apply bg-primary/20 rounded-full;
 }

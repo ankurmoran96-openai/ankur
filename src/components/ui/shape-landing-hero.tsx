@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -15,20 +14,20 @@ function HeroGeometric({
     title2?: string;
 }) {
     const fadeUpVariants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 20 },
         visible: (i: number) => ({
             opacity: 1,
             y: 0,
             transition: {
-                duration: 1,
-                delay: 0.5 + i * 0.2,
+                duration: 0.8,
+                delay: 0.2 + i * 0.1,
                 ease: [0.25, 0.4, 0.25, 1],
             },
         }),
     };
 
     return (
-        <div className="relative min-h-[90vh] w-full flex items-center justify-center overflow-hidden">
+        <div className="relative min-h-[70vh] md:min-h-[90vh] w-full flex items-center justify-center overflow-hidden">
             <div className="relative z-10 container mx-auto px-4 md:px-6">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
@@ -36,10 +35,10 @@ function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-12"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-6 md:mb-12"
                     >
-                        <Circle className="h-2 w-2 fill-primary/80" />
-                        <span className="text-sm text-white/60 tracking-wide font-code uppercase">
+                        <Circle className="h-1.5 w-1.5 fill-primary/80" />
+                        <span className="text-[10px] md:text-sm text-white/60 tracking-wide font-code uppercase">
                             {badge}
                         </span>
                     </motion.div>
@@ -50,7 +49,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-5xl sm:text-7xl md:text-9xl font-display font-bold mb-6 md:mb-8 tracking-tighter uppercase">
+                        <h1 className="text-4xl sm:text-7xl md:text-9xl font-display font-bold mb-4 md:mb-8 tracking-tighter uppercase leading-[0.9]">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                 {title1}
                             </span>
@@ -71,8 +70,8 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4 italic">
-                            I am building a smart future. I focus on creating AI tools, helpful robots, and practicing my vocal music.
+                        <p className="text-sm sm:text-lg md:text-xl text-white/40 mb-6 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4 italic">
+                            Building a smart future through AI tools, autonomous agents, and consistent vocal practice.
                         </p>
                     </motion.div>
                 </div>
