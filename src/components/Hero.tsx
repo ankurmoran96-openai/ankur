@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -14,11 +15,8 @@ import {
   Mic2, 
   Code2, 
   Zap,
-  MousePointer2,
   Cpu,
-  BrainCircuit,
-  Terminal,
-  Cloud
+  BrainCircuit
 } from 'lucide-react';
 import Link from 'next/link';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
@@ -37,24 +35,25 @@ export function Hero() {
   ];
 
   const workFocus = [
-    "AI Integration", "AI/ML", "Applied Engineering", "Prompt Engineering", 
+    "AI Integration", "AI/ML", "Applied AI Engineering", "Prompt Engineering", 
     "AI Architecture", "Python", "MLOps", "AI AGENTS", "Web Development", "Bots", "Linux Scripts"
   ];
 
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
   };
 
   return (
     <section className="w-full flex flex-col items-center relative overflow-hidden bg-transparent">
       <HeroGeometric 
-        badge="Founder of BrahMos AI | V4.2"
+        badge="Founder of BrahMos AI | V4.3"
         title1="ANKUR"
         title2="MORAN"
       />
 
       <div className="w-full max-w-7xl mx-auto px-4 md:px-6 space-y-12 md:space-y-32 pb-24 md:pb-40 relative z-10">
+        {/* Profile Grid */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
@@ -63,7 +62,7 @@ export function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6"
         >
           {profileInfo.map((info, i) => (
-            <Card key={i} className="glass-card p-3 md:p-6 flex items-center gap-2 md:gap-4 group border-white/5 transition-transform hover:scale-105">
+            <Card key={i} className="glass-card p-3 md:p-6 flex items-center gap-2 md:gap-4 group border-white/5 transition-all hover:border-primary/30">
               <div className="w-8 h-8 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background transition-all">
                 <info.icon className="w-4 h-4 md:w-6 md:h-6" />
               </div>
@@ -76,6 +75,7 @@ export function Hero() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-20">
+          {/* Passions */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -106,6 +106,7 @@ export function Hero() {
             </div>
           </motion.div>
 
+          {/* Working Focus */}
           <motion.div 
             initial="hidden" 
             whileInView="visible" 
@@ -129,14 +130,15 @@ export function Hero() {
 
             <div className="p-5 md:p-10 rounded-2xl bg-primary/5 border border-primary/20 relative overflow-hidden group hover:border-primary/40 transition-all">
               <BrainCircuit className="absolute -bottom-6 -right-6 w-20 h-20 md:w-40 md:h-40 text-primary/5 group-hover:text-primary/10 transition-all duration-700" />
-              <h4 className="text-sm md:text-2xl font-headline font-bold uppercase mb-2 text-primary leading-none">Empire Mission</h4>
+              <h4 className="text-sm md:text-2xl font-headline font-bold uppercase mb-2 text-primary leading-none">BrahMos AI Mission</h4>
               <p className="text-xs md:text-lg text-muted-foreground font-light leading-relaxed italic">
-                Pioneering the BrahMos AI ecosystem through autonomous agents, cloud orchestration, and relentless mobile innovation.
+                Architecting the future of neural orchestration through autonomous agents, BrahMos Cloud, and relentless mobile innovation.
               </p>
             </div>
           </motion.div>
         </div>
 
+        {/* CTA */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
@@ -150,8 +152,8 @@ export function Hero() {
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
 
-          <Link href="/ai" className="group" prefetch>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <Link href="/ai" className="group">
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Button size="lg" className="h-14 md:h-24 px-6 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 shadow-[0_0_30px_rgba(255,59,59,0.1)] group">
                 <div className="text-left">
                   <p className="text-[8px] md:text-[10px] font-code tracking-[0.4em] opacity-60 mb-0.5 uppercase">Node 01</p>

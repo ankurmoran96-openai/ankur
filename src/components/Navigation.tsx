@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -18,9 +19,11 @@ import { Button } from '@/components/ui/button';
 
 export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -34,13 +37,15 @@ export function Navigation() {
     { name: 'Connect', href: '/connect', icon: MessageSquare, desc: 'Contact' },
   ];
 
+  if (!mounted) return null;
+
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 px-4 md:px-6 py-3",
+      "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 px-4 md:px-6 py-3",
       scrolled ? "bg-background/90 backdrop-blur-md border-b border-white/5" : "bg-transparent"
     )}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <Link href="/" className="group flex items-center gap-3" prefetch>
+        <Link href="/" className="group flex items-center gap-3">
           <div className="w-8 h-8 md:w-10 md:h-10 bg-primary/10 border border-primary/20 rounded-md flex items-center justify-center transition-all group-hover:border-primary/50 group-hover:bg-primary/20">
             <span className="font-display font-bold text-primary text-[10px] md:text-sm">AM</span>
           </div>
@@ -53,7 +58,7 @@ export function Navigation() {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="w-10 h-10 md:w-12 md:h-12 hover:bg-white/5 border border-white/5 rounded-full transition-all">
-              <LayoutGrid className="w-4 h-4 md:w-5 md:h-5 text-primary/60 group-hover:text-primary transition-colors" />
+              <LayoutGrid className="w-4 h-4 md:w-5 md:h-5 text-primary/60" />
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-full sm:max-w-md bg-card/95 backdrop-blur-3xl border-l border-white/5 p-0 flex flex-col">
@@ -96,7 +101,7 @@ export function Navigation() {
             </div>
             
             <div className="p-6 md:p-8 border-t border-white/5 bg-black/20 flex justify-between items-center">
-               <span className="text-[8px] md:text-[9px] font-code text-muted-foreground tracking-widest">Version 4.1</span>
+               <span className="text-[8px] md:text-[9px] font-code text-muted-foreground tracking-widest">Version 4.3</span>
                <div className="flex gap-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/20" />

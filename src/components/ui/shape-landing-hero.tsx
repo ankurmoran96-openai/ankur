@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -19,15 +20,15 @@ function HeroGeometric({
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.8,
-                delay: 0.2 + i * 0.1,
+                duration: 0.6,
+                delay: 0.1 + i * 0.1,
                 ease: [0.25, 0.4, 0.25, 1],
             },
         }),
     };
 
     return (
-        <div className="relative min-h-[70vh] md:min-h-[90vh] w-full flex items-center justify-center overflow-hidden">
+        <div className="relative min-h-[60vh] md:min-h-[90vh] w-full flex items-center justify-center overflow-hidden">
             <div className="relative z-10 container mx-auto px-4 md:px-6">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
@@ -70,8 +71,8 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-sm sm:text-lg md:text-xl text-white/40 mb-6 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4 italic">
-                            Building a smart future through AI tools, autonomous agents, and consistent vocal practice.
+                        <p className="text-xs sm:text-base md:text-xl text-white/40 mb-6 leading-relaxed font-light tracking-wide max-w-2xl mx-auto px-4 italic">
+                            Founding the BrahMos AI ecosystem through autonomous agents, cloud orchestration, and relentless mobile innovation.
                         </p>
                     </motion.div>
                 </div>

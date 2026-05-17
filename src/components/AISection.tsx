@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -12,12 +13,10 @@ import {
   Music,
   ShieldAlert,
   Bot,
-  BrainCircuit,
   MessageSquare,
   Github,
   Cloud,
-  ExternalLink,
-  Cpu
+  ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -86,7 +85,7 @@ export function AISection() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
   };
 
   return (
@@ -104,7 +103,7 @@ export function AISection() {
             BrahMos AI Ecosystem
           </div>
           <h2 className="text-4xl md:text-8xl font-display font-bold tracking-tighter uppercase leading-none">AI <span className="text-primary/60">Lab</span></h2>
-          <p className="text-muted-foreground font-code text-[8px] md:text-xs tracking-[0.4em] uppercase">V4.2_ACTIVE_CLASS_10</p>
+          <p className="text-muted-foreground font-code text-[8px] md:text-xs tracking-[0.4em] uppercase">V4.3_ACTIVE_CLASS_10</p>
         </motion.div>
 
         <div className="space-y-12 md:space-y-32">
@@ -191,7 +190,7 @@ export function AISection() {
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
-          <Link href="/music" className="group" prefetch>
+          <Link href="/music" className="group">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="h-16 md:h-24 px-8 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 group shadow-lg">
                 <div className="text-left">
