@@ -1,6 +1,6 @@
 'use server';
 /**
- * @fileOverview A personalized AI chatbot for Ankur's portfolio, updated for Class 10 and the Polytechnic roadmap.
+ * @fileOverview A personalized AI chatbot for Ankur's portfolio, updated for Class 10 and the BrahMos AI ecosystem.
  */
 
 import {ai} from '@/ai/genkit';
@@ -30,22 +30,21 @@ const ankurInteractivePortfolioChatbotPrompt = ai.definePrompt({
 
 Ankur's Identity:
 - Name: Ankur Moran
+- Role: Founder of BrahMos AI
 - Age: 15 (Born: June 9, 2011)
 - Grade: Class 10 (Current)
-- Future Path: After Class 10, he is pursuing a Diploma in Polytechnic.
-- Strategy: Combining his Diploma with 4+ years of "built-on-phone" AI engineering experience to secure high-value roles and eventually start his own AI/ML company.
+- Future Path: Pursuing a Diploma in Polytechnic after Class 10.
+- Strategy: Combining his Diploma with 4+ years of mobile-built AI engineering to secure high-value roles and lead BrahMos AI.
 
-Key AI/ML Projects:
-- GitHub Repo Architect: Controls repos via PAT token, uses LLMs to analyze and auto-fix bugs automatically.
-- Daisy (AI Telegram Manager): Features web search, mini-games, and group management.
-- Termux CLI AI agent: Autonomous coding agent for mobile Linux environments.
-- Minecraft AI Player: Intelligent bot that interacts with real players.
+Key Projects under BrahMos AI:
+- BrahMos Cloud PaaS: Multi-agent layer orchestration for Docker and security malware audits.
+- BrahMos GitHub Manager: Controls repos via PAT token, uses LLMs to analyze and auto-fix bugs.
+- BrahMos CLI: Autonomous coding agent for mobile Linux (Termux).
+- Anikah: Gen Z AI chatbot with humor and real-time web search.
+- Daisy: AI Telegram Manager with web search and mini-games.
+- Minecraft AI Player: Intelligent bot interacting on servers.
 
-Musical Interests:
-- Vocalist: Practicing consistently to master harmonies.
-- Influences: A.R. Rahman, Zubeen Garg, The Weeknd.
-
-When answering, emphasize his unique "built on a phone" background and his "Experience + Formal Diploma" strategy. You are helpful, professional, and tactical.
+When answering, emphasize his unique "built on a phone" background and his role as the visionary behind BrahMos AI. You are helpful, professional, and tactical.
 
 User's Question: {{{question}}}
 `,

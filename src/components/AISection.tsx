@@ -16,7 +16,8 @@ import {
   MessageSquare,
   Github,
   Cloud,
-  ChevronRight
+  ExternalLink,
+  Cpu
 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -25,19 +26,39 @@ export function AISection() {
   const projects = [
     {
       title: "BrahMos Cloud PaaS",
-      badge: "NEW: ORCHESTRATOR",
+      badge: "CLOUD ORCHESTRATOR",
       icon: Cloud,
       desc: "Multi-agent layer orchestration using LLMs to manage Docker environments and perform deep security malware audits.",
       features: ["Multi-Agent Ops", "Docker Automation", "Malware Analysis", "Security Auditing"],
-      image: "https://picsum.photos/seed/brahmos/800/600"
+      image: "https://picsum.photos/seed/brahmos/800/600",
+      github: "https://github.com/ankurmoran96-openai/brahmoscloud"
     },
     {
-      title: "GitHub Repo Architect",
-      badge: "SELF-HEALING",
+      title: "BrahMos GitHub Manager",
+      badge: "SELF-HEALING ARCHITECT",
       icon: Github,
       desc: "Autonomous repository manager that uses LLMs to analyze code via PAT token and automatically fixes detected bugs.",
       features: ["PAT Authentication", "Auto-Fixing Bugs", "Neural Analysis", "Self-Healing Code"],
-      image: "https://picsum.photos/seed/github/800/600"
+      image: "https://picsum.photos/seed/github/800/600",
+      github: "https://github.com/ankurmoran96-openai/GitPushBot"
+    },
+    {
+      title: "BrahMos CLI",
+      badge: "AUTONOMOUS CODING AGENT",
+      icon: Terminal,
+      desc: "A mobile-first autonomous agent built for Termux that handles code logic and file operations directly via CLI.",
+      features: ["Writes Code", "Fixes Errors", "Plans Tasks", "Mobile Linux"],
+      image: "https://picsum.photos/seed/terminal/800/600",
+      github: "https://github.com/ankurmoran96-openai/brahmos"
+    },
+    {
+      title: "Anikah (AI Chatbot)",
+      badge: "GEN Z AI",
+      icon: Bot,
+      desc: "A Gen Z chatbot packed with humor and real-time web search capabilities for deeply relevant and funny interactions.",
+      features: ["Humor Mode", "Web Search", "Gen Z Slang", "Context Awareness"],
+      image: "https://picsum.photos/seed/anikah/800/600",
+      github: "https://github.com/ankurmoran96-openai/Anikah"
     },
     {
       title: "Daisy (AI TG Manager)",
@@ -48,26 +69,10 @@ export function AISection() {
       image: "https://picsum.photos/seed/daisy/800/600"
     },
     {
-      title: "Termux Assistant",
-      badge: "AUTONOMOUS AGENT",
-      icon: Terminal,
-      desc: "Mobile-first autonomous agent that handles code logic and file operations directly in the Termux environment.",
-      features: ["Writes Code", "Fixes Errors", "Plans Tasks", "Mobile Linux"],
-      image: "https://picsum.photos/seed/terminal/800/600"
-    },
-    {
-      title: "Memory Chatbot",
-      badge: "NEURAL MEMORY",
-      icon: BrainCircuit,
-      desc: "Conversational AI that maintains persistent memory of past interactions for deeply contextual responses.",
-      features: ["Context Awareness", "Long-term Memory", "Personalized Chat"],
-      image: "https://picsum.photos/seed/memory/800/600"
-    },
-    {
       title: "Minecraft AI Player",
       badge: "SMART ENTITY",
       icon: Bot,
-      desc: "Intelligent bot that interacts with real players using human-like behaviors and chat logic.",
+      desc: "Intelligent bot that interacts with real players using human-like behaviors and chat logic on Minecraft servers.",
       features: ["Real Chat", "Smart Logic", "Server Interaction"]
     },
     {
@@ -96,10 +101,10 @@ export function AISection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-code uppercase tracking-[0.4em]">
             <Sparkles className="w-3 h-3" />
-            Tactical Arsenal
+            BrahMos AI Ecosystem
           </div>
           <h2 className="text-4xl md:text-8xl font-display font-bold tracking-tighter uppercase leading-none">AI <span className="text-primary/60">Lab</span></h2>
-          <p className="text-muted-foreground font-code text-[8px] md:text-xs tracking-[0.4em] uppercase">V4.1_ACTIVE_CLASS_10</p>
+          <p className="text-muted-foreground font-code text-[8px] md:text-xs tracking-[0.4em] uppercase">V4.2_ACTIVE_CLASS_10</p>
         </motion.div>
 
         <div className="space-y-12 md:space-y-32">
@@ -127,9 +132,18 @@ export function AISection() {
                   )}
                   <div className="absolute inset-0 bg-gradient-to-r from-card via-transparent to-transparent" />
                 </div>
-                <div className="lg:w-1/2 p-6 md:p-12 flex flex-col justify-center space-y-6 md:space-y-10">
+                <div className="lg:w-1/2 p-6 md:p-12 flex flex-col justify-center space-y-6 md:space-y-8">
                   <div className="space-y-3 md:space-y-6">
-                    <Badge className="bg-primary text-background font-code font-bold rounded-none px-2 text-[8px] md:text-xs">{project.badge}</Badge>
+                    <div className="flex justify-between items-start">
+                      <Badge className="bg-primary text-background font-code font-bold rounded-none px-2 text-[8px] md:text-xs">{project.badge}</Badge>
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Button variant="ghost" size="icon" className="w-8 h-8 rounded-full border border-white/10 bg-white/5 text-primary hover:bg-primary hover:text-background">
+                            <Github className="w-4 h-4" />
+                          </Button>
+                        </a>
+                      )}
+                    </div>
                     <h3 className="text-xl md:text-4xl font-headline font-bold flex items-center gap-3 md:gap-4 leading-none">
                       <project.icon className="w-5 md:w-10 h-5 md:h-10 text-primary" />
                       {project.title}
@@ -147,6 +161,17 @@ export function AISection() {
                       </div>
                     ))}
                   </div>
+
+                  {project.github && (
+                    <div className="pt-4">
+                       <a href={project.github} target="_blank" rel="noopener noreferrer">
+                         <Button variant="outline" className="h-10 px-6 border-primary/20 bg-primary/5 text-primary font-code text-[10px] uppercase tracking-widest hover:bg-primary hover:text-background transition-all flex items-center gap-2">
+                           <ExternalLink className="w-3 h-3" />
+                           Review Source
+                         </Button>
+                       </a>
+                    </div>
+                  )}
                 </div>
               </Card>
             </motion.div>
@@ -167,15 +192,17 @@ export function AISection() {
           </div>
           
           <Link href="/music" className="group" prefetch>
-            <Button size="lg" className="h-16 md:h-24 px-8 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 group">
-              <div className="text-left">
-                <p className="text-[8px] md:text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 02</p>
-                <p className="text-lg md:text-4xl font-display font-bold tracking-tighter uppercase leading-none">Vocals</p>
-              </div>
-              <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
-                <Music className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
-              </div>
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Button size="lg" className="h-16 md:h-24 px-8 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 group shadow-lg">
+                <div className="text-left">
+                  <p className="text-[8px] md:text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 02</p>
+                  <p className="text-lg md:text-4xl font-display font-bold tracking-tighter uppercase leading-none">Vocals</p>
+                </div>
+                <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                  <Music className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
+                </div>
+              </Button>
+            </motion.div>
           </Link>
         </motion.div>
       </div>
