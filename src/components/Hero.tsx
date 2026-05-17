@@ -16,7 +16,9 @@ import {
   Code2, 
   Zap,
   Cpu,
-  BrainCircuit
+  BrainCircuit,
+  MessageSquare,
+  Send
 } from 'lucide-react';
 import Link from 'next/link';
 import { HeroGeometric } from '@/components/ui/shape-landing-hero';
@@ -47,7 +49,7 @@ export function Hero() {
   return (
     <section className="w-full flex flex-col items-center relative overflow-hidden bg-transparent">
       <HeroGeometric 
-        badge="Founder of BrahMos AI | V4.4"
+        badge="Founder of BrahMos AI | V4.5"
         title1="ANKUR"
         title2="MORAN"
       />
@@ -132,19 +134,19 @@ export function Hero() {
               <BrainCircuit className="absolute -bottom-6 -right-6 w-20 h-20 md:w-40 md:h-40 text-primary/5 group-hover:text-primary/10 transition-all duration-700" />
               <h4 className="text-xs md:text-2xl font-headline font-bold uppercase mb-2 text-primary leading-none">BrahMos AI Mission</h4>
               <p className="text-[10px] md:text-lg text-muted-foreground font-light leading-relaxed italic">
-                Architecting the future of neural orchestration through autonomous agents, BrahMos Cloud, and relentless mobile innovation.
+                Architecting the future of neural orchestration through autonomous agents and relentless mobile innovation.
               </p>
             </div>
           </motion.div>
         </div>
 
-        {/* CTA */}
+        {/* CTA Section */}
         <motion.div 
           initial="hidden" 
           whileInView="visible" 
           viewport={{ once: true }} 
           variants={fadeUp}
-          className="flex flex-col items-center gap-6 pt-8"
+          className="flex flex-col items-center gap-8 pt-8"
         >
           <div className="w-full flex items-center gap-4 md:gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
@@ -152,19 +154,35 @@ export function Hero() {
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
 
-          <Link href="/ai" className="group">
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-              <Button size="lg" className="h-14 md:h-24 px-6 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 shadow-[0_0_30px_rgba(255,59,59,0.1)] group">
-                <div className="text-left">
-                  <p className="text-[7px] md:text-[10px] font-code tracking-[0.4em] opacity-60 mb-0.5 uppercase">Node 01</p>
-                  <p className="text-base md:text-4xl font-display font-bold tracking-tighter uppercase leading-none">AI Lab</p>
-                </div>
-                <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
-                  <ChevronRight className="w-4 h-4 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Button>
-            </motion.div>
-          </Link>
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 w-full max-w-2xl justify-center">
+            <Link href="/ai" className="group flex-1">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button size="lg" className="w-full h-14 md:h-24 px-6 md:px-12 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center justify-between group shadow-[0_0_30px_rgba(255,59,59,0.1)]">
+                  <div className="text-left">
+                    <p className="text-[7px] md:text-[10px] font-code tracking-[0.4em] opacity-60 mb-0.5 uppercase">Node 01</p>
+                    <p className="text-base md:text-3xl font-display font-bold tracking-tighter uppercase leading-none">AI Lab</p>
+                  </div>
+                  <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                    <ChevronRight className="w-4 h-4 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Button>
+              </motion.div>
+            </Link>
+
+            <Link href="https://t.me/ankurslys" target="_blank" className="group flex-1">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button size="lg" className="w-full h-14 md:h-24 px-6 md:px-12 glass-card bg-white/5 hover:bg-primary hover:text-background border-white/10 rounded-full transition-all flex items-center justify-between group">
+                  <div className="text-left">
+                    <p className="text-[7px] md:text-[10px] font-code tracking-[0.4em] opacity-60 mb-0.5 uppercase">Wanna Connect?</p>
+                    <p className="text-base md:text-3xl font-display font-bold tracking-tighter uppercase leading-none">Contact</p>
+                  </div>
+                  <div className="w-8 h-8 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
+                    <Send className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
+                  </div>
+                </Button>
+              </motion.div>
+            </Link>
+          </div>
           
           <p className="text-[8px] md:text-[10px] font-code text-muted-foreground/40 uppercase tracking-[0.5em] animate-pulse">Scroll Down for More Info</p>
         </motion.div>

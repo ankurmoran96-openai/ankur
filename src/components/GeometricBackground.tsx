@@ -75,11 +75,10 @@ export function GeometricBackground() {
         setMounted(true);
     }, []);
 
-    // Ensure identical initial render for hydration
     return (
         <div className="fixed inset-0 -z-20 overflow-hidden bg-[#0E0E12]">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.03] via-transparent to-primary/[0.03] blur-3xl opacity-50" />
-
+            
             {mounted && (
                 <div className="absolute inset-0 overflow-hidden">
                     <ElegantShape

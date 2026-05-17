@@ -16,7 +16,8 @@ import {
   MessageSquare,
   Github,
   Cloud,
-  ExternalLink
+  ExternalLink,
+  Code
 } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -29,56 +30,56 @@ export function AISection() {
       icon: Cloud,
       desc: "Multi-agent layer orchestration using LLMs to manage Docker environments and perform deep security malware audits.",
       features: ["Multi-Agent Ops", "Docker Automation", "Malware Analysis", "Security Auditing"],
-      image: "https://picsum.photos/seed/brahmos/800/600",
+      image: "https://picsum.photos/seed/brahmoscloud/800/600",
       github: "https://github.com/ankurmoran96-openai/brahmoscloud"
     },
     {
       title: "BrahMos GitHub Manager",
-      badge: "SELF-HEALING ARCHITECT",
+      badge: "SELF-HEALING AI",
       icon: Github,
-      desc: "Autonomous repository manager that uses LLMs to analyze code via PAT token and automatically fixes detected bugs.",
+      desc: "Autonomous repository architect that uses LLMs to analyze code via PAT token and automatically self-heals bugs.",
       features: ["PAT Authentication", "Auto-Fixing Bugs", "Neural Analysis", "Self-Healing Code"],
-      image: "https://picsum.photos/seed/github/800/600",
+      image: "https://picsum.photos/seed/githubbot/800/600",
       github: "https://github.com/ankurmoran96-openai/GitPushBot"
     },
     {
       title: "BrahMos CLI",
       badge: "AUTONOMOUS CODING AGENT",
       icon: Terminal,
-      desc: "A mobile-first autonomous agent built for Termux that handles code logic and file operations directly via CLI.",
+      desc: "A mobile-first autonomous agent built for Termux that handles logic and file operations directly via CLI.",
       features: ["Writes Code", "Fixes Errors", "Plans Tasks", "Mobile Linux"],
-      image: "https://picsum.photos/seed/terminal/800/600",
+      image: "https://picsum.photos/seed/brahmoscli/800/600",
       github: "https://github.com/ankurmoran96-openai/brahmos"
     },
     {
       title: "Anikah (AI Chatbot)",
       badge: "GEN Z AI",
       icon: Bot,
-      desc: "A Gen Z chatbot packed with humor and real-time web search capabilities for deeply relevant and funny interactions.",
+      desc: "Humorous Gen Z chatbot with real-time web search capabilities for deeply relevant and funny interactions.",
       features: ["Humor Mode", "Web Search", "Gen Z Slang", "Context Awareness"],
       image: "https://picsum.photos/seed/anikah/800/600",
       github: "https://github.com/ankurmoran96-openai/Anikah"
     },
     {
       title: "Daisy (AI TG Manager)",
-      badge: "AI INTEGRATED",
+      badge: "NEURAL MANAGER",
       icon: MessageSquare,
-      desc: "Advanced Telegram manager featuring real-time web search, mini-games, and group management with neural chat logic.",
-      features: ["Daisy AI", "Web Search", "Mini Games", "Group Management"],
+      desc: "Advanced Telegram manager featuring real-time web search, mini-games, and group management with neural logic.",
+      features: ["Real-time Search", "Mini Games", "Group Management", "Neural Chat"],
       image: "https://picsum.photos/seed/daisy/800/600"
     },
     {
       title: "Minecraft AI Player",
-      badge: "SMART ENTITY",
-      icon: Bot,
-      desc: "Intelligent bot that interacts with real players using human-like behaviors and chat logic on Minecraft servers.",
-      features: ["Real Chat", "Smart Logic", "Server Interaction"]
+      badge: "INTELLIGENT ENTITY",
+      icon: Code,
+      desc: "Intelligent bot that joins servers and interacts with real players using human-like behaviors and chat logic.",
+      features: ["Real Chat", "Server Access", "Smart Behavior"]
     },
     {
       title: "Bypass Dumper",
       badge: "SECURITY RESEARCH",
       icon: ShieldAlert,
-      desc: "Technical auditing tool designed for BGMI memory analysis and deep security research.",
+      desc: "Technical auditing tool designed for memory analysis and deep security research for mobile games.",
       features: ["Memory Scanning", "Security Audit", "Deep Analysis"]
     }
   ];
@@ -103,7 +104,7 @@ export function AISection() {
             BrahMos AI Ecosystem
           </div>
           <h2 className="text-4xl md:text-8xl font-display font-bold tracking-tighter uppercase leading-none">AI <span className="text-primary/60">Lab</span></h2>
-          <p className="text-muted-foreground font-code text-[8px] md:text-xs tracking-[0.4em] uppercase">V4.3_ACTIVE_CLASS_10</p>
+          <p className="text-muted-foreground font-code text-[8px] md:text-xs tracking-[0.4em] uppercase">V4.5_TACTICAL_DEPLOYMENT</p>
         </motion.div>
 
         <div className="space-y-12 md:space-y-32">
@@ -166,7 +167,7 @@ export function AISection() {
                        <a href={project.github} target="_blank" rel="noopener noreferrer">
                          <Button variant="outline" className="h-10 px-6 border-primary/20 bg-primary/5 text-primary font-code text-[10px] uppercase tracking-widest hover:bg-primary hover:text-background transition-all flex items-center gap-2">
                            <ExternalLink className="w-3 h-3" />
-                           Review Source
+                           Inspect Node
                          </Button>
                        </a>
                     </div>
@@ -186,19 +187,19 @@ export function AISection() {
         >
           <div className="w-full flex items-center gap-8">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Next Directive</span>
+            <span className="text-[10px] font-code text-primary tracking-[0.6em] uppercase">Connect Node</span>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
           </div>
           
-          <Link href="/music" className="group">
+          <Link href="/connect" className="group">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="h-16 md:h-24 px-8 md:px-16 glass-card bg-primary/5 hover:bg-primary hover:text-background border-primary/20 rounded-full transition-all flex items-center gap-4 md:gap-8 group shadow-lg">
                 <div className="text-left">
-                  <p className="text-[8px] md:text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 02</p>
-                  <p className="text-lg md:text-4xl font-display font-bold tracking-tighter uppercase leading-none">Vocals</p>
+                  <p className="text-[8px] md:text-[9px] font-code tracking-[0.4em] opacity-60 mb-1 uppercase">Node 05</p>
+                  <p className="text-lg md:text-4xl font-display font-bold tracking-tighter uppercase leading-none">Connect</p>
                 </div>
                 <div className="w-8 h-8 md:w-14 md:h-14 bg-primary/10 rounded-full flex items-center justify-center transition-all group-hover:bg-background group-hover:text-primary">
-                  <Music className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
+                  <MessageSquare className="w-4 h-4 md:w-6 md:h-6 group-hover:rotate-12 transition-transform" />
                 </div>
               </Button>
             </motion.div>

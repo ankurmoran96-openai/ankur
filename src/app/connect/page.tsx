@@ -9,17 +9,50 @@ import {
   Github, 
   Instagram, 
   Mail, 
-  MessageCircle, 
   Send, 
   ArrowRight,
   ShieldCheck,
   Zap,
-  Phone
+  Phone,
+  MessageCircle,
+  Globe
 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ConnectPage() {
   const contactMethods = [
+    {
+      name: "BrahMos AI TG",
+      value: "@BrahMosAI",
+      href: "https://t.me/BrahMosAI",
+      icon: Zap,
+      color: "from-primary/20 to-primary/40",
+      desc: "Official BrahMos AI ecosystem updates and deployment logs."
+    },
+    {
+      name: "Portfolio Channel",
+      value: "@ankurmigga",
+      href: "https://t.me/ankurmigga",
+      icon: Globe,
+      color: "from-blue-500/20 to-sky-500/20",
+      desc: "Personal builds, tactical dev updates, and early access projects."
+    },
+    {
+      name: "Personal Telegram",
+      value: "@ankurslys",
+      href: "https://t.me/ankurslys",
+      icon: Send,
+      color: "from-cyan-500/20 to-blue-500/20",
+      desc: "Direct tactical messaging for collaboration or inquiries."
+    },
+    {
+      name: "WhatsApp",
+      value: "+91 9387116776",
+      href: "https://wa.me/919387116776",
+      icon: Phone,
+      color: "from-green-500/20 to-emerald-500/20",
+      desc: "Primary communication node for direct technical contact."
+    },
     {
       name: "GitHub",
       value: "@ankurmoran96-openai",
@@ -34,31 +67,15 @@ export default function ConnectPage() {
       href: "https://instagram.com/ankrdgaf",
       icon: Instagram,
       color: "from-pink-500/20 to-purple-500/20",
-      desc: "Daily updates and behind the scenes of my builds."
-    },
-    {
-      name: "WhatsApp",
-      value: "+91 9387116776",
-      href: "https://wa.me/919387116776",
-      icon: Phone,
-      color: "from-green-500/20 to-emerald-500/20",
-      desc: "Direct communication for collaboration or inquiries."
-    },
-    {
-      name: "Telegram",
-      value: "@ankurslys",
-      href: "https://t.me/ankurslys",
-      icon: Send,
-      color: "from-blue-500/20 to-sky-500/20",
-      desc: "Instant tactical messaging and project updates."
+      desc: "Behind the scenes of mobile-first AI engineering."
     },
     {
       name: "Email",
       value: "ankurmoran96@gmail.com",
       href: "mailto:ankurmoran96@gmail.com",
       icon: Mail,
-      color: "from-primary/20 to-primary/40",
-      desc: "Formal inquiries and professional networking."
+      color: "from-white/5 to-white/10",
+      desc: "Formal inquiries and industrial networking."
     }
   ];
 
@@ -79,13 +96,13 @@ export default function ConnectPage() {
       >
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary text-[8px] md:text-[10px] font-code uppercase tracking-[0.4em]">
           <ShieldCheck className="w-3 h-3 md:w-4 md:h-4" />
-          Secure Channel
+          Neural Link Established
         </div>
         <h1 className="text-3xl md:text-9xl font-display font-bold tracking-tighter uppercase leading-none">
           Connect <br /><span className="text-primary/60">With Me.</span>
         </h1>
         <p className="text-muted-foreground font-light text-xs md:text-xl max-w-2xl mx-auto italic leading-relaxed">
-          "Ready to collaborate on the next generation of AI orchestration? Reach out through any of the encrypted channels below."
+          "Reach out via any of the tactical channels below to collaborate on the future of AI."
         </p>
       </motion.div>
 
@@ -115,7 +132,7 @@ export default function ConnectPage() {
                 </div>
                 <div className="space-y-1 md:space-y-2">
                   <h3 className="text-[8px] md:text-[10px] font-code text-primary uppercase tracking-[0.3em] font-bold">{method.name}</h3>
-                  <p className="text-base md:text-2xl font-display font-bold tracking-tight truncate">{method.value}</p>
+                  <p className="text-sm md:text-2xl font-display font-bold tracking-tight truncate">{method.value}</p>
                   <p className="text-[10px] md:text-sm text-muted-foreground font-light leading-relaxed">
                     {method.desc}
                   </p>
@@ -135,7 +152,7 @@ export default function ConnectPage() {
       >
         <div className="w-full flex items-center gap-4 md:gap-8">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent to-primary/20" />
-          <span className="text-[8px] md:text-[10px] font-code text-primary tracking-[0.4em] uppercase">Status: Available</span>
+          <span className="text-[8px] md:text-[10px] font-code text-primary tracking-[0.4em] uppercase">Status: Tactical</span>
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/20" />
         </div>
         
