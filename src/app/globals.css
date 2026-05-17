@@ -36,21 +36,25 @@
     background-image: 
       radial-gradient(circle at 50% 50%, #121217 0%, #0e0e12 100%);
     overflow-x: hidden;
+    /* Performance fix for lag */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
+/* Performance Optimized Background */
 .star {
   @apply fixed pointer-events-none;
   background: white;
   border-radius: 50%;
   opacity: 0.2;
   animation: twinkle var(--duration) infinite ease-in-out;
-  will-change: opacity, transform;
+  will-change: opacity;
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.05; transform: scale(1); }
-  50% { opacity: 0.2; transform: scale(1.2); }
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.2; }
 }
 
 .neon-text {
@@ -64,7 +68,7 @@
 .glass-card {
   @apply bg-card/40 backdrop-blur-md border border-white/5 transition-all duration-300;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  will-change: transform, box-shadow, background-color;
+  will-change: transform, opacity;
 }
 
 .glass-card:hover {
@@ -130,4 +134,9 @@
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
   @apply bg-primary/20 rounded-full hover:bg-primary/50;
+}
+
+/* Fix mobile touch delays */
+* {
+  touch-action: manipulation;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Instagram, Send, Cpu, Cloud } from 'lucide-react';
+import { Github, Instagram, Send, Cpu, Cloud, Mail, Phone } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -16,7 +16,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs md:text-sm text-muted-foreground font-body font-light max-w-xs mx-auto md:mx-0">
-              Founding the next generation of neural systems. V3.5_CLASS_10.
+              Founding the next generation of neural systems. V4.0_CLASS_10.
             </p>
           </div>
 
@@ -24,8 +24,9 @@ export function Footer() {
             <div className="flex gap-3 md:gap-4">
               {[
                 { icon: Github, href: 'https://github.com/ankurmoran96-openai', label: 'GitHub' },
-                { icon: Instagram, href: 'https://instagram.com/git.push.ankur', label: 'Instagram' },
-                { icon: Send, href: 'https://t.me/ankurslys', label: 'Telegram' }
+                { icon: Instagram, href: 'https://instagram.com/ankrdgaf', label: 'Instagram' },
+                { icon: Send, href: 'https://t.me/ankurslys', label: 'Telegram' },
+                { icon: Mail, href: 'mailto:ankurmoran96@gmail.com', label: 'Email' }
               ].map((social, i) => (
                 <a 
                   key={i} 
@@ -47,7 +48,7 @@ export function Footer() {
           <div className="flex flex-wrap justify-center gap-x-4 md:gap-x-6 gap-y-2 text-[9px] md:text-[10px] font-code uppercase tracking-widest text-muted-foreground/60">
             <div className="flex items-center gap-2">
               <Cpu className="w-3 h-3 text-primary/60" />
-              <span>Developed via AI</span>
+              <span>BrahMos Cloud PaaS</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-primary/60">●</span>
@@ -55,7 +56,7 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <Cloud className="w-3 h-3 text-primary/60" />
-              <span>Network: Netlify</span>
+              <span>Status: Tactical v4.0</span>
             </div>
           </div>
           <div className="text-[9px] md:text-[10px] text-muted-foreground/30 font-code uppercase tracking-[0.3em]">
